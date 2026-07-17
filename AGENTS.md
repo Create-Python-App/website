@@ -2,7 +2,7 @@
 
 ## Overview
 
-Marketing and documentation site for create-node-app.
+Marketing and documentation site for create-python-app.
 
 ## Tech Stack
 

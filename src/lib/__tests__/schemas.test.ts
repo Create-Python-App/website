@@ -25,26 +25,26 @@ describe('categorySchema', () => {
 describe('templateSchema', () => {
   it('should validate a valid template', () => {
     const validTemplate = {
-      name: 'React Vite Starter',
+      name: 'FastAPI Starter',
       description: 'A fast React boilerplate with Vite.',
-      url: 'https://github.com/Create-Node-App/cna-templates/tree/main/templates/react-vite-starter',
+      url: 'https://github.com/Create-Python-App/cpa-templates/tree/main/templates/fastapi-starter',
       type: 'react',
       category: 'frontend-applications',
       labels: ['React', 'Vite', 'TypeScript'],
-      slug: 'react-vite-starter',
+      slug: 'fastapi-starter',
     };
     expect(templateSchema.safeParse(validTemplate).success).toBe(true);
   });
 
   it('should reject a template with invalid url', () => {
     const invalidTemplate = {
-      name: 'React Vite Starter',
+      name: 'FastAPI Starter',
       description: 'A fast React boilerplate.',
       url: 'not-a-url',
       type: 'react',
       category: 'frontend-applications',
       labels: ['React'],
-      slug: 'react-vite-starter',
+      slug: 'fastapi-starter',
     };
     expect(templateSchema.safeParse(invalidTemplate).success).toBe(false);
   });
@@ -55,7 +55,7 @@ describe('extensionSchema', () => {
     const validExtension = {
       name: 'Tailwind CSS',
       description: 'Add Tailwind CSS.',
-      url: 'https://github.com/Create-Node-App/cna-templates/tree/main/extensions/react-tailwindcss',
+      url: 'https://github.com/Create-Python-App/cpa-templates/tree/main/extensions/python-docker',
       type: 'react',
       category: 'UI',
       labels: ['Tailwind', 'CSS'],
@@ -68,7 +68,7 @@ describe('extensionSchema', () => {
     const validExtension = {
       name: 'GitHub Setup',
       description: 'Add GitHub automation.',
-      url: 'https://github.com/Create-Node-App/cna-templates/tree/main/extensions/all-github-setup',
+      url: 'https://github.com/Create-Python-App/cpa-templates/tree/main/extensions/github-setup',
       type: ['react', 'nextjs', 'backend'],
       category: 'Tooling',
       labels: ['GitHub', 'CI/CD'],
@@ -83,13 +83,13 @@ describe('templatesDataSchema', () => {
     const validData = {
       templates: [
         {
-          name: 'React Vite Starter',
+          name: 'FastAPI Starter',
           description: 'A fast React boilerplate.',
           url: 'https://github.com/example/react-vite',
           type: 'react',
           category: 'frontend-applications',
           labels: ['React'],
-          slug: 'react-vite-starter',
+          slug: 'fastapi-starter',
         },
       ],
       extensions: [

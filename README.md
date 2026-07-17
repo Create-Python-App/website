@@ -1,22 +1,25 @@
-# Create Awesome Node App - Official Website
+# Create Awesome Python App - Official Website
 
-[![npm](https://img.shields.io/npm/v/create-awesome-node-app?style=flat-square&color=cb3837)](https://www.npmjs.com/package/create-awesome-node-app)
-[![npm downloads](https://img.shields.io/npm/dm/create-awesome-node-app?style=flat-square&color=cb3837)](https://www.npmjs.com/package/create-awesome-node-app)
-[![Templates](https://img.shields.io/badge/templates-cna--templates-blue?style=flat-square)](https://github.com/Create-Node-App/cna-templates)
-[![GitHub org](https://img.shields.io/badge/GitHub-Create--Node--App-black?style=flat-square&logo=github)](https://github.com/Create-Node-App)
+[![PyPI](https://img.shields.io/pypi/v/create-awesome-python-app?style=flat-square&color=3776ab)](https://pypi.org/project/create-awesome-python-app/)
+[![Templates](https://img.shields.io/badge/templates-cpa--templates-blue?style=flat-square)](https://github.com/Create-Python-App/cpa-templates)
+[![GitHub org](https://img.shields.io/badge/GitHub-Create--Python--App-black?style=flat-square&logo=github)](https://github.com/Create-Python-App)
 
-This is the official website for [Create Awesome Node App](https://www.npmjs.com/package/create-awesome-node-app), a tool that helps you quickly set up Node.js projects with best practices and modern tooling.
+This is the official website for [Create Awesome Python App](https://pypi.org/project/create-awesome-python-app/), a tool that helps you quickly set up Python projects with best practices and modern tooling (uv-first).
 
 ## Project Links
 
-- [Official website](https://create-awesome-node-app.vercel.app)
-- [CLI package on npm](https://www.npmjs.com/package/create-awesome-node-app)
-- [Main Create-Node-App repository](https://github.com/Create-Node-App/create-node-app)
-- [Templates and extensions catalog](https://github.com/Create-Node-App/cna-templates)
-- [Create-Node-App GitHub organization](https://github.com/Create-Node-App)
+- [Official website](https://create-awesome-python-app.vercel.app)
+- [CLI package on PyPI](https://pypi.org/project/create-awesome-python-app/)
+- [Main Create-Python-App repository](https://github.com/Create-Python-App/create-python-app)
+- [Templates and extensions catalog](https://github.com/Create-Python-App/cpa-templates)
+- [Create-Python-App GitHub organization](https://github.com/Create-Python-App)
 
 > [!TIP]
-> This project was initialized with [create-awesome-node-app](https://www.npmjs.com/package/create-awesome-node-app). **DO NOT USE THIS TEMPLATE DIRECTLY!** Instead, create your own project using the command and following the interactive menu options. For more information, refer to the documentation!
+> Scaffold new apps with [`create-awesome-python-app`](https://pypi.org/project/create-awesome-python-app/) — do not clone template snapshot repos for production work. Prefer:
+>
+> ```bash
+> uvx create-awesome-python-app my-api --template fastapi-starter
+> ```
 
 ## Features
 
@@ -66,12 +69,12 @@ Scripts for preparing and viewing the production version:
 
 ## Contributing
 
-Bug reports, feature requests, and pull requests are welcome on the [Create-Node-App/website](https://github.com/Create-Node-App/website) repository!
+Bug reports, feature requests, and pull requests are welcome on the [Create-Python-App/website](https://github.com/Create-Python-App/website) repository!
 
 ## 👥 Contributors
 
-<a href="https://github.com/Create-Node-App/website/contributors">
-  <img src="https://contrib.rocks/image?repo=Create-Node-App/website"/>
+<a href="https://github.com/Create-Python-App/website/contributors">
+  <img src="https://contrib.rocks/image?repo=Create-Python-App/website" alt="Contributors to Create-Python-App/website"/>
 </a>
 
 Made with [contributors-img](https://contrib.rocks).

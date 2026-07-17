@@ -1,5 +1,5 @@
 {
-  "name": "create-node-app",
+  "name": "create-python-app-website",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Create-Node-App/create-node-app.git"
+    "url": "git+https://github.com/Create-Python-App/website.git"
   },
   "author": "ulises-jeremias",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Create-Node-App/create-node-app/issues"
+    "url": "https://github.com/Create-Python-App/website/issues"
   },
-  "homepage": "https://github.com/Create-Node-App/create-node-app#readme",
+  "homepage": "https://github.com/Create-Python-App/website#readme",
   "dependencies": {
     "danger": "^13.0.10"
   },
