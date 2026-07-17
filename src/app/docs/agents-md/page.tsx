@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 
 export const metadata = {
-  title: 'AGENTS.md | Create Awesome Node App',
+  title: 'AGENTS.md | Create Awesome Python App',
   description: 'Guide to the generated AGENTS.md contract for AI assistants.',
 };
 
@@ -80,10 +80,10 @@ export default function AgentsMdPage() {
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2">
                     <Sparkles className="h-5 w-5 text-primary" />
-                    Generated Example (React Template)
+                    Generated Example (FastAPI Template)
                   </CardTitle>
                   <CardDescription>
-                    A trimmed example of the AGENTS.md shipped with a React Vite template.
+                    A trimmed example of the AGENTS.md shipped with the FastAPI starter template.
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
@@ -98,62 +98,61 @@ Humans: read CONTRIBUTING.md and the documents under docs/.
 | Topic | Source of Truth |
 |-------|-----------------|
 | Project architecture | docs/PROJECT_STRUCTURE.md |
-| Component patterns | docs/COMPONENT_GUIDELINES.md |
-| Performance guidance | docs/PERFORMANCE.md |
-| State management approach | docs/STATE_MANAGEMENT.md |
-| Styling + design system | docs/STYLING.md |
+| API route patterns | docs/API_GUIDELINES.md |
+| Settings & env vars | docs/CONFIGURATION.md |
+| Database / ORM usage | docs/DATABASE.md |
 | Testing strategy | docs/TESTING.md |
-| Accessibility notes | docs/ACCESSIBILITY.md |
+| Deployment notes | docs/DEPLOYMENT.md |
 
 ## 2. Operating Principles (AI Perspective)
 
 - Documentation-first
 - Reuse-before-build
-- Type safety always (no unvetted any)
+- Type hints always (mypy/pyright clean)
 - Deterministic, incremental changes
 - Explicit assumption logging
 
-## 3. AI Execution Protocol (React Feature Work)
+## 3. AI Execution Protocol (FastAPI Feature Work)
 
-When asked to add/modify UI logic:
-1. Locate relevant feature folder (src/features/*) or propose new if justified
+When asked to add/modify API behavior:
+1. Locate the relevant router or service module under src/
 2. Read related docs/* referenced above
-3. Prefer extending existing component patterns
+3. Prefer extending existing dependency-injection patterns
 4. Show proposed file tree + diff plan BEFORE writing code
-5. After code: list follow-up validation steps (lint, type check, test)
+5. After code: list follow-up validation steps (ruff, mypy, pytest)
 
 ## 4. Guardrails (Must Enforce)
 
-- Do NOT fabricate file paths, component APIs, or library versions
-- Do NOT remove existing accessibility props (aria-*, alt, role) without replacement rationale
-- Do NOT introduce global mutable singletons for state—prefer documented patterns
+- Do NOT fabricate file paths, settings keys, or package versions
+- Do NOT bypass pydantic validation or typed settings without rationale
+- Do NOT add sync I/O inside async route handlers without explicit approval
 - ALWAYS flag large dependency additions (>1 lib) for human confirmation
-- ALWAYS surface potential performance regressions (unmemoized large lists, heavy renders)
+- ALWAYS surface potential performance regressions (N+1 queries, blocking calls)
 
-## 5. Component Creation Checklist
+## 5. Endpoint Creation Checklist
 
-- Typed props interface exported
-- Meaningful name + colocated index.ts re-export (if pattern exists)
-- Accessibility reviewed (labels, semantics)
-- Story / example or usage snippet considered
-- Test file added or explicitly deferred with reason
+- Typed request/response models (Pydantic v2)
+- Router registered in the app factory
+- Settings read via pydantic-settings, not raw os.environ
+- Test added or explicitly deferred with reason
+- OpenAPI tags and summaries updated when applicable
 
 ## 6. When the AI Should Ask or Refuse
 
-Ask for clarification if: feature scope unclear, conflicting patterns, missing target directory.
-Refuse if: asked to bypass validation, remove type safety, duplicate existing documented component.
+Ask for clarification if: feature scope unclear, conflicting patterns, missing target module.
+Refuse if: asked to bypass validation, remove type checks, or duplicate existing documented endpoints.
 
 ## 7. Post-Change Assistant Report
 
 Return a bullet summary:
 - Files touched (concise)
 - New dependencies (if any)
-- Type/lint status
+- ruff/mypy/pytest status
 - Suggested manual QA steps
 - Deferred items (tests, docs)
 
 ---
-Maintained automatically by create-awesome-node-app React template provisioning.
+Maintained automatically by create-awesome-python-app FastAPI template provisioning.
 Humans: stop reading—go to CONTRIBUTING.md + docs/.
 `}</code>
                   </pre>
@@ -174,7 +173,8 @@ Humans: stop reading—go to CONTRIBUTING.md + docs/.
                     <li>Add domain-specific escalation triggers (security, data, billing)</li>
                     <li>Reference internal design system docs instead of re-stating variants</li>
                     <li>
-                      Include CI scripts or task runners (e.g. <code>pnpm test:unit</code>) if not obvious
+                      Include CI scripts or task runners (e.g. <code>uv run pytest</code>, <code>uv run ruff check .</code>)
+                      if not obvious
                     </li>
                     <li>Keep tone imperative and concise—optimize for machine parsing + embedding</li>
                   </ul>

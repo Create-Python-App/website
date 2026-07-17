@@ -1,19 +1,4 @@
-import {
-  ArrowLeft,
-  ArrowRight,
-  Cloud,
-  Code,
-  Database,
-  Globe,
-  Layers,
-  Monitor,
-  Package,
-  Palette,
-  Shield,
-  TestTube,
-  Wrench,
-  Zap,
-} from 'lucide-react';
+import { ArrowLeft, ArrowRight, Cloud, Code, Container, Database, Monitor, Shield, Terminal, Wrench } from 'lucide-react';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 
@@ -21,14 +6,14 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 
 export const metadata: Metadata = {
-  title: 'Extensions | Create Awesome Node App Documentation',
+  title: 'Extensions | Create Awesome Python App Documentation',
   description:
-    'Learn about extensions and how to add features like state management, testing, and UI libraries to your project.',
+    'Learn about extensions and how to add Docker, Postgres, observability, auth, and CI tooling to your Python project.',
   alternates: { canonical: '/docs/extensions' },
   openGraph: {
-    title: 'Extensions | Create Awesome Node App Documentation',
+    title: 'Extensions | Create Awesome Python App Documentation',
     description:
-      'Learn about extensions and how to add features like state management, testing, and UI libraries to your project.',
+      'Learn about extensions and how to add Docker, Postgres, observability, auth, and CI tooling to your Python project.',
     url: '/docs/extensions',
     type: 'article',
   },
@@ -36,76 +21,52 @@ export const metadata: Metadata = {
 
 const categories = [
   {
-    name: 'UI',
-    description: 'Component libraries and design systems.',
-    icon: <Palette className="h-5 w-5 text-primary" />,
-    examples: ['Material UI', 'Tailwind CSS', 'Shadcn/UI', 'Semantic UI', 'Mantine'],
-  },
-  {
-    name: 'State Management',
-    description: 'Client-side state solutions.',
-    icon: <Layers className="h-5 w-5 text-primary" />,
-    examples: ['Zustand', 'Redux Toolkit', 'Recoil', 'Jotai'],
-  },
-  {
-    name: 'Testing',
-    description: 'Unit, integration, and end-to-end testing setups.',
-    icon: <TestTube className="h-5 w-5 text-primary" />,
-    examples: ['Vitest + Testing Library', 'Jest + Testing Library', 'Playwright'],
+    name: 'Containers',
+    description: 'Docker images and Compose stacks for local and production runs.',
+    icon: <Container className="h-5 w-5 text-primary" />,
+    examples: ['python-docker'],
   },
   {
     name: 'Database',
-    description: 'ORM, database adapters, and data persistence utilities.',
+    description: 'PostgreSQL services, ORM helpers, and migration scaffolding.',
     icon: <Database className="h-5 w-5 text-primary" />,
-    examples: ['Drizzle + PostgreSQL', 'Drizzle + SQLite', 'Mongoose', 'Prisma'],
+    examples: ['python-postgres', 'python-sqlalchemy', 'python-redis'],
   },
   {
-    name: 'Data Fetching',
-    description: 'API and data synchronization layers.',
-    icon: <Zap className="h-5 w-5 text-primary" />,
-    examples: ['React Query', 'Apollo Client', 'SWR', 'tRPC'],
+    name: 'Observability',
+    description: 'Error tracking and production diagnostics.',
+    icon: <Monitor className="h-5 w-5 text-primary" />,
+    examples: ['python-sentry'],
   },
   {
-    name: 'Auth',
-    description: 'Authentication and authorization integrations.',
+    name: 'Security',
+    description: 'Authentication and authorization skeletons.',
     icon: <Shield className="h-5 w-5 text-primary" />,
-    examples: ['NextAuth.js', 'Clerk', 'Auth0', 'Supabase Auth'],
+    examples: ['python-auth-jwt'],
+  },
+  {
+    name: 'CI & GitHub',
+    description: 'GitHub Actions, lint gates, and repository automation.',
+    icon: <Cloud className="h-5 w-5 text-primary" />,
+    examples: ['github-setup'],
+  },
+  {
+    name: 'Developer Experience',
+    description: 'Editor integrations and remote development environments.',
+    icon: <Terminal className="h-5 w-5 text-primary" />,
+    examples: ['python-devcontainer'],
+  },
+  {
+    name: 'API & Services',
+    description: 'Backend-focused add-ons for FastAPI and similar templates.',
+    icon: <Code className="h-5 w-5 text-primary" />,
+    examples: ['python-sqlalchemy', 'python-redis', 'python-auth-jwt'],
   },
   {
     name: 'Tooling',
-    description: 'Developer experience and workflow extensions.',
+    description: 'Cross-cutting workflow improvements for Python projects.',
     icon: <Wrench className="h-5 w-5 text-primary" />,
-    examples: ['Storybook', 'GitHub Setup', 'Million.js', 'Electron'],
-  },
-  {
-    name: 'Deployment',
-    description: 'Hosting, CI/CD, and infrastructure configurations.',
-    icon: <Cloud className="h-5 w-5 text-primary" />,
-    examples: ['Vercel', 'Docker', 'GitHub Actions', 'Serverless'],
-  },
-  {
-    name: 'Monitoring',
-    description: 'Error tracking, logging, and observability.',
-    icon: <Monitor className="h-5 w-5 text-primary" />,
-    examples: ['Sentry', 'OpenTelemetry', 'Datadog', 'LogRocket'],
-  },
-  {
-    name: 'Localization',
-    description: 'Internationalization and translation tooling.',
-    icon: <Globe className="h-5 w-5 text-primary" />,
-    examples: ['i18next', 'react-intl', 'next-intl', 'Lingui'],
-  },
-  {
-    name: 'API',
-    description: 'API clients, code generation, and integration utilities.',
-    icon: <Code className="h-5 w-5 text-primary" />,
-    examples: ['Axios', 'Ky', 'OpenAPI Generator', 'GraphQL Codegen'],
-  },
-  {
-    name: 'Cross Platform',
-    description: 'Extensions targeting multiple platforms simultaneously.',
-    icon: <Package className="h-5 w-5 text-primary" />,
-    examples: ['Electron', 'Tauri', 'Capacitor', 'React Native Web'],
+    examples: ['github-setup', 'python-devcontainer'],
   },
 ];
 
@@ -120,7 +81,7 @@ export default function DocsExtensionsPage() {
             <Link href="/docs/templates" className="text-primary hover:underline">
               template
             </Link>{' '}
-            to layer in additional features — UI libraries, state management, testing setups, and more.
+            to layer in additional features — Docker packaging, Postgres, observability, auth, CI, and more.
           </p>
         </div>
 
@@ -134,15 +95,15 @@ export default function DocsExtensionsPage() {
             </p>
             <p>
               Each extension declares which template <strong>types</strong> it is compatible with (e.g.{' '}
-              <code>react</code>, <code>nestjs-backend</code>), so the CLI only shows you relevant options for your
-              chosen template.
+              <code>fastapi-backend</code>, <code>django-backend</code>, <code>cli-app</code>), so the CLI only shows
+              you relevant options for your chosen template.
             </p>
 
             <div className="rounded-md bg-muted p-4">
               <pre className="text-sm overflow-x-auto">
                 <code>
-                  npx create-awesome-node-app my-app --template react-vite-boilerplate --addons react-zustand
-                  react-tailwindcss react-testing-library-with-vitest
+                  uvx create-awesome-python-app@latest my-app --template fastapi-starter --addons python-docker
+                  python-postgres github-setup
                 </code>
               </pre>
             </div>
@@ -190,8 +151,8 @@ export default function DocsExtensionsPage() {
           <section id="how-extensions-work" className="space-y-4">
             <h2 className="text-2xl font-bold tracking-tight">How extensions work</h2>
             <p>
-              When the CLI applies an extension it performs a deep merge of the extension's files and{' '}
-              <code>package.json</code> fields into the scaffolded project:
+              When the CLI applies an extension it performs a deep merge of the extension&apos;s files and{' '}
+              <code>pyproject.toml</code> fields into the scaffolded project:
             </p>
 
             <ol className="list-decimal pl-6 space-y-3 mt-2">
@@ -200,12 +161,12 @@ export default function DocsExtensionsPage() {
                 Filenames ending in <code>.template</code> are processed as EJS templates before being written.
               </li>
               <li>
-                <strong>Dependencies</strong> — <code>package/dependencies.js</code> and{' '}
-                <code>package/devDependencies.js</code> entries are merged into the project's <code>package.json</code>.
+                <strong>Dependencies</strong> — extension dependency lists are merged into the project&apos;s{' '}
+                <code>pyproject.toml</code> (runtime and dev groups).
               </li>
               <li>
-                <strong>Scripts</strong> — any <code>scripts</code> defined by the extension are merged with existing
-                scripts.
+                <strong>Scripts</strong> — any task scripts or Makefile targets defined by the extension are merged with
+                existing project tooling.
               </li>
               <li>
                 <strong>Incompatibilities</strong> — extensions declare <code>incompatibleWith</code> slugs so the CLI
@@ -219,12 +180,12 @@ export default function DocsExtensionsPage() {
             <p>
               Extensions live in the <code>extensions/</code> directory of the{' '}
               <a
-                href="https://github.com/Create-Node-App/cna-templates"
+                href="https://github.com/Create-Python-App/cpa-templates"
                 target="_blank"
                 rel="noreferrer"
                 className="text-primary hover:underline"
               >
-                cna-templates
+                cpa-templates
               </a>{' '}
               repository:
             </p>
@@ -232,11 +193,9 @@ export default function DocsExtensionsPage() {
               <pre className="text-sm overflow-x-auto">
                 {`extensions/
 └── your-extension-name/
-    ├── [src]/            # Source files merged into the project's src/
-    ├── package/
-    │   ├── dependencies.js       # Runtime deps to add
-    │   └── devDependencies.js    # Dev deps to add
-    ├── package.json      # Extension metadata
+    ├── files/            # Files merged into the project tree
+    ├── pyproject/        # Optional dependency fragments for merge
+    ├── extension.json    # Extension metadata and compatibility
     └── README.md`}
               </pre>
             </div>
@@ -246,7 +205,7 @@ export default function DocsExtensionsPage() {
             <h2 className="text-2xl font-bold tracking-tight">Listing available extensions</h2>
             <div className="rounded-md bg-muted p-4">
               <pre className="text-sm">
-                <code>npx create-awesome-node-app --list-addons</code>
+                <code>uvx create-awesome-python-app --list-addons</code>
               </pre>
             </div>
             <p>
