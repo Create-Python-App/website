@@ -74,7 +74,7 @@ Bug reports, feature requests, and pull requests are welcome on the [Create-Pyth
 ## 👥 Contributors
 
 <a href="https://github.com/Create-Python-App/website/contributors">
-  <img src="https://contrib.rocks/image?repo=Create-Python-App/website"/>
+  <img src="https://contrib.rocks/image?repo=Create-Python-App/website" alt="Contributors to Create-Python-App/website"/>
 </a>
 
 Made with [contributors-img](https://contrib.rocks).
