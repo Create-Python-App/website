@@ -85,7 +85,7 @@ describe('templatesDataSchema', () => {
         {
           name: 'FastAPI Starter',
           description: 'A fast React boilerplate.',
-          url: 'https://github.com/example/react-vite',
+          url: 'https://github.com/example/fastapi-starter',
           type: 'react',
           category: 'frontend-applications',
           labels: ['React'],
@@ -96,7 +96,7 @@ describe('templatesDataSchema', () => {
         {
           name: 'Tailwind CSS',
           description: 'Add Tailwind CSS.',
-          url: 'https://github.com/example/tailwind',
+          url: 'https://github.com/example/python-docker',
           type: 'react',
           category: 'UI',
           labels: ['CSS'],
