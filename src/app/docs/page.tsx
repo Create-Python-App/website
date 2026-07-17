@@ -31,12 +31,12 @@ export default function DocsPage() {
           <section id="introduction" className="space-y-4">
             <h2 className="text-2xl font-bold tracking-tight">Introduction to create-awesome-python-app</h2>
             <p>
-              <code>create-awesome-python-app</code> is a powerful command-line tool designed to streamline the process of
-              setting up modern Python applications. It provides a collection of carefully crafted templates and
+              <code>create-awesome-python-app</code> is a powerful command-line tool designed to streamline the process
+              of setting up modern Python applications. It provides a collection of carefully crafted templates and
               extensions that help developers quickly bootstrap projects with best practices and optimal configurations.
             </p>
 
-            <Card className="bg-gradient-to-r from-amber-500/10 via-amber-400/10 to-teal-600/10 border-amber-500/20 hover:border-amber-500/40 transition-colors">
+            <Card className="bg-gradient-to-r from-blue-500/10 via-blue-400/10 to-green-600/10 border-blue-500/20 hover:border-blue-500/40 transition-colors">
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
                   <Sparkles className="h-5 w-5 text-yellow-400" />
@@ -56,7 +56,7 @@ export default function DocsPage() {
                 <div className="flex flex-col gap-2 sm:flex-row">
                   <Button
                     variant="outline"
-                    className="bg-white/5 hover:bg-white/10 border-amber-500/20 hover:border-amber-500/40"
+                    className="bg-white/5 hover:bg-white/10 border-blue-500/20 hover:border-blue-500/40"
                     asChild
                   >
                     <Link href="/docs/agents-md" className="group">
@@ -110,8 +110,8 @@ export default function DocsPage() {
 
             <h3 className="text-xl font-semibold">Getting Started</h3>
             <p>
-              Using <code>create-awesome-python-app</code> is straightforward. You can create a new project with a single
-              command:
+              Using <code>create-awesome-python-app</code> is straightforward. You can create a new project with a
+              single command:
             </p>
 
             <Tabs defaultValue="uvx" className="w-full">
@@ -153,7 +153,12 @@ export default function DocsPage() {
             <ul className="list-disc pl-6 space-y-2 mt-2">
               <li>Python 3.12 or higher</li>
               <li>
-                <a href="https://docs.astral.sh/uv/" className="text-primary hover:underline" target="_blank" rel="noreferrer">
+                <a
+                  href="https://docs.astral.sh/uv/"
+                  className="text-primary hover:underline"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   uv
                 </a>{' '}
                 (recommended — used by generated projects and the default install path via uvx)
@@ -194,7 +199,9 @@ export default function DocsPage() {
                     <td className="py-2 px-4">
                       <code>-t, --template &lt;template&gt;</code>
                     </td>
-                    <td className="py-2 px-4">Specify a template slug (e.g. <code>fastapi-starter</code>)</td>
+                    <td className="py-2 px-4">
+                      Specify a template slug (e.g. <code>fastapi-starter</code>)
+                    </td>
                   </tr>
                   <tr className="border-b">
                     <td className="py-2 px-4">
@@ -218,7 +225,9 @@ export default function DocsPage() {
                     <td className="py-2 px-4">
                       <code>--no-install</code>
                     </td>
-                    <td className="py-2 px-4">Scaffold the project without running <code>uv sync</code></td>
+                    <td className="py-2 px-4">
+                      Scaffold the project without running <code>uv sync</code>
+                    </td>
                   </tr>
                   <tr className="border-b">
                     <td className="py-2 px-4">

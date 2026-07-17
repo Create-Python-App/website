@@ -8,7 +8,7 @@ interface EcosystemEntry {
   name: string;
   slug: string;
   description: string;
-  status: 'production' | 'planned';
+  status: 'production' | 'beta' | 'planned';
   href: string;
   colors: {
     node1: string;
@@ -28,8 +28,8 @@ const ECOSYSTEM: EcosystemEntry[] = [
     slug: 'create-python-app',
     description:
       'Composition-first scaffolding for Python — FastAPI, Django, Celery, CLIs, and uv workspaces with composable extensions.',
-    status: 'production',
-    href: 'https://github.com/Create-Python-App',
+    status: 'beta',
+    href: 'https://create-awesome-python-app.vercel.app',
     colors: {
       node1: '#3b82f6',
       node2: '#16a34a',
@@ -54,9 +54,9 @@ const ECOSYSTEM: EcosystemEntry[] = [
       gradStart: '#f59e0b',
       gradEnd: '#0d9488',
       glow: 'rgba(245,158,11,0.15)',
-      border: 'hsl(var(--primary)/0.25)',
-      badge: 'hsl(var(--primary)/0.12)',
-      badgeText: 'hsl(var(--primary))',
+      border: 'rgba(245,158,11,0.25)',
+      badge: 'rgba(245,158,11,0.12)',
+      badgeText: '#fbbf24',
     },
   },
   {
@@ -89,7 +89,6 @@ function NodeGraphIcon({ colors }: { colors: EcosystemEntry['colors'] }) {
           <stop offset="100%" stopColor={colors.gradEnd} />
         </linearGradient>
       </defs>
-      {/* Edges */}
       <line
         x1="11"
         y1="14"
@@ -120,16 +119,18 @@ function NodeGraphIcon({ colors }: { colors: EcosystemEntry['colors'] }) {
         strokeWidth="1.5"
         strokeLinecap="round"
       />
-      {/* Top-left node */}
       <circle cx="9" cy="12" r="5" fill={colors.node1} fillOpacity="0.85" />
-      {/* Top-right node */}
       <circle cx="35" cy="12" r="5" fill={colors.node2} fillOpacity="0.85" />
-      {/* Center node (main) */}
       <circle cx="22" cy="24" r="7" fill={`url(#${id})`} />
-      {/* Bottom node */}
       <circle cx="22" cy="38" r="4" fill={colors.node2} fillOpacity="0.7" />
     </svg>
   );
+}
+
+function statusLabel(status: EcosystemEntry['status']) {
+  if (status === 'production') return '✅ Production';
+  if (status === 'beta') return '🧪 Beta';
+  return '🔜 Planned';
 }
 
 export function EcosystemSection() {
@@ -143,13 +144,13 @@ export function EcosystemSection() {
           </div>
           <h2 className="font-display text-3xl font-bold tracking-tight sm:text-4xl">
             One philosophy.{' '}
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary via-amber-400 to-[hsl(var(--brand-teal))] animate-gradient-text">
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary via-blue-400 to-[hsl(var(--brand-teal))] animate-gradient-text">
               Any language.
             </span>
           </h2>
           <p className="max-w-2xl text-muted-foreground md:text-lg">
-            The composition-first scaffolding approach is coming to more ecosystems. Start with Python today — Node.js
-            and V are on the way.
+            The composition-first scaffolding approach spans ecosystems. Start with Python Beta today — Node.js is
+            production-ready, and V is on the way.
           </p>
         </div>
 
@@ -160,7 +161,6 @@ export function EcosystemSection() {
               className="relative overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
               style={{ borderColor: entry.colors.border }}
             >
-              {/* Top accent bar */}
               <div
                 className="absolute top-0 left-0 right-0 h-0.5"
                 style={{
@@ -178,7 +178,7 @@ export function EcosystemSection() {
                       color: entry.colors.badgeText,
                     }}
                   >
-                    {entry.status === 'production' ? '✅ Production' : '🔜 Planned'}
+                    {statusLabel(entry.status)}
                   </span>
                 </div>
                 <CardTitle className="text-base font-display mt-2">{entry.name}</CardTitle>
@@ -193,15 +193,15 @@ export function EcosystemSection() {
                   asChild
                 >
                   <Link href={entry.href} target="_blank" rel="noreferrer">
-                    {entry.status === 'production' ? (
-                      <>
-                        Explore
-                        <ArrowRight className="h-3 w-3" />
-                      </>
-                    ) : (
+                    {entry.status === 'planned' ? (
                       <>
                         Follow on GitHub
                         <ExternalLink className="h-3 w-3" />
+                      </>
+                    ) : (
+                      <>
+                        Explore
+                        <ArrowRight className="h-3 w-3" />
                       </>
                     )}
                   </Link>

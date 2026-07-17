@@ -56,11 +56,11 @@ export function TemplateDetailsClient({ template, compatibleExtensions }: Templa
           <div className="grid gap-8 lg:grid-cols-[2fr_1fr]">
             <div className="fade-in-up-delay-1">
               <div className="flex items-center gap-4 mb-6">
-                <div className="h-16 w-16 rounded-lg bg-gradient-to-br from-primary/20 to-teal-600/20 flex items-center justify-center floating">
+                <div className="h-16 w-16 rounded-lg bg-gradient-to-br from-primary/20 to-green-600/20 flex items-center justify-center floating">
                   {getTemplateIcon(template.type)}
                 </div>
                 <div>
-                  <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl bg-clip-text text-transparent bg-gradient-to-r from-primary to-teal-600 animate-gradient-text glow-text">
+                  <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl bg-clip-text text-transparent bg-gradient-to-r from-primary to-green-600 animate-gradient-text glow-text">
                     {template.name}
                   </h1>
                   <p className="text-muted-foreground">{template.category}</p>
@@ -101,7 +101,7 @@ export function TemplateDetailsClient({ template, compatibleExtensions }: Templa
                 </TabsList>
                 <TabsContent value="overview" className="space-y-4">
                   <div className="prose prose-gray dark:prose-invert max-w-none">
-                    <h3 className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-teal-600">
+                    <h3 className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-green-600">
                       About this template
                     </h3>
                     <p>
@@ -112,7 +112,7 @@ export function TemplateDetailsClient({ template, compatibleExtensions }: Templa
                       The {template.name} template is designed to help developers jumpstart their projects with best
                       practices, modern tooling, and a well-structured codebase.
                     </p>
-                    <h3 className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-teal-600">
+                    <h3 className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-green-600">
                       Key Benefits
                     </h3>
                     <ul>
@@ -126,14 +126,14 @@ export function TemplateDetailsClient({ template, compatibleExtensions }: Templa
                 </TabsContent>
                 <TabsContent value="usage" className="space-y-4">
                   <div className="prose prose-gray dark:prose-invert max-w-none">
-                    <h3 className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-teal-600">
+                    <h3 className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-green-600">
                       Getting Started
                     </h3>
                     <p>To use this template, run the following command:</p>
                     <div className="bg-muted rounded-md p-4 font-mono text-sm overflow-x-auto shimmer">
                       <p>uvx create-awesome-python-app --template {template.slug}</p>
                     </div>
-                    <h3 className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-teal-600">
+                    <h3 className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-green-600">
                       With Extensions
                     </h3>
                     <p>You can also add extensions to enhance your template:</p>
@@ -151,7 +151,7 @@ export function TemplateDetailsClient({ template, compatibleExtensions }: Templa
                 </TabsContent>
                 <TabsContent value="features" className="space-y-4">
                   <div className="prose prose-gray dark:prose-invert max-w-none">
-                    <h3 className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-teal-600">
+                    <h3 className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-green-600">
                       Core Features
                     </h3>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 not-prose mt-4">
@@ -204,7 +204,7 @@ export function TemplateDetailsClient({ template, compatibleExtensions }: Templa
                 </CardContent>
                 <CardFooter className="flex flex-col items-start gap-4">
                   <CopyButton
-                    className="w-full bg-gradient-to-r from-primary to-teal-600 hover:from-primary/90 hover:to-teal-600/90 glow transition-all duration-300"
+                    className="w-full bg-gradient-to-r from-primary to-green-600 hover:from-primary/90 hover:to-green-600/90 glow transition-all duration-300"
                     command={`uvx create-awesome-python-app --template ${template.slug}`}
                   />
                   <Link href={template.url} className="w-full" target="_blank" rel="noopener noreferrer">
@@ -251,7 +251,7 @@ export function TemplateDetailsClient({ template, compatibleExtensions }: Templa
         <div className="container px-4 md:px-6 relative z-10">
           <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
             <div className="space-y-2">
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl bg-clip-text text-transparent bg-gradient-to-r from-teal-600 to-amber-500 animate-gradient-text glow-text">
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl bg-clip-text text-transparent bg-gradient-to-r from-green-600 to-blue-500 animate-gradient-text glow-text">
                 Compatible Extensions
               </h2>
               <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
@@ -306,7 +306,7 @@ export function TemplateDetailsClient({ template, compatibleExtensions }: Templa
           <div className="container px-4 md:px-6 relative z-10">
             <div className="flex flex-col items-center justify-center space-y-4 text-center mb-12">
               <div className="space-y-2">
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl bg-clip-text text-transparent bg-gradient-to-r from-primary to-teal-600 animate-gradient-text glow-text">
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl bg-clip-text text-transparent bg-gradient-to-r from-primary to-green-600 animate-gradient-text glow-text">
                   Recommended Combinations
                 </h2>
                 <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
@@ -332,7 +332,7 @@ export function TemplateDetailsClient({ template, compatibleExtensions }: Templa
         <div className="container px-4 md:px-6 relative z-10">
           <div className="flex flex-col items-center justify-center space-y-4 text-center">
             <div className="space-y-2">
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl bg-clip-text text-transparent bg-gradient-to-r from-primary to-teal-600 animate-gradient-text glow-text">
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl bg-clip-text text-transparent bg-gradient-to-r from-primary to-green-600 animate-gradient-text glow-text">
                 Ready to Build?
               </h2>
               <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
@@ -342,7 +342,7 @@ export function TemplateDetailsClient({ template, compatibleExtensions }: Templa
             <div className="flex flex-col gap-2 min-[400px]:flex-row">
               <Button
                 size="lg"
-                className="bg-gradient-to-r from-primary to-teal-600 hover:from-primary/90 hover:to-teal-600/90 glow transition-all duration-300"
+                className="bg-gradient-to-r from-primary to-green-600 hover:from-primary/90 hover:to-green-600/90 glow transition-all duration-300"
                 onClick={() => {
                   navigator.clipboard?.writeText?.(`uvx create-awesome-python-app --template ${template.slug}`);
                 }}

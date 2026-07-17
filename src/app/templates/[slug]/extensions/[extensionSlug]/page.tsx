@@ -102,16 +102,16 @@ export default function TemplateExtensionPage({
               <div className="fade-in-up-delay-1">
                 <div className="flex items-center gap-4 mb-6">
                   <div className="flex items-center">
-                    <div className="h-16 w-16 rounded-lg bg-gradient-to-br from-primary/20 to-teal-600/20 flex items-center justify-center">
+                    <div className="h-16 w-16 rounded-lg bg-gradient-to-br from-primary/20 to-green-600/20 flex items-center justify-center">
                       <Package className="h-6 w-6 text-primary" />
                     </div>
                     <div className="mx-2 text-muted-foreground">+</div>
-                    <div className="h-16 w-16 rounded-lg bg-gradient-to-br from-teal-600/20 to-amber-500/20 flex items-center justify-center">
-                      <Puzzle className="h-6 w-6 text-teal-600" />
+                    <div className="h-16 w-16 rounded-lg bg-gradient-to-br from-green-600/20 to-blue-500/20 flex items-center justify-center">
+                      <Puzzle className="h-6 w-6 text-green-600" />
                     </div>
                   </div>
                   <div>
-                    <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl bg-clip-text text-transparent bg-gradient-to-r from-primary via-teal-600 to-amber-500 animate-gradient-text glow-text">
+                    <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl bg-clip-text text-transparent bg-gradient-to-r from-primary via-green-600 to-blue-500 animate-gradient-text glow-text">
                       {template.name} + {extension.name}
                     </h1>
                     <p className="text-muted-foreground">
@@ -130,7 +130,7 @@ export default function TemplateExtensionPage({
                     <Badge
                       key={label}
                       variant="secondary"
-                      className="bg-secondary/50 backdrop-blur-sm transition-all duration-300 hover:bg-teal-600/20"
+                      className="bg-secondary/50 backdrop-blur-sm transition-all duration-300 hover:bg-green-600/20"
                     >
                       {label}
                     </Badge>
@@ -141,26 +141,26 @@ export default function TemplateExtensionPage({
                   <TabsList className="mb-4 bg-background/50 backdrop-blur-sm">
                     <TabsTrigger
                       value="overview"
-                      className="data-[state=active]:bg-teal-600/20 transition-all duration-300"
+                      className="data-[state=active]:bg-green-600/20 transition-all duration-300"
                     >
                       Overview
                     </TabsTrigger>
                     <TabsTrigger
                       value="installation"
-                      className="data-[state=active]:bg-teal-600/20 transition-all duration-300"
+                      className="data-[state=active]:bg-green-600/20 transition-all duration-300"
                     >
                       Installation
                     </TabsTrigger>
                     <TabsTrigger
                       value="benefits"
-                      className="data-[state=active]:bg-teal-600/20 transition-all duration-300"
+                      className="data-[state=active]:bg-green-600/20 transition-all duration-300"
                     >
                       Benefits
                     </TabsTrigger>
                   </TabsList>
                   <TabsContent value="overview" className="space-y-4">
                     <div className="prose prose-gray dark:prose-invert max-w-none">
-                      <h3 className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-teal-600 to-amber-500">
+                      <h3 className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-green-600 to-blue-500">
                         Perfect Combination
                       </h3>
                       <p>
@@ -184,7 +184,7 @@ export default function TemplateExtensionPage({
                   </TabsContent>
                   <TabsContent value="installation" className="space-y-4">
                     <div className="prose prose-gray dark:prose-invert max-w-none">
-                      <h3 className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-teal-600 to-amber-500">
+                      <h3 className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-green-600 to-blue-500">
                         One-Command Installation
                       </h3>
                       <p>
@@ -199,7 +199,7 @@ export default function TemplateExtensionPage({
                         </p>
                       </div>
 
-                      <h3 className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-teal-600 to-amber-500">
+                      <h3 className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-green-600 to-blue-500">
                         What Happens Next
                       </h3>
                       <p>After running this command:</p>
@@ -215,7 +215,7 @@ export default function TemplateExtensionPage({
                   </TabsContent>
                   <TabsContent value="benefits" className="space-y-4">
                     <div className="prose prose-gray dark:prose-invert max-w-none">
-                      <h3 className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-teal-600 to-amber-500">
+                      <h3 className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-green-600 to-blue-500">
                         Why This Combination Works
                       </h3>
 
@@ -300,7 +300,7 @@ export default function TemplateExtensionPage({
                   </CardContent>
                   <CardFooter className="flex flex-col items-start gap-4">
                     <CopyButton
-                      className="w-full bg-gradient-to-r from-primary via-teal-600 to-amber-500 hover:from-primary/90 hover:via-teal-600/90 hover:to-amber-500/90 glow transition-all duration-300"
+                      className="w-full bg-gradient-to-r from-primary via-green-600 to-blue-500 hover:from-primary/90 hover:via-green-600/90 hover:to-blue-500/90 glow transition-all duration-300"
                       command={`uvx create-awesome-python-app --template ${template.slug} --addons ${extension.slug}`}
                     />
                     <div className="flex w-full gap-2">
@@ -316,7 +316,7 @@ export default function TemplateExtensionPage({
                       <Link href={extension.url} className="flex-1" target="_blank">
                         <Button
                           variant="outline"
-                          className="w-full backdrop-blur-sm bg-background/30 border-teal-600/20 hover:bg-background/50 transition-all duration-300"
+                          className="w-full backdrop-blur-sm bg-background/30 border-green-600/20 hover:bg-background/50 transition-all duration-300"
                         >
                           <Puzzle className="mr-2 h-4 w-4" />
                           Extension
@@ -391,7 +391,7 @@ export default function TemplateExtensionPage({
           <div className="container px-4 md:px-6 relative z-10">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl bg-clip-text text-transparent bg-gradient-to-r from-primary via-teal-600 to-amber-500 animate-gradient-text glow-text">
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl bg-clip-text text-transparent bg-gradient-to-r from-primary via-green-600 to-blue-500 animate-gradient-text glow-text">
                   Ready to Build?
                 </h2>
                 <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
@@ -400,7 +400,7 @@ export default function TemplateExtensionPage({
               </div>
               <div className="flex flex-col gap-2 min-[400px]:flex-row">
                 <CopyButton
-                  className="bg-gradient-to-r from-primary via-teal-600 to-amber-500 hover:from-primary/90 hover:via-teal-600/90 hover:to-amber-500/90 glow transition-all duration-300"
+                  className="bg-gradient-to-r from-primary via-green-600 to-blue-500 hover:from-primary/90 hover:via-green-600/90 hover:to-blue-500/90 glow transition-all duration-300"
                   command={`uvx create-awesome-python-app --template ${template.slug} --addons ${extension.slug}`}
                   size="lg"
                 />
