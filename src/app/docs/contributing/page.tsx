@@ -6,8 +6,8 @@ import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 import { Button } from '@/components/ui/button';
 
 export const metadata = {
-  title: 'Contributing | Create Awesome Node App Documentation',
-  description: 'Learn how to contribute templates and extensions to create-awesome-node-app',
+  title: 'Contributing | Create Awesome Python App Documentation',
+  description: 'Learn how to contribute templates and extensions to create-awesome-python-app',
 };
 
 export default function ContributingPage() {
@@ -15,7 +15,7 @@ export default function ContributingPage() {
     <div className="container py-10">
       <div className="mx-auto max-w-5xl space-y-6">
         <div className="space-y-2">
-          <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">Contributing to create-awesome-node-app</h1>
+          <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">Contributing to create-awesome-python-app</h1>
           <p className="text-lg text-muted-foreground">
             Learn how to contribute templates and extensions to the project
           </p>
@@ -24,7 +24,7 @@ export default function ContributingPage() {
         <div className="space-y-8">
           <section id="contributing-overview" className="space-y-4">
             <h2 className="text-2xl font-bold tracking-tight">Contribution Overview</h2>
-            <p>The create-awesome-node-app project welcomes contributions from the community. You can contribute by:</p>
+            <p>The create-awesome-python-app project welcomes contributions from the community. You can contribute by:</p>
             <ul className="list-disc pl-6 space-y-2">
               <li>Adding new templates</li>
               <li>Adding new extensions</li>
@@ -54,7 +54,7 @@ graph TD
           <section id="contributing-templates" className="space-y-4">
             <h2 className="text-2xl font-bold tracking-tight">Contributing New Templates</h2>
             <p>
-              Templates are the foundation of create-awesome-node-app. They provide the initial structure and
+              Templates are the foundation of create-awesome-python-app. They provide the initial structure and
               configuration for new projects. This guide will walk you through the process of creating and contributing
               a new template.
             </p>
@@ -76,15 +76,15 @@ graph TD
                   <pre className="text-sm overflow-x-auto">
                     {`templates/
 └── your-template-name/
-    ├── public/           # Static assets
-    ├── src/              # Source code
-    │   ├── components/   # React components (for frontend templates)
-    │   ├── lib/          # Utility functions and libraries
-    │   └── styles/       # CSS and styling
-    ├── .gitignore        # Git ignore file
-    ├── package.json      # Package dependencies and scripts
+    ├── src/              # Application source (layout varies by template)
+    │   ├── app/          # FastAPI/Django modules
+    │   └── ...
+    ├── tests/            # pytest suite
+    ├── .gitignore
+    ├── pyproject.toml    # uv project metadata, scripts, and dependencies
+    ├── uv.lock           # Lockfile (generated after uv sync)
     ├── README.md         # Template documentation
-    └── tsconfig.json     # TypeScript configuration (if applicable)`}
+    └── AGENTS.md         # AI assistant contract`}
                   </pre>
                 </div>
               </div>
@@ -110,7 +110,7 @@ graph TD
       "name": "Your Template Name",
       "slug": "your-template-name",
       "description": "A concise description of your template",
-      "url": "https://github.com/Create-Node-App/cna-templates/tree/main/templates/your-template-name",
+      "url": "https://github.com/Create-Python-App/cpa-templates/tree/main/templates/your-template-name",
       "type": "template-type",
       "category": "category-slug",
       "labels": ["Label1", "Label2", "Label3"]
@@ -135,7 +135,8 @@ graph TD
                     <strong>url</strong>: The URL to your template in the repository
                   </li>
                   <li>
-                    <strong>type</strong>: The type of template (e.g., "react", "nestjs-backend", "nextjs")
+                    <strong>type</strong>: The type of template (e.g., &quot;fastapi-backend&quot;, &quot;django-backend&quot;,
+                    &quot;cli-app&quot;, &quot;celery-worker&quot;, &quot;uv-workspace&quot;)
                   </li>
                   <li>
                     <strong>category</strong>: The category slug from the categories section
@@ -207,19 +208,19 @@ graph TD
                   Submitting Your Template
                 </h3>
                 <p>
-                  Once your template is ready, you can submit it for inclusion in the create-awesome-node-app project:
+                  Once your template is ready, you can submit it for inclusion in the create-awesome-python-app project:
                 </p>
 
                 <ol className="list-decimal pl-6 space-y-4 mt-4">
                   <li>
                     <strong>Fork the repository:</strong> Create a fork of the{' '}
                     <a
-                      href="https://github.com/Create-Node-App/cna-templates"
+                      href="https://github.com/Create-Python-App/cpa-templates"
                       target="_blank"
                       className="text-primary hover:underline"
                       rel="noreferrer"
                     >
-                      cna-templates repository
+                      cpa-templates repository
                     </a>{' '}
                     on GitHub.
                   </li>
@@ -272,11 +273,9 @@ graph TD
                   <pre className="text-sm overflow-x-auto">
                     {`extensions/
 └── your-extension-name/
-    ├── files/           # Files to be added to the template
-    │   ├── src/         # Source files to be added
-    │   └── ...          # Other files
-    ├── dependencies.json # Dependencies to be added to package.json
-    ├── scripts.json     # Scripts to be added to package.json
+    ├── files/           # Files to be added to or merged into the template
+    ├── pyproject/       # Optional dependency fragments for pyproject.toml merge
+    ├── extension.json   # Metadata, compatibility, and merge rules
     └── README.md        # Extension documentation`}
                   </pre>
                 </div>
@@ -302,7 +301,7 @@ graph TD
       "name": "Your Extension Name",
       "slug": "your-extension-name",
       "description": "A concise description of your extension",
-      "url": "https://github.com/Create-Node-App/cna-templates/tree/main/extensions/your-extension-name",
+      "url": "https://github.com/Create-Python-App/cpa-templates/tree/main/extensions/your-extension-name",
       "type": ["template-type1", "template-type2"],
       "category": "Extension Category",
       "labels": ["Label1", "Label2", "Label3"]
@@ -331,7 +330,8 @@ graph TD
                     of strings)
                   </li>
                   <li>
-                    <strong>category</strong>: The category of the extension (e.g., "UI", "State Management", "Tooling")
+                    <strong>category</strong>: The category of the extension (e.g., &quot;containers&quot;, &quot;database&quot;,
+                    &quot;observability&quot;, &quot;security&quot;, &quot;ci&quot;)
                   </li>
                   <li>
                     <strong>labels</strong>: Keywords that describe your extension
@@ -358,12 +358,12 @@ graph TD
                     the template.
                   </li>
                   <li>
-                    <strong>Define dependencies:</strong> Create a <code>dependencies.json</code> file listing any npm
-                    packages your extension requires.
+                    <strong>Define dependencies:</strong> Declare Python packages your extension adds in a{' '}
+                    <code>pyproject/</code> fragment or equivalent merge file consumed by the CLI.
                   </li>
                   <li>
-                    <strong>Add scripts:</strong> If your extension needs to add scripts to <code>package.json</code>,
-                    create a <code>scripts.json</code> file.
+                    <strong>Add scripts or tasks:</strong> If your extension needs Makefile targets or documented{' '}
+                    <code>uv run</code> commands, include them in the extension README and any task runner config.
                   </li>
                   <li>
                     <strong>Document your extension:</strong> Create a README.md that explains how to use your extension
@@ -373,23 +373,17 @@ graph TD
 
                 <div className="rounded-md bg-muted p-4 mt-4">
                   <pre className="text-sm overflow-x-auto">
-                    {`// Example dependencies.json
-{
-  "dependencies": {
-    "axios": "^1.3.4",
-    "react-query": "^3.39.3"
-  },
-  "devDependencies": {
-    "@types/axios": "^0.14.0"
-  }
-}
+                    {`# Example pyproject dependency fragment (conceptual)
+[project]
+dependencies = [
+  "httpx>=0.27",
+  "sqlalchemy>=2.0",
+]
 
-// Example scripts.json
-{
-  "scripts": {
-    "api:generate": "openapi-generator-cli generate -i api-spec.yaml -g typescript-axios -o src/api"
-  }
-}`}
+[dependency-groups]
+dev = [
+  "pytest-cov>=5.0",
+]`}
                   </pre>
                 </div>
               </div>
@@ -424,7 +418,7 @@ graph TD
                 <div className="rounded-md bg-muted p-4 mt-4">
                   <pre className="text-sm overflow-x-auto">
                     {`// Example of specifying multiple compatible template types
-"type": ["react", "nextjs", "webextension-react"]`}
+"type": ["fastapi-backend", "django-backend", "cli-app"]`}
                   </pre>
                 </div>
               </div>
@@ -442,12 +436,12 @@ graph TD
                   <li>
                     <strong>Fork the repository:</strong> Create a fork of the{' '}
                     <a
-                      href="https://github.com/Create-Node-App/cna-templates"
+                      href="https://github.com/Create-Python-App/cpa-templates"
                       target="_blank"
                       className="text-primary hover:underline"
                       rel="noreferrer"
                     >
-                      cna-templates repository
+                      cpa-templates repository
                     </a>{' '}
                     on GitHub.
                   </li>
@@ -484,10 +478,10 @@ graph TD
               <div className="rounded-lg border p-4">
                 <h3 className="text-lg font-semibold mb-2">Code Quality</h3>
                 <ul className="list-disc pl-6 space-y-2">
-                  <li>Include linting and formatting configurations</li>
-                  <li>Set up TypeScript for type safety</li>
-                  <li>Add comprehensive comments where necessary</li>
-                  <li>Follow best practices for the technologies used</li>
+                  <li>Include Ruff and pytest configuration where applicable</li>
+                  <li>Use type hints and optional mypy/pyright settings</li>
+                  <li>Add comprehensive docstrings where behavior is non-obvious</li>
+                  <li>Follow Python and framework best practices (FastAPI, Django, Typer, Celery)</li>
                 </ul>
               </div>
 
@@ -496,7 +490,7 @@ graph TD
                 <ul className="list-disc pl-6 space-y-2">
                   <li>Provide a detailed README.md</li>
                   <li>Include usage examples</li>
-                  <li>Document available scripts and commands</li>
+                  <li>Document available <code>uv run</code> commands and Makefile targets</li>
                   <li>Explain any non-standard configurations</li>
                 </ul>
               </div>
@@ -506,7 +500,7 @@ graph TD
                 <ul className="list-disc pl-6 space-y-2">
                   <li>Ensure compatibility with supported extensions</li>
                   <li>Use the latest stable versions of dependencies</li>
-                  <li>Test with different Node.js versions</li>
+                  <li>Test with different Python versions</li>
                   <li>Consider cross-platform compatibility</li>
                 </ul>
               </div>

@@ -7,8 +7,8 @@ import { Button } from '@/components/ui/button';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 
 export const metadata = {
-  title: 'Advanced Usage | Create Awesome Node App Documentation',
-  description: 'Advanced usage guide for create-awesome-node-app',
+  title: 'Advanced Usage | Create Awesome Python App Documentation',
+  description: 'Advanced usage guide for create-awesome-python-app',
 };
 
 export default function AdvancedUsagePage() {
@@ -18,85 +18,73 @@ export default function AdvancedUsagePage() {
         <div className="space-y-2">
           <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">Advanced Usage</h1>
           <p className="text-lg text-muted-foreground">
-            Advanced techniques and configurations for create-awesome-node-app
+            Advanced techniques and configurations for create-awesome-python-app
           </p>
         </div>
 
         <div className="space-y-8">
-          <section id="package-managers" className="space-y-4">
-            <h2 className="text-2xl font-bold tracking-tight">Using Different Package Managers</h2>
+          <section id="uv-workflow" className="space-y-4">
+            <h2 className="text-2xl font-bold tracking-tight">Working with uv in Generated Projects</h2>
             <p>
-              create-awesome-node-app supports multiple package managers. You can choose the one that best fits your
-              workflow:
+              Every CPA template is uv-first: dependencies live in <code>pyproject.toml</code>, the lockfile is{' '}
+              <code>uv.lock</code>, and day-to-day commands go through <code>uv run</code>.
             </p>
 
-            <Tabs defaultValue="npm" className="w-full mt-4">
+            <Tabs defaultValue="sync" className="w-full mt-4">
               <TabsList className="grid w-full grid-cols-3">
-                <TabsTrigger value="npm">npm</TabsTrigger>
-                <TabsTrigger value="yarn">Yarn</TabsTrigger>
-                <TabsTrigger value="pnpm">pnpm</TabsTrigger>
+                <TabsTrigger value="sync">uv sync</TabsTrigger>
+                <TabsTrigger value="run">uv run</TabsTrigger>
+                <TabsTrigger value="add">uv add</TabsTrigger>
               </TabsList>
-              <TabsContent value="npm" className="mt-2">
+              <TabsContent value="sync" className="mt-2">
                 <div className="rounded-md bg-muted p-4">
                   <pre className="text-sm overflow-x-auto">
-                    {`# Create a new project with npm
-npx create-awesome-node-app my-app
+                    {`# Create a project (uv sync runs automatically unless --no-install)
+uvx create-awesome-python-app@latest my-app --template fastapi-starter
 
-# Specify package manager explicitly
-npx create-awesome-node-app my-app --use-npm
-
-# Install dependencies
+# Install or refresh dependencies later
 cd my-app
-npm install
-
-# Run development server
-npm run dev`}
+uv sync`}
                   </pre>
                 </div>
               </TabsContent>
-              <TabsContent value="yarn" className="mt-2">
+              <TabsContent value="run" className="mt-2">
                 <div className="rounded-md bg-muted p-4">
                   <pre className="text-sm overflow-x-auto">
-                    {`# Create a new project with Yarn
-yarn create awesome-node-app my-app
-
-# Specify package manager explicitly
-npx create-awesome-node-app my-app --use-yarn
-
-# Install dependencies
+                    {`# Run the dev server (FastAPI example)
 cd my-app
-yarn
+uv run uvicorn app.main:app --reload
 
-# Run development server
-yarn dev`}
+# Run tests
+uv run pytest
+
+# Run lint and type checks
+uv run ruff check .
+uv run mypy .`}
                   </pre>
                 </div>
               </TabsContent>
-              <TabsContent value="pnpm" className="mt-2">
+              <TabsContent value="add" className="mt-2">
                 <div className="rounded-md bg-muted p-4">
                   <pre className="text-sm overflow-x-auto">
-                    {`# Create a new project with pnpm
-pnpm create awesome-node-app my-app
+                    {`# Add a runtime dependency
+uv add httpx
 
-# Specify package manager explicitly
-npx create-awesome-node-app my-app --use-pnpm
+# Add a dev dependency
+uv add --dev pytest-cov
 
-# Install dependencies
-cd my-app
-pnpm install
-
-# Run development server
-pnpm dev`}
+# Remove a dependency
+uv remove unused-package`}
                   </pre>
                 </div>
               </TabsContent>
             </Tabs>
 
             <Alert className="mt-4">
-              <AlertTitle>Package Manager Detection</AlertTitle>
+              <AlertTitle>Skip automatic install</AlertTitle>
               <AlertDescription>
-                create-awesome-node-app automatically detects the package manager you're using. If you want to override
-                this behavior, use the <code>--use-yarn</code> or <code>--use-pnpm</code> flag.
+                Use <code>--no-install</code> when scaffolding if you want to review <code>pyproject.toml</code> before
+                running <code>uv sync</code> yourself.
               </AlertDescription>
             </Alert>
           </section>
@@ -117,19 +105,20 @@ pnpm dev`}
                 </p>
                 <div className="mt-4">
                   <pre className="text-xs bg-muted p-2 rounded-md overflow-x-auto">
-                    npx create-awesome-node-app my-app --addons github-setup
+                    uvx create-awesome-python-app@latest my-app --template fastapi-starter --addons github-setup
                   </pre>
                 </div>
               </div>
 
               <div className="rounded-lg border p-4">
-                <h3 className="text-lg font-semibold mb-2">Docker Compose</h3>
+                <h3 className="text-lg font-semibold mb-2">Docker</h3>
                 <p className="text-sm text-muted-foreground">
-                  The Docker Compose Setup extension adds Docker environments for development and production.
+                  The <code>python-docker</code> extension adds a Dockerfile and Compose files for local and production
+                  container runs.
                 </p>
                 <div className="mt-4">
                   <pre className="text-xs bg-muted p-2 rounded-md overflow-x-auto">
-                    npx create-awesome-node-app my-app --addons docker-compose-setup
+                    uvx create-awesome-python-app@latest my-app --template fastapi-starter --addons python-docker
                   </pre>
                 </div>
               </div>
@@ -137,7 +126,7 @@ pnpm dev`}
 
             <div className="mt-6">
               <h3 className="text-xl font-semibold">Deployment Workflow</h3>
-              <p className="mt-2">Here's a typical deployment workflow for a create-awesome-node-app project:</p>
+              <p className="mt-2">Here's a typical deployment workflow for a create-awesome-python-app project:</p>
 
               <DiagramWorkflow
                 className="mt-4"
@@ -163,30 +152,36 @@ graph TD
 
           <section id="monorepo" className="space-y-4 mt-8">
             <h2 className="text-2xl font-bold tracking-tight">Monorepo Setup</h2>
-            <p>create-awesome-node-app offers a Turborepo Boilerplate template for monorepo setups:</p>
+            <p>
+              create-awesome-python-app offers the <code>uv-workspace-starter</code> template for Python monorepos with a
+              single lockfile and shared tooling:
+            </p>
 
             <div className="rounded-md bg-muted p-4 mt-4">
               <pre className="text-sm overflow-x-auto">
-                {`# Create a new monorepo project
-npx create-awesome-node-app my-monorepo --template turborepo-boilerplate
+                {`# Create a new uv workspace monorepo
+uvx create-awesome-python-app@latest my-monorepo --template uv-workspace-starter
 
 # Navigate to the project
 cd my-monorepo
 
-# Run all packages in development mode
-npm run dev
+# Sync all workspace members
+uv sync
 
-# Build all packages
-npm run build`}
+# Run a member app (example)
+uv run --package apps-api uvicorn app.main:app --reload
+
+# Run tests across the workspace
+uv run pytest`}
               </pre>
             </div>
 
-            <p className="mt-4">The Turborepo Boilerplate template includes:</p>
+            <p className="mt-4">The uv workspace starter includes:</p>
             <ul className="list-disc pl-6 space-y-2">
-              <li>Turborepo configuration for efficient builds</li>
-              <li>Workspace setup for managing multiple packages</li>
-              <li>Shared configurations for TypeScript, ESLint, and other tools</li>
-              <li>Example packages to demonstrate the monorepo structure</li>
+              <li>uv workspace configuration with shared <code>pyproject.toml</code> tooling</li>
+              <li>Separate <code>packages/</code> libraries and <code>apps/</code> deployables</li>
+              <li>Shared Ruff, Pyright, and pytest configuration</li>
+              <li>Example members demonstrating cross-package imports</li>
             </ul>
           </section>
 
@@ -209,10 +204,10 @@ npm run build`}
                     dependencies manually
                   </p>
                   <div className="rounded-md bg-muted p-2 mt-2">
-                    <code>npx create-awesome-node-app my-app --no-install</code>
+                    <code>uvx create-awesome-python-app my-app --no-install</code>
                   </div>
                   <div className="rounded-md bg-muted p-2 mt-2">
-                    <code>cd my-app && npm install</code>
+                    <code>cd my-app && uv sync</code>
                   </div>
                 </div>
               </div>
@@ -231,10 +226,10 @@ npm run build`}
                     <strong>Solution:</strong> List available templates and extensions to check the correct names
                   </p>
                   <div className="rounded-md bg-muted p-2 mt-2">
-                    <code>npx create-awesome-node-app --list-templates</code>
+                    <code>uvx create-awesome-python-app --list-templates</code>
                   </div>
                   <div className="rounded-md bg-muted p-2 mt-2">
-                    <code>npx create-awesome-node-app --list-addons</code>
+                    <code>uvx create-awesome-python-app --list-addons</code>
                   </div>
                 </div>
               </div>
@@ -254,7 +249,7 @@ npm run build`}
                     interactive mode
                   </p>
                   <div className="rounded-md bg-muted p-2 mt-2">
-                    <code>npx create-awesome-node-app my-app --interactive</code>
+                    <code>uvx create-awesome-python-app my-app --interactive</code>
                   </div>
                 </div>
               </div>
@@ -278,15 +273,15 @@ npm run build`}
 
           <section id="templates-extensions-list" className="space-y-4 mt-8">
             <h2 className="text-2xl font-bold tracking-tight">Available Templates and Extensions</h2>
-            <p>create-awesome-node-app offers a variety of templates and extensions. Here's how to list them:</p>
+            <p>create-awesome-python-app offers a variety of templates and extensions. Here's how to list them:</p>
 
             <div className="rounded-md bg-muted p-4 mt-4">
               <pre className="text-sm overflow-x-auto">
                 {`# List all available templates
-npx create-awesome-node-app --list-templates
+uvx create-awesome-python-app --list-templates
 
 # List all available extensions
-npx create-awesome-node-app --list-addons`}
+uvx create-awesome-python-app --list-addons`}
               </pre>
             </div>
 
@@ -300,7 +295,7 @@ npx create-awesome-node-app --list-addons`}
             <p>The interactive mode provides a guided experience for creating projects:</p>
 
             <div className="rounded-md bg-muted p-4 mt-4">
-              <pre className="text-sm overflow-x-auto">{`npx create-awesome-node-app my-app --interactive`}</pre>
+              <pre className="text-sm overflow-x-auto">{`uvx create-awesome-python-app my-app --interactive`}</pre>
             </div>
 
             <p className="mt-4">In interactive mode, you'll be prompted to:</p>

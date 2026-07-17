@@ -7,12 +7,12 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 
 export const metadata: Metadata = {
-  title: 'Documentation | Create Awesome Node App',
-  description: 'Comprehensive documentation for create-awesome-node-app',
+  title: 'Documentation | Create Awesome Python App',
+  description: 'Comprehensive documentation for create-awesome-python-app',
   alternates: { canonical: '/docs' },
   openGraph: {
-    title: 'Documentation | Create Awesome Node App',
-    description: 'Comprehensive documentation for create-awesome-node-app',
+    title: 'Documentation | Create Awesome Python App',
+    description: 'Comprehensive documentation for create-awesome-python-app',
     url: '/docs',
     type: 'article',
   },
@@ -24,15 +24,15 @@ export default function DocsPage() {
       <div className="mx-auto max-w-5xl space-y-6">
         <div className="space-y-2">
           <h1 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">Documentation</h1>
-          <p className="text-lg text-muted-foreground">Comprehensive guide to using create-awesome-node-app</p>
+          <p className="text-lg text-muted-foreground">Comprehensive guide to using create-awesome-python-app</p>
         </div>
 
         <div className="space-y-8">
           <section id="introduction" className="space-y-4">
-            <h2 className="text-2xl font-bold tracking-tight">Introduction to create-awesome-node-app</h2>
+            <h2 className="text-2xl font-bold tracking-tight">Introduction to create-awesome-python-app</h2>
             <p>
-              <code>create-awesome-node-app</code> is a powerful command-line tool designed to streamline the process of
-              setting up modern Node.js applications. It provides a collection of carefully crafted templates and
+              <code>create-awesome-python-app</code> is a powerful command-line tool designed to streamline the process of
+              setting up modern Python applications. It provides a collection of carefully crafted templates and
               extensions that help developers quickly bootstrap projects with best practices and optimal configurations.
             </p>
 
@@ -110,34 +110,34 @@ export default function DocsPage() {
 
             <h3 className="text-xl font-semibold">Getting Started</h3>
             <p>
-              Using <code>create-awesome-node-app</code> is straightforward. You can create a new project with a single
+              Using <code>create-awesome-python-app</code> is straightforward. You can create a new project with a single
               command:
             </p>
 
-            <Tabs defaultValue="npm" className="w-full">
+            <Tabs defaultValue="uvx" className="w-full">
               <TabsList className="grid w-full grid-cols-3">
-                <TabsTrigger value="npm">npm</TabsTrigger>
-                <TabsTrigger value="yarn">Yarn</TabsTrigger>
-                <TabsTrigger value="pnpm">pnpm</TabsTrigger>
+                <TabsTrigger value="uvx">uvx</TabsTrigger>
+                <TabsTrigger value="pipx">pipx</TabsTrigger>
+                <TabsTrigger value="homebrew">Homebrew</TabsTrigger>
               </TabsList>
-              <TabsContent value="npm" className="mt-2">
+              <TabsContent value="uvx" className="mt-2">
                 <div className="rounded-md bg-muted p-4">
                   <pre className="text-sm">
-                    <code>npx create-awesome-node-app my-app</code>
+                    <code>uvx create-awesome-python-app@latest my-app</code>
                   </pre>
                 </div>
               </TabsContent>
-              <TabsContent value="yarn" className="mt-2">
+              <TabsContent value="pipx" className="mt-2">
                 <div className="rounded-md bg-muted p-4">
                   <pre className="text-sm">
-                    <code>yarn create awesome-node-app my-app</code>
+                    <code>pipx run create-awesome-python-app my-app</code>
                   </pre>
                 </div>
               </TabsContent>
-              <TabsContent value="pnpm" className="mt-2">
+              <TabsContent value="homebrew" className="mt-2">
                 <div className="rounded-md bg-muted p-4">
                   <pre className="text-sm">
-                    <code>pnpm create awesome-node-app my-app</code>
+                    <code>brew install create-awesome-python-app{'\n'}create-awesome-python-app my-app</code>
                   </pre>
                 </div>
               </TabsContent>
@@ -149,10 +149,15 @@ export default function DocsPage() {
             </p>
 
             <h3 className="text-xl font-semibold mt-6">Prerequisites</h3>
-            <p>Before using create-awesome-node-app, ensure you have the following installed:</p>
+            <p>Before using create-awesome-python-app, ensure you have the following installed:</p>
             <ul className="list-disc pl-6 space-y-2 mt-2">
-              <li>Node.js (version 18.0.0 or higher)</li>
-              <li>npm, Yarn, or pnpm package manager</li>
+              <li>Python 3.12 or higher</li>
+              <li>
+                <a href="https://docs.astral.sh/uv/" className="text-primary hover:underline" target="_blank" rel="noreferrer">
+                  uv
+                </a>{' '}
+                (recommended — used by generated projects and the default install path via uvx)
+              </li>
             </ul>
 
             <h3 className="text-xl font-semibold mt-6">Command Options</h3>
@@ -169,15 +174,9 @@ export default function DocsPage() {
                 <tbody>
                   <tr className="border-b">
                     <td className="py-2 px-4">
-                      <code>-V, --version</code>
+                      <code>--version</code>
                     </td>
-                    <td className="py-2 px-4">Output the version number</td>
-                  </tr>
-                  <tr className="border-b">
-                    <td className="py-2 px-4">
-                      <code>-v, --verbose</code>
-                    </td>
-                    <td className="py-2 px-4">Print additional logs</td>
+                    <td className="py-2 px-4">Show the CLI version</td>
                   </tr>
                   <tr className="border-b">
                     <td className="py-2 px-4">
@@ -187,41 +186,52 @@ export default function DocsPage() {
                   </tr>
                   <tr className="border-b">
                     <td className="py-2 px-4">
-                      <code>--no-install</code>
+                      <code>-v, --verbose</code>
                     </td>
-                    <td className="py-2 px-4">Generate package.json without installing dependencies</td>
+                    <td className="py-2 px-4">Print additional logs</td>
                   </tr>
                   <tr className="border-b">
                     <td className="py-2 px-4">
                       <code>-t, --template &lt;template&gt;</code>
                     </td>
-                    <td className="py-2 px-4">Specify a template for the created project</td>
+                    <td className="py-2 px-4">Specify a template slug (e.g. <code>fastapi-starter</code>)</td>
                   </tr>
                   <tr className="border-b">
                     <td className="py-2 px-4">
                       <code>--addons [extensions...]</code>
                     </td>
-                    <td className="py-2 px-4">Specify extensions to apply for the boilerplate generation</td>
+                    <td className="py-2 px-4">Apply one or more extensions during scaffolding</td>
                   </tr>
                   <tr className="border-b">
                     <td className="py-2 px-4">
-                      <code>--use-yarn</code>
+                      <code>--extend &lt;extension&gt;</code>
                     </td>
-                    <td className="py-2 px-4">Use yarn instead of npm or pnpm</td>
+                    <td className="py-2 px-4">Apply a single extension (repeatable)</td>
                   </tr>
                   <tr className="border-b">
                     <td className="py-2 px-4">
-                      <code>--use-pnpm</code>
+                      <code>--set &lt;key=value&gt;</code>
                     </td>
-                    <td className="py-2 px-4">Use pnpm instead of yarn or npm</td>
+                    <td className="py-2 px-4">Set template or extension variables non-interactively</td>
                   </tr>
                   <tr className="border-b">
                     <td className="py-2 px-4">
-                      <code>--interactive</code>
+                      <code>--no-install</code>
                     </td>
-                    <td className="py-2 px-4">Run in interactive mode to select options (default: false)</td>
+                    <td className="py-2 px-4">Scaffold the project without running <code>uv sync</code></td>
                   </tr>
-                  {/* --ai-tool flag removed (deprecated) */}
+                  <tr className="border-b">
+                    <td className="py-2 px-4">
+                      <code>-f, --force</code>
+                    </td>
+                    <td className="py-2 px-4">Overwrite the target directory if it already exists</td>
+                  </tr>
+                  <tr className="border-b">
+                    <td className="py-2 px-4">
+                      <code>--interactive / --no-interactive</code>
+                    </td>
+                    <td className="py-2 px-4">Enable or disable the guided template/extension prompts</td>
+                  </tr>
                   <tr className="border-b">
                     <td className="py-2 px-4">
                       <code>--list-templates</code>
@@ -232,7 +242,43 @@ export default function DocsPage() {
                     <td className="py-2 px-4">
                       <code>--list-addons</code>
                     </td>
-                    <td className="py-2 px-4">List all available addons</td>
+                    <td className="py-2 px-4">List all available extensions</td>
+                  </tr>
+                  <tr className="border-b">
+                    <td className="py-2 px-4">
+                      <code>--offline</code>
+                    </td>
+                    <td className="py-2 px-4">Use cached catalog and templates only</td>
+                  </tr>
+                  <tr className="border-b">
+                    <td className="py-2 px-4">
+                      <code>--no-cache / --cache-dir</code>
+                    </td>
+                    <td className="py-2 px-4">Control the local template cache location and behavior</td>
+                  </tr>
+                  <tr className="border-b">
+                    <td className="py-2 px-4">
+                      <code>--pin / --refresh / --strict-version</code>
+                    </td>
+                    <td className="py-2 px-4">Pin, refresh, or strictly resolve catalog versions</td>
+                  </tr>
+                  <tr className="border-b">
+                    <td className="py-2 px-4">
+                      <code>--keep-on-failure</code>
+                    </td>
+                    <td className="py-2 px-4">Keep partially generated files when scaffolding fails</td>
+                  </tr>
+                  <tr className="border-b">
+                    <td className="py-2 px-4">
+                      <code>--install-completion / --show-completion</code>
+                    </td>
+                    <td className="py-2 px-4">Install or print shell completion scripts</td>
+                  </tr>
+                  <tr className="border-b">
+                    <td className="py-2 px-4">
+                      <code>cache</code>
+                    </td>
+                    <td className="py-2 px-4">Manage the local template cache (subcommand)</td>
                   </tr>
                   <tr className="border-b">
                     <td className="py-2 px-4">
@@ -250,7 +296,7 @@ export default function DocsPage() {
                 <p className="font-medium">Create a project with interactive mode:</p>
                 <div className="rounded-md bg-muted p-4 mt-2">
                   <pre className="text-sm">
-                    <code>npx create-awesome-node-app my-app --interactive</code>
+                    <code>uvx create-awesome-python-app my-app --interactive</code>
                   </pre>
                 </div>
               </div>
@@ -259,7 +305,7 @@ export default function DocsPage() {
                 <p className="font-medium">Create a project with a specific template:</p>
                 <div className="rounded-md bg-muted p-4 mt-2">
                   <pre className="text-sm">
-                    <code>npx create-awesome-node-app my-app --template react-vite-boilerplate</code>
+                    <code>uvx create-awesome-python-app@latest my-app --template fastapi-starter</code>
                   </pre>
                 </div>
               </div>
@@ -269,7 +315,7 @@ export default function DocsPage() {
                 <div className="rounded-md bg-muted p-4 mt-2">
                   <pre className="text-sm">
                     <code>
-                      npx create-awesome-node-app my-app --template react-vite-boilerplate --addons material-ui
+                      uvx create-awesome-python-app@latest my-app --template fastapi-starter --addons python-docker
                       github-setup
                     </code>
                   </pre>
@@ -280,7 +326,7 @@ export default function DocsPage() {
                 <p className="font-medium">List all available templates:</p>
                 <div className="rounded-md bg-muted p-4 mt-2">
                   <pre className="text-sm">
-                    <code>npx create-awesome-node-app --list-templates</code>
+                    <code>uvx create-awesome-python-app --list-templates</code>
                   </pre>
                 </div>
               </div>
@@ -289,7 +335,7 @@ export default function DocsPage() {
                 <p className="font-medium">List all available extensions:</p>
                 <div className="rounded-md bg-muted p-4 mt-2">
                   <pre className="text-sm">
-                    <code>npx create-awesome-node-app --list-addons</code>
+                    <code>uvx create-awesome-python-app --list-addons</code>
                   </pre>
                 </div>
               </div>
@@ -300,13 +346,13 @@ export default function DocsPage() {
 
           <section className="space-y-4">
             <h2 className="text-2xl font-bold tracking-tight">Available Templates</h2>
-            <p>create-awesome-node-app offers a variety of templates for different types of applications:</p>
+            <p>create-awesome-python-app offers a variety of templates for different types of applications:</p>
 
             <div className="rounded-lg border bg-muted/40 p-6 flex items-center justify-between">
               <div>
-                <p className="font-semibold">10 production-ready templates</p>
+                <p className="font-semibold">5 production-ready templates</p>
                 <p className="text-sm text-muted-foreground mt-1">
-                  Frontend, backend, fullstack, monorepo, testing, and web extension starters.
+                  FastAPI, Django API, CLI, Celery worker, and uv workspace monorepo starters.
                 </p>
               </div>
               <Button asChild>
@@ -324,7 +370,7 @@ export default function DocsPage() {
               <Card>
                 <CardHeader className="pb-2">
                   <CardTitle>Installation</CardTitle>
-                  <CardDescription>npm, Homebrew, AUR, and Docker install options</CardDescription>
+                  <CardDescription>uvx/PyPI, Homebrew, AUR, and Docker install options</CardDescription>
                 </CardHeader>
                 <CardContent>
                   <Button asChild className="w-full">

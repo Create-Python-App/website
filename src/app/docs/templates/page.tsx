@@ -1,4 +1,4 @@
-import { ArrowLeft, ArrowRight, Globe, Layers, Package, Server, Settings, Terminal, Wrench, Zap } from 'lucide-react';
+import { ArrowLeft, ArrowRight, Globe, Layers, Package, Settings, Terminal, Zap } from 'lucide-react';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 
@@ -7,28 +7,23 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { getTemplatesData } from '@/lib/data';
 
 export const metadata: Metadata = {
-  title: 'Templates | Create Awesome Node App Documentation',
-  description: 'Learn about the available project templates and how to use them with create-awesome-node-app.',
+  title: 'Templates | Create Awesome Python App Documentation',
+  description: 'Learn about the available project templates and how to use them with create-awesome-python-app.',
   alternates: { canonical: '/docs/templates' },
   openGraph: {
-    title: 'Templates | Create Awesome Node App Documentation',
-    description: 'Learn about the available project templates and how to use them with create-awesome-node-app.',
+    title: 'Templates | Create Awesome Python App Documentation',
+    description: 'Learn about the available project templates and how to use them with create-awesome-python-app.',
     url: '/docs/templates',
     type: 'article',
   },
 };
 
 const typeIcons: Record<string, React.ReactNode> = {
-  'nestjs-backend': <Server className="h-5 w-5 text-primary" />,
-  nextjs: <Layers className="h-5 w-5 text-primary" />,
-  monorepo: <Settings className="h-5 w-5 text-primary" />,
-  react: <Terminal className="h-5 w-5 text-primary" />,
-  'webextension-react': <Wrench className="h-5 w-5 text-primary" />,
-  webdriverio: <Package className="h-5 w-5 text-primary" />,
-  'nextjs-saas-ai': <Zap className="h-5 w-5 text-primary" />,
-  remix: <Globe className="h-5 w-5 text-primary" />,
-  astro: <Globe className="h-5 w-5 text-primary" />,
-  hono: <Server className="h-5 w-5 text-primary" />,
+  'fastapi-backend': <Zap className="h-5 w-5 text-primary" />,
+  'django-backend': <Globe className="h-5 w-5 text-primary" />,
+  'cli-app': <Terminal className="h-5 w-5 text-primary" />,
+  'celery-worker': <Package className="h-5 w-5 text-primary" />,
+  'uv-workspace': <Settings className="h-5 w-5 text-primary" />,
 };
 
 export default async function DocsTemplatesPage() {
@@ -41,7 +36,7 @@ export default async function DocsTemplatesPage() {
         <div className="space-y-2">
           <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">Templates</h1>
           <p className="text-lg text-muted-foreground">
-            Project templates are the starting point for every <code>create-awesome-node-app</code> project. Each
+            Project templates are the starting point for every <code>create-awesome-python-app</code> project. Each
             template is a complete, production-ready project skeleton for a specific technology stack.
           </p>
         </div>
@@ -51,7 +46,7 @@ export default async function DocsTemplatesPage() {
             <h2 className="text-2xl font-bold tracking-tight">What is a template?</h2>
             <p>
               A template provides the initial directory structure, configuration files, and tooling for a new project.
-              When you run <code>create-awesome-node-app</code>, you pick a template and optionally layer{' '}
+              When you run <code>create-awesome-python-app</code>, you pick a template and optionally layer{' '}
               <Link href="/docs/extensions" className="text-primary hover:underline">
                 extensions
               </Link>{' '}
@@ -60,7 +55,7 @@ export default async function DocsTemplatesPage() {
 
             <div className="rounded-md bg-muted p-4">
               <pre className="text-sm overflow-x-auto">
-                <code>npx create-awesome-node-app my-app --template react-vite-boilerplate</code>
+                <code>uvx create-awesome-python-app@latest my-app --template fastapi-starter</code>
               </pre>
             </div>
 
@@ -78,12 +73,12 @@ export default async function DocsTemplatesPage() {
             <p>
               The following templates are maintained in the{' '}
               <a
-                href="https://github.com/Create-Node-App/cna-templates"
+                href="https://github.com/Create-Python-App/cpa-templates"
                 target="_blank"
                 rel="noreferrer"
                 className="text-primary hover:underline"
               >
-                cna-templates
+                cpa-templates
               </a>{' '}
               repository. There are currently <strong>{templates.length} templates</strong> available.
             </p>
@@ -132,7 +127,7 @@ export default async function DocsTemplatesPage() {
                 </p>
                 <div className="rounded-md bg-muted p-4">
                   <pre className="text-sm">
-                    <code>npx create-awesome-node-app my-app --interactive</code>
+                    <code>uvx create-awesome-python-app my-app --interactive</code>
                   </pre>
                 </div>
               </div>
@@ -145,8 +140,8 @@ export default async function DocsTemplatesPage() {
                 <div className="rounded-md bg-muted p-4">
                   <pre className="text-sm overflow-x-auto">
                     <code>
-                      npx create-awesome-node-app my-app --template react-vite-boilerplate --addons react-zustand
-                      react-testing-library-with-vitest
+                      uvx create-awesome-python-app@latest my-app --template fastapi-starter --addons python-docker
+                      python-postgres
                     </code>
                   </pre>
                 </div>
@@ -156,7 +151,7 @@ export default async function DocsTemplatesPage() {
                 <h3 className="text-xl font-semibold mb-2">List all templates</h3>
                 <div className="rounded-md bg-muted p-4">
                   <pre className="text-sm">
-                    <code>npx create-awesome-node-app --list-templates</code>
+                    <code>uvx create-awesome-python-app --list-templates</code>
                   </pre>
                 </div>
               </div>
@@ -166,20 +161,20 @@ export default async function DocsTemplatesPage() {
           <section id="template-structure" className="space-y-4">
             <h2 className="text-2xl font-bold tracking-tight">Template structure</h2>
             <p>
-              Every template lives in the <code>templates/</code> directory of the cna-templates repository and follows
+              Every template lives in the <code>templates/</code> directory of the cpa-templates repository and follows
               this layout:
             </p>
             <div className="rounded-md bg-muted p-4">
               <pre className="text-sm overflow-x-auto">
                 {`templates/
 └── your-template-name/
-    ├── src/              # Source code
-    ├── public/           # Static assets (frontend templates)
+    ├── src/              # Application source (or app/ for Django)
+    ├── tests/            # pytest suite
     ├── .gitignore
-    ├── package.json
+    ├── pyproject.toml    # uv project metadata and dependencies
+    ├── uv.lock           # Lockfile (generated)
     ├── README.md
-    ├── AGENTS.md         # AI assistant contract
-    └── tsconfig.json`}
+    └── AGENTS.md         # AI assistant contract`}
               </pre>
             </div>
             <p>
