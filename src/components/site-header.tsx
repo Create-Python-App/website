@@ -60,23 +60,23 @@ export function SiteHeader({ onOpenCommand }: { onOpenCommand?: () => void }) {
           >
             <defs>
               <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stopColor="#f59e0b" />
-                <stop offset="55%" stopColor="#d97706" />
-                <stop offset="100%" stopColor="#0d9488" />
+                <stop offset="0%" stopColor="#3b82f6" />
+                <stop offset="55%" stopColor="#2563eb" />
+                <stop offset="100%" stopColor="#16a34a" />
               </linearGradient>
             </defs>
             {/* Center node */}
             <circle cx="18" cy="18" r="5" fill="url(#logoGrad)" />
             {/* Top-left node */}
-            <circle cx="7" cy="9" r="3.5" fill="#f59e0b" fillOpacity="0.85" />
+            <circle cx="7" cy="9" r="3.5" fill="#3b82f6" fillOpacity="0.85" />
             {/* Top-right node */}
-            <circle cx="29" cy="9" r="3.5" fill="#0d9488" fillOpacity="0.85" />
+            <circle cx="29" cy="9" r="3.5" fill="#16a34a" fillOpacity="0.85" />
             {/* Bottom node */}
-            <circle cx="18" cy="30" r="3.5" fill="#0d9488" fillOpacity="0.7" />
+            <circle cx="18" cy="30" r="3.5" fill="#16a34a" fillOpacity="0.7" />
             {/* Edges */}
-            <line x1="9.5" y1="11" x2="14.5" y2="15" stroke="#f59e0b" strokeOpacity="0.5" strokeWidth="1.5" />
-            <line x1="26.5" y1="11" x2="21.5" y2="15" stroke="#0d9488" strokeOpacity="0.5" strokeWidth="1.5" />
-            <line x1="18" y1="23" x2="18" y2="26.5" stroke="#0d9488" strokeOpacity="0.5" strokeWidth="1.5" />
+            <line x1="9.5" y1="11" x2="14.5" y2="15" stroke="#3b82f6" strokeOpacity="0.5" strokeWidth="1.5" />
+            <line x1="26.5" y1="11" x2="21.5" y2="15" stroke="#16a34a" strokeOpacity="0.5" strokeWidth="1.5" />
+            <line x1="18" y1="23" x2="18" y2="26.5" stroke="#16a34a" strokeOpacity="0.5" strokeWidth="1.5" />
           </svg>
           <div className="hidden min-w-0 flex-col sm:flex">
             <span className="font-display text-sm font-semibold leading-tight tracking-tight truncate">

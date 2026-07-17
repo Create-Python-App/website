@@ -1,14 +1,19 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Create Awesome Node App">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Create Awesome Python App">
   <defs>
-    <linearGradient id="cnaNest" x1="8" y1="8" x2="56" y2="56" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="#f59e0b"/>
-      <stop offset="55%" stop-color="#d97706"/>
-      <stop offset="100%" stop-color="#0d9488"/>
+    <linearGradient id="cpaGraph" x1="8" y1="8" x2="56" y2="56" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#3b82f6"/>
+      <stop offset="55%" stop-color="#2563eb"/>
+      <stop offset="100%" stop-color="#16a34a"/>
     </linearGradient>
   </defs>
   <rect width="64" height="64" rx="14" fill="#0f172a"/>
-  <circle cx="22" cy="28" r="7" fill="none" stroke="url(#cnaNest)" stroke-width="3.5"/>
-  <circle cx="42" cy="28" r="7" fill="none" stroke="url(#cnaNest)" stroke-width="3.5"/>
-  <circle cx="32" cy="42" r="7" fill="none" stroke="url(#cnaNest)" stroke-width="3.5"/>
-  <path d="M28 30.5 L36 30.5 M27 33.5 L30.5 37.5 M37 33.5 L33.5 37.5" stroke="url(#cnaNest)" stroke-width="3" stroke-linecap="round"/>
+  <!-- Edges -->
+  <line x1="18" y1="20" x2="28" y2="28" stroke="#3b82f6" stroke-opacity="0.55" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="46" y1="20" x2="36" y2="28" stroke="#16a34a" stroke-opacity="0.55" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="32" y1="40" x2="32" y2="48" stroke="#16a34a" stroke-opacity="0.5" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- Nodes -->
+  <circle cx="16" cy="18" r="6" fill="#3b82f6" fill-opacity="0.9"/>
+  <circle cx="48" cy="18" r="6" fill="#16a34a" fill-opacity="0.9"/>
+  <circle cx="32" cy="32" r="9" fill="url(#cpaGraph)"/>
+  <circle cx="32" cy="52" r="5" fill="#16a34a" fill-opacity="0.75"/>
 </svg>

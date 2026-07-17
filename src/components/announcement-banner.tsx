@@ -11,7 +11,7 @@ const bannerVariants = cva(
   {
     variants: {
       variant: {
-        gradient: 'bg-gradient-to-r from-amber-600 via-amber-500 to-teal-600 text-white',
+        gradient: 'bg-gradient-to-r from-blue-600 via-blue-500 to-green-600 text-white',
         subtle: 'bg-[hsl(var(--background))] border-b border-border/60 text-foreground/90 dark:text-foreground/80',
         accent: 'bg-[hsl(var(--primary)/0.15)] text-foreground',
       },
@@ -51,7 +51,7 @@ export function AnnouncementBanner({
         {variant === 'gradient' && (
           <>
             <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center opacity-40 [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]" />
-            <div className="absolute inset-0 bg-gradient-to-r from-amber-500/20 via-amber-400/15 to-teal-500/20 animate-gradient-text" />
+            <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 via-blue-400/15 to-green-500/20 animate-gradient-text" />
           </>
         )}
       </div>

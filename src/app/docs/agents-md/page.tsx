@@ -21,7 +21,7 @@ export default function AgentsMdPage() {
           <div className="container relative z-10 px-4 md:px-6">
             <div className="flex flex-col items-center text-center space-y-4">
               <div className="space-y-2">
-                <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl bg-clip-text text-transparent bg-gradient-to-r from-primary to-teal-600 animate-gradient-text">
+                <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl bg-clip-text text-transparent bg-gradient-to-r from-primary to-green-600 animate-gradient-text">
                   AGENTS.md Contract
                 </h1>
                 <p className="max-w-2xl text-muted-foreground md:text-lg">
@@ -173,8 +173,8 @@ Humans: stop reading—go to CONTRIBUTING.md + docs/.
                     <li>Add domain-specific escalation triggers (security, data, billing)</li>
                     <li>Reference internal design system docs instead of re-stating variants</li>
                     <li>
-                      Include CI scripts or task runners (e.g. <code>uv run pytest</code>, <code>uv run ruff check .</code>)
-                      if not obvious
+                      Include CI scripts or task runners (e.g. <code>uv run pytest</code>,{' '}
+                      <code>uv run ruff check .</code>) if not obvious
                     </li>
                     <li>Keep tone imperative and concise—optimize for machine parsing + embedding</li>
                   </ul>

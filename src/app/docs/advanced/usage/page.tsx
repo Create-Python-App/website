@@ -153,8 +153,8 @@ graph TD
           <section id="monorepo" className="space-y-4 mt-8">
             <h2 className="text-2xl font-bold tracking-tight">Monorepo Setup</h2>
             <p>
-              create-awesome-python-app offers the <code>uv-workspace-starter</code> template for Python monorepos with a
-              single lockfile and shared tooling:
+              create-awesome-python-app offers the <code>uv-workspace-starter</code> template for Python monorepos with
+              a single lockfile and shared tooling:
             </p>
 
             <div className="rounded-md bg-muted p-4 mt-4">
@@ -178,8 +178,12 @@ uv run pytest`}
 
             <p className="mt-4">The uv workspace starter includes:</p>
             <ul className="list-disc pl-6 space-y-2">
-              <li>uv workspace configuration with shared <code>pyproject.toml</code> tooling</li>
-              <li>Separate <code>packages/</code> libraries and <code>apps/</code> deployables</li>
+              <li>
+                uv workspace configuration with shared <code>pyproject.toml</code> tooling
+              </li>
+              <li>
+                Separate <code>packages/</code> libraries and <code>apps/</code> deployables
+              </li>
               <li>Shared Ruff, Pyright, and pytest configuration</li>
               <li>Example members demonstrating cross-package imports</li>
             </ul>
@@ -191,7 +195,7 @@ uv run pytest`}
             <div className="space-y-6">
               <div className="rounded-lg border p-4">
                 <h3 className="text-lg font-semibold flex items-center gap-2">
-                  <AlertTriangle className="h-5 w-5 text-amber-500" />
+                  <AlertTriangle className="h-5 w-5 text-blue-500" />
                   Installation Failures
                 </h3>
                 <p className="mt-2">If you encounter issues during installation:</p>
@@ -214,7 +218,7 @@ uv run pytest`}
 
               <div className="rounded-lg border p-4">
                 <h3 className="text-lg font-semibold flex items-center gap-2">
-                  <AlertTriangle className="h-5 w-5 text-amber-500" />
+                  <AlertTriangle className="h-5 w-5 text-blue-500" />
                   Template or Extension Not Found
                 </h3>
                 <p className="mt-2">If a template or extension is not found:</p>
@@ -236,7 +240,7 @@ uv run pytest`}
 
               <div className="rounded-lg border p-4">
                 <h3 className="text-lg font-semibold flex items-center gap-2">
-                  <AlertTriangle className="h-5 w-5 text-amber-500" />
+                  <AlertTriangle className="h-5 w-5 text-blue-500" />
                   Compatibility Issues
                 </h3>
                 <p className="mt-2">If you encounter compatibility issues between templates and extensions:</p>

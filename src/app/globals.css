@@ -20,57 +20,57 @@
     --card-foreground: 240 10% 3.9%;
     --popover: 0 0% 100%;
     --popover-foreground: 240 10% 3.9%;
-    /* Cozy nest brand: amber primary + teal accent */
-    --background: 40 100% 98%;
-    --foreground: 215 28% 17%;
+    /* Python node-graph brand: blue primary + green accent */
+    --background: 210 40% 98%;
+    --foreground: 222 47% 11%;
     --card: 0 0% 100%;
-    --card-foreground: 215 28% 17%;
+    --card-foreground: 222 47% 11%;
     --popover: 0 0% 100%;
-    --popover-foreground: 215 28% 17%;
-    --primary: 38 92% 50%;
+    --popover-foreground: 222 47% 11%;
+    --primary: 217 91% 60%;
     --primary-foreground: 0 0% 100%;
-    --secondary: 40 33% 96%;
-    --secondary-foreground: 215 28% 17%;
-    --muted: 40 33% 96%;
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222 47% 11%;
+    --muted: 210 40% 96%;
     --muted-foreground: 215 16% 47%;
-    --accent: 175 77% 94%;
-    --accent-foreground: 175 84% 20%;
+    --accent: 142 76% 94%;
+    --accent-foreground: 142 76% 20%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
-    --border: 33 100% 88%;
-    --input: 33 100% 88%;
-    --ring: 38 92% 50%;
-    --brand-teal: 175 77% 32%;
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 217 91% 60%;
+    --brand-teal: 142 76% 36%;
     --radius: 0.75rem;
     /* New semantic tokens */
     --radius-sm: 0.5rem;
     --radius-lg: 1.25rem;
-    --shadow-color: 38 80% 20%;
+    --shadow-color: 221 60% 25%;
     --shadow-elevation-low: 0 1px 2px -1px hsl(var(--shadow-color) / 0.2), 0 1px 3px hsl(var(--shadow-color) / 0.12);
     --shadow-elevation-md:
       0 2px 4px -2px hsl(var(--shadow-color) / 0.22), 0 4px 6px -1px hsl(var(--shadow-color) / 0.16);
     --shadow-elevation-high:
       0 8px 16px -4px hsl(var(--shadow-color) / 0.28), 0 6px 20px -2px hsl(var(--shadow-color) / 0.2);
-    /* Gradient tokens — amber → teal nest */
-    --gradient-primary: linear-gradient(135deg, hsl(38 92% 50%) 0%, hsl(32 91% 44%) 55%, hsl(175 77% 32%) 100%);
+    /* Gradient tokens — blue → green graph */
+    --gradient-primary: linear-gradient(135deg, hsl(217 91% 60%) 0%, hsl(221 83% 53%) 55%, hsl(142 76% 36%) 100%);
     --gradient-accent: linear-gradient(
       135deg,
-      hsl(38 92% 50% / 0.9),
-      hsl(32 91% 44% / 0.85) 45%,
-      hsl(175 77% 32% / 0.85)
+      hsl(217 91% 60% / 0.9),
+      hsl(221 83% 53% / 0.85) 45%,
+      hsl(142 76% 36% / 0.85)
     );
     --gradient-radial:
-      radial-gradient(circle at 30% 20%, hsl(38 92% 50% / 0.28), transparent 60%),
-      radial-gradient(circle at 70% 60%, hsl(175 77% 32% / 0.22), transparent 65%);
+      radial-gradient(circle at 30% 20%, hsl(217 91% 60% / 0.28), transparent 60%),
+      radial-gradient(circle at 70% 60%, hsl(142 76% 36% / 0.22), transparent 65%);
     /* Surface layering */
     --surface: hsl(var(--background) / 0.75);
     --surface-hover: hsl(var(--background) / 0.9);
     --surface-border: hsl(var(--border));
     /* Glow tokens */
-    --amber-glow: rgba(245, 158, 11, 0.12);
-    --teal-glow: rgba(13, 148, 136, 0.1);
+    --amber-glow: rgba(59, 130, 246, 0.12);
+    --teal-glow: rgba(22, 163, 74, 0.1);
     /* Node-graph motif */
-    --node-dot: rgba(245, 158, 11, 0.6);
+    --node-dot: rgba(59, 130, 246, 0.6);
     /* Font variables */
     --font-sans: 'Inter', system-ui, sans-serif;
     --font-display: 'Space Grotesk', var(--font-sans);
@@ -83,26 +83,26 @@
     --card-foreground: 210 40% 98%;
     --popover: 217 33% 17%;
     --popover-foreground: 210 40% 98%;
-    --primary: 38 92% 50%;
+    --primary: 217 91% 60%;
     --primary-foreground: 222 47% 11%;
     --secondary: 217 33% 17%;
     --secondary-foreground: 210 40% 98%;
     --muted: 217 33% 17%;
     --muted-foreground: 215 20% 65%;
-    --accent: 175 40% 18%;
-    --accent-foreground: 175 70% 75%;
+    --accent: 142 40% 18%;
+    --accent-foreground: 142 70% 75%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
     --border: 215 25% 27%;
     --input: 215 25% 27%;
-    --ring: 38 92% 50%;
-    --brand-teal: 175 70% 40%;
-    --shadow-color: 38 60% 8%;
+    --ring: 217 91% 60%;
+    --brand-teal: 142 70% 40%;
+    --shadow-color: 221 50% 8%;
     --surface: hsl(var(--background) / 0.55);
     --surface-hover: hsl(var(--background) / 0.7);
-    --amber-glow: rgba(245, 158, 11, 0.08);
-    --teal-glow: rgba(13, 148, 136, 0.07);
-    --node-dot: rgba(245, 158, 11, 0.35);
+    --amber-glow: rgba(59, 130, 246, 0.08);
+    --teal-glow: rgba(22, 163, 74, 0.07);
+    --node-dot: rgba(59, 130, 246, 0.35);
   }
 }
 

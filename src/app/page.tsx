@@ -51,7 +51,7 @@ export default async function Home() {
               <CopyButton
                 command={PRIMARY_COMMAND}
                 size="lg"
-                className="bg-gradient-to-r from-primary to-teal-600 hover:from-primary/90 hover:to-teal-600/90 glow transition-all duration-300 text-primary-foreground"
+                className="bg-gradient-to-r from-primary to-green-600 hover:from-primary/90 hover:to-green-600/90 glow transition-all duration-300 text-primary-foreground"
               />
               <Button
                 size="lg"
@@ -80,7 +80,7 @@ export default async function Home() {
                 <div className="inline-block rounded-lg bg-muted px-3 py-1 text-sm backdrop-blur-sm">
                   Featured templates
                 </div>
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl bg-clip-text text-transparent bg-gradient-to-r from-primary to-teal-600">
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl bg-clip-text text-transparent bg-gradient-to-r from-primary to-green-600">
                   Start with a solid foundation
                 </h2>
                 <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed">
@@ -131,7 +131,7 @@ export default async function Home() {
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
                 <div className="inline-block rounded-lg bg-muted px-3 py-1 text-sm">Categories</div>
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl bg-clip-text text-transparent bg-gradient-to-r from-primary to-teal-600">
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl bg-clip-text text-transparent bg-gradient-to-r from-primary to-green-600">
                   Find your stack
                 </h2>
                 <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed">
@@ -156,7 +156,7 @@ export default async function Home() {
                   <div className="inline-block rounded-lg bg-muted px-3 py-1 text-sm backdrop-blur-sm">
                     How it works
                   </div>
-                  <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl bg-clip-text text-transparent bg-gradient-to-r from-primary to-teal-600">
+                  <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl bg-clip-text text-transparent bg-gradient-to-r from-primary to-green-600">
                     Compose, then generate
                   </h2>
                   <p className="max-w-[600px] text-muted-foreground md:text-xl/relaxed">
@@ -185,7 +185,7 @@ export default async function Home() {
                   </CardHeader>
                   <CardContent className="space-y-3">
                     <div className="bg-muted rounded-md p-4 font-mono text-sm overflow-x-auto">
-                      <p className="text-teal-700 dark:text-teal-300">$ uvx create-awesome-python-app my-app \</p>
+                      <p className="text-green-700 dark:text-green-300">$ uvx create-awesome-python-app my-app \</p>
                       <p className="pl-4">--template fastapi-starter \</p>
                       <p className="pl-4">--addons python-docker github-setup</p>
                     </div>
@@ -214,7 +214,7 @@ export default async function Home() {
           <div className="container px-4 md:px-6 relative z-10">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl bg-clip-text text-transparent bg-gradient-to-r from-primary to-teal-600 animate-gradient-text">
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl bg-clip-text text-transparent bg-gradient-to-r from-primary to-green-600 animate-gradient-text">
                   Ready when you are
                 </h2>
                 <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed">
@@ -225,7 +225,7 @@ export default async function Home() {
                 <CopyButton
                   command={PRIMARY_COMMAND}
                   size="lg"
-                  className="bg-gradient-to-r from-primary to-teal-600 hover:from-primary/90 hover:to-teal-600/90 glow transition-all duration-300 text-primary-foreground"
+                  className="bg-gradient-to-r from-primary to-green-600 hover:from-primary/90 hover:to-green-600/90 glow transition-all duration-300 text-primary-foreground"
                 />
                 <Button
                   size="lg"

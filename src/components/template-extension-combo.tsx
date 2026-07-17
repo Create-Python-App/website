@@ -15,7 +15,7 @@ export function TemplateExtensionCombo({ template, extension }: TemplateExtensio
           <div className="flex flex-col gap-4">
             <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
               <div className="flex min-w-0 items-center gap-3">
-                <div className="h-10 w-10 shrink-0 rounded-md bg-gradient-to-br from-primary/20 to-teal-600/20 flex items-center justify-center">
+                <div className="h-10 w-10 shrink-0 rounded-md bg-gradient-to-br from-primary/20 to-green-600/20 flex items-center justify-center">
                   <span className="text-sm font-semibold text-primary">T</span>
                 </div>
                 <div className="min-w-0">
@@ -25,8 +25,8 @@ export function TemplateExtensionCombo({ template, extension }: TemplateExtensio
               </div>
               <ArrowRight className="h-4 w-4 shrink-0 text-muted-foreground rotate-90 sm:rotate-0 self-center" />
               <div className="flex min-w-0 items-center gap-3">
-                <div className="h-10 w-10 shrink-0 rounded-md bg-gradient-to-br from-teal-600/20 to-amber-500/20 flex items-center justify-center">
-                  <span className="text-sm font-semibold text-teal-600">E</span>
+                <div className="h-10 w-10 shrink-0 rounded-md bg-gradient-to-br from-green-600/20 to-blue-500/20 flex items-center justify-center">
+                  <span className="text-sm font-semibold text-green-600">E</span>
                 </div>
                 <div className="min-w-0">
                   <h3 className="text-sm font-medium break-words">{extension.name}</h3>
@@ -43,7 +43,7 @@ export function TemplateExtensionCombo({ template, extension }: TemplateExtensio
           </div>
         </CardContent>
       </Card>
-      <div className="absolute -inset-px rounded-lg bg-gradient-to-r from-primary/20 via-teal-600/20 to-amber-500/20 -z-10 animate-pulse"></div>
+      <div className="absolute -inset-px rounded-lg bg-gradient-to-r from-primary/20 via-green-600/20 to-blue-500/20 -z-10 animate-pulse"></div>
     </div>
   );
 }
