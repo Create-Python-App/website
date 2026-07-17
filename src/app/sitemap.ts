@@ -1,7 +1,7 @@
 import type { MetadataRoute } from 'next';
 import { getTemplatesData } from '@/lib/data';
 
-const siteUrl = 'https://create-awesome-node-app.vercel.app';
+const siteUrl = 'https://create-awesome-python-app.vercel.app';
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const { templates, extensions, categories } = await getTemplatesData();

@@ -1,7 +1,7 @@
 import { getFallbackData } from './mock-data';
 import { type TemplatesData, templatesDataSchema } from './schemas';
 
-const TEMPLATES_URL = 'https://raw.githubusercontent.com/Create-Node-App/cna-templates/main/templates.json';
+const TEMPLATES_URL = 'https://raw.githubusercontent.com/Create-Python-App/cpa-templates/main/templates.json';
 
 export async function getTemplatesData(): Promise<TemplatesData> {
   try {

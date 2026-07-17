@@ -21,17 +21,17 @@ describe('validateTemplate', () => {
 
   it('should return data for valid template', () => {
     const validData = {
-      name: 'React Vite Starter',
+      name: 'FastAPI Starter',
       description: 'A fast React boilerplate.',
-      url: 'https://github.com/Create-Node-App/cna-templates/tree/main/templates/react-vite-starter',
+      url: 'https://github.com/Create-Python-App/cpa-templates/tree/main/templates/fastapi-starter',
       type: 'react',
       category: 'frontend-applications',
       labels: ['React', 'Vite'],
-      slug: 'react-vite-starter',
+      slug: 'fastapi-starter',
     };
     const result = validateTemplate(validData);
     expect(result).not.toBeNull();
-    expect(result?.name).toBe('React Vite Starter');
+    expect(result?.name).toBe('FastAPI Starter');
   });
 });
 
@@ -45,7 +45,7 @@ describe('validateExtension', () => {
     const validData = {
       name: 'Tailwind CSS',
       description: 'Add Tailwind CSS.',
-      url: 'https://github.com/Create-Node-App/cna-templates/tree/main/extensions/react-tailwindcss',
+      url: 'https://github.com/Create-Python-App/cpa-templates/tree/main/extensions/python-docker',
       type: 'react',
       category: 'UI',
       labels: ['Tailwind'],
