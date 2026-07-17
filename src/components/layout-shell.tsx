@@ -76,13 +76,13 @@ export function LayoutShell({ children }: { children: ReactNode }) {
                       />
                       <line x1="18" y1="23" x2="18" y2="26.5" stroke="#0d9488" strokeOpacity="0.5" strokeWidth="1.5" />
                     </svg>
-                    <span className="font-display text-sm font-semibold">create-node-app</span>
+                    <span className="font-display text-sm font-semibold">create-python-app</span>
                   </div>
                   <p className="text-xs text-muted-foreground leading-relaxed max-w-[220px]">
-                    One command. Any stack. Compose templates and extensions into production-ready Node.js apps.
+                    One command. Any stack. Compose templates and extensions into production-ready Python apps.
                   </p>
                   <p className="text-xs text-muted-foreground">
-                    &copy; {new Date().getFullYear()} Create Awesome Node App.
+                    &copy; {new Date().getFullYear()} Create Awesome Python App.
                   </p>
                 </div>
                 {/* Col 2 — Resources */}
@@ -95,7 +95,7 @@ export function LayoutShell({ children }: { children: ReactNode }) {
                       { href: '/docs', label: 'Documentation' },
                       { href: '/docs/contributing', label: 'Contributing Guide' },
                       {
-                        href: 'https://github.com/Create-Node-App/cna-templates/releases',
+                        href: 'https://github.com/Create-Python-App/cpa-templates/releases',
                         label: 'Changelog',
                         external: true,
                       },
@@ -117,19 +117,19 @@ export function LayoutShell({ children }: { children: ReactNode }) {
                   <p className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">Community</p>
                   <nav className="flex flex-col gap-2">
                     {[
-                      { href: 'https://github.com/Create-Node-App', label: 'GitHub Organization', external: true },
+                      { href: 'https://github.com/Create-Python-App', label: 'GitHub Organization', external: true },
                       {
-                        href: 'https://www.npmjs.com/package/create-awesome-node-app',
-                        label: 'npm Package',
+                        href: 'https://pypi.org/project/create-awesome-python-app/',
+                        label: 'PyPI Package',
                         external: true,
                       },
                       {
-                        href: 'https://github.com/Create-Node-App/cna-templates/issues/new?template=bug-report.yml',
+                        href: 'https://github.com/Create-Python-App/cpa-templates/issues/new?template=bug-report.yml',
                         label: 'Report an issue',
                         external: true,
                       },
                       {
-                        href: 'https://github.com/Create-Node-App/cna-templates/issues/new?template=feature-request.yml',
+                        href: 'https://github.com/Create-Python-App/cpa-templates/issues/new?template=feature-request.yml',
                         label: 'Request a feature',
                         external: true,
                       },
@@ -151,27 +151,27 @@ export function LayoutShell({ children }: { children: ReactNode }) {
                   <p className="text-xs font-semibold uppercase tracking-widest text-muted-foreground">Ecosystem</p>
                   <nav className="flex flex-col gap-2">
                     <Link
-                      href="https://github.com/Create-Node-App"
+                      href="https://github.com/Create-Python-App"
                       target="_blank"
                       rel="noreferrer"
                       className="flex items-center gap-2 text-sm transition-colors hover:text-foreground"
                     >
                       <span className="h-2 w-2 rounded-full bg-primary shrink-0" />
                       <span className="text-muted-foreground hover:text-foreground transition-colors">
-                        Node.js
+                        Python
                         <span className="ml-1.5 text-[10px] font-medium text-primary/80">live</span>
                       </span>
                     </Link>
                     <Link
-                      href="https://github.com/Create-Python-App"
+                      href="https://github.com/Create-Node-App"
                       target="_blank"
                       rel="noreferrer"
                       className="flex items-center gap-2 text-sm transition-colors hover:text-foreground"
                     >
                       <span className="h-2 w-2 rounded-full bg-blue-500 shrink-0" />
                       <span className="text-muted-foreground hover:text-foreground transition-colors">
-                        Python
-                        <span className="ml-1.5 text-[10px] font-medium text-muted-foreground">soon</span>
+                        Node.js
+                        <span className="ml-1.5 text-[10px] font-medium text-muted-foreground">sibling</span>
                       </span>
                     </Link>
                     <Link

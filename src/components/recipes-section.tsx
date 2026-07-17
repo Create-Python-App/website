@@ -22,65 +22,68 @@ interface Recipe {
 
 const recipes: Recipe[] = [
   {
-    title: 'Modern SPA',
-    description: 'React + Vite with Tailwind and Zustand for a fast client app.',
-    icon: Layers,
-    labels: ['React', 'Vite', 'Tailwind', 'Zustand'],
-    command: {
-      base: 'npx create-awesome-node-app my-app ',
-      templateFlag: '--template',
-      templateValue: ' react-vite-boilerplate ',
-      addonsFlag: '--addons',
-      addonsValue: ' tailwind-css zustand vitest-react-testing-library',
-    },
-    rawCommand:
-      'npm create awesome-node-app@latest my-spa -- --template react-vite-boilerplate --addons tailwind-css zustand --no-interactive',
-    href: '/templates/react-vite-boilerplate',
-  },
-  {
-    title: 'Full-stack web',
-    description: 'Next.js with Auth.js and Drizzle for a production app foundation.',
-    icon: Workflow,
-    labels: ['Next.js', 'Auth.js', 'Drizzle', 'PostgreSQL'],
-    command: {
-      base: 'npx create-awesome-node-app my-app ',
-      templateFlag: '--template',
-      templateValue: ' nextjs-starter ',
-      addonsFlag: '--addons',
-      addonsValue: ' nextjs-auth nextjs-drizzle-postgres',
-    },
-    rawCommand:
-      'npm create awesome-node-app@latest my-app -- --template nextjs-starter --addons nextjs-auth nextjs-drizzle-postgres --no-interactive',
-    href: '/templates/nextjs-starter',
-  },
-  {
-    title: 'API platform',
-    description: 'NestJS with Docker and GitHub Actions for a shippable backend.',
+    title: 'FastAPI API',
+    description: 'FastAPI starter with Docker and GitHub Actions for a shippable backend.',
     icon: Server,
-    labels: ['NestJS', 'Docker', 'GitHub Actions', 'OpenAPI'],
+    labels: ['FastAPI', 'Docker', 'GitHub Actions', 'uv'],
     command: {
-      base: 'npx create-awesome-node-app my-api ',
+      base: 'uvx create-awesome-python-app my-api ',
       templateFlag: '--template',
-      templateValue: ' nestjs-boilerplate ',
+      templateValue: ' fastapi-starter ',
       addonsFlag: '--addons',
-      addonsValue: ' docker-compose-setup github-setup',
+      addonsValue: ' python-docker github-setup',
     },
     rawCommand:
-      'npm create awesome-node-app@latest my-api -- --template nestjs-boilerplate --addons docker-compose-setup github-setup --no-interactive',
-    href: '/templates/nestjs-boilerplate',
+      'uvx create-awesome-python-app my-api --template fastapi-starter --addons python-docker github-setup --no-interactive',
+    href: '/templates/fastapi-starter',
   },
   {
-    title: 'SaaS + AI flagship',
-    description: 'Multi-tenant Next.js SaaS with AI, Auth, and pgvector built in.',
-    icon: Sparkles,
-    labels: ['Next.js', 'AI', 'pgvector', 'Multi-tenant'],
+    title: 'CLI tool',
+    description: 'Typer/Click-ready CLI starter with Dev Container and GitHub setup.',
+    icon: Layers,
+    labels: ['CLI', 'uv', 'Dev Container', 'GitHub'],
     command: {
-      base: 'npx create-awesome-node-app my-saas ',
+      base: 'uvx create-awesome-python-app my-cli ',
       templateFlag: '--template',
-      templateValue: ' nextjs-saas-ai-starter',
+      templateValue: ' cli-starter ',
+      addonsFlag: '--addons',
+      addonsValue: ' python-devcontainer github-setup',
     },
-    rawCommand: 'npm create awesome-node-app@latest my-saas -- --template nextjs-saas-ai-starter --no-interactive',
-    href: '/templates/nextjs-saas-ai-starter',
+    rawCommand:
+      'uvx create-awesome-python-app my-cli --template cli-starter --addons python-devcontainer github-setup --no-interactive',
+    href: '/templates/cli-starter',
+  },
+  {
+    title: 'Celery worker',
+    description: 'Background worker with Redis and Docker for async task pipelines.',
+    icon: Workflow,
+    labels: ['Celery', 'Redis', 'Docker', 'Workers'],
+    command: {
+      base: 'uvx create-awesome-python-app my-worker ',
+      templateFlag: '--template',
+      templateValue: ' celery-worker ',
+      addonsFlag: '--addons',
+      addonsValue: ' python-redis python-docker',
+    },
+    rawCommand:
+      'uvx create-awesome-python-app my-worker --template celery-worker --addons python-redis python-docker --no-interactive',
+    href: '/templates/celery-worker',
+  },
+  {
+    title: 'Django API',
+    description: 'Django API starter with Postgres and JWT auth extensions.',
+    icon: Sparkles,
+    labels: ['Django', 'Postgres', 'JWT', 'API'],
+    command: {
+      base: 'uvx create-awesome-python-app my-django ',
+      templateFlag: '--template',
+      templateValue: ' django-api ',
+      addonsFlag: '--addons',
+      addonsValue: ' python-postgres python-auth-jwt',
+    },
+    rawCommand:
+      'uvx create-awesome-python-app my-django --template django-api --addons python-postgres python-auth-jwt --no-interactive',
+    href: '/templates/django-api',
   },
 ];
 

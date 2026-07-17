@@ -36,7 +36,7 @@ export function TemplateExtensionCombo({ template, extension }: TemplateExtensio
             </div>
 
             <div className="bg-muted rounded-md p-3 font-mono text-xs overflow-x-auto">
-              <p className="text-green-500">$ npx create-awesome-node-app \</p>
+              <p className="text-green-500">$ uvx create-awesome-python-app \</p>
               <p className="pl-4 break-all">--template {template.slug} \</p>
               <p className="pl-4 break-all">--addons {extension.slug}</p>
             </div>

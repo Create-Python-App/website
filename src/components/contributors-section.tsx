@@ -22,13 +22,13 @@ export function ContributorsSection() {
                 className="bg-gradient-to-r from-primary to-teal-600 hover:from-primary/90 hover:to-teal-600/90"
                 asChild
               >
-                <Link href="https://github.com/Create-Node-App/create-node-app/blob/main/CONTRIBUTING.md">
+                <Link href="https://github.com/Create-Python-App/create-python-app/blob/main/CONTRIBUTING.md">
                   Contributing guide
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </Button>
               <Button size="lg" variant="outline" asChild>
-                <Link href="https://github.com/Create-Node-App">
+                <Link href="https://github.com/Create-Python-App">
                   <Github className="mr-2 h-4 w-4" />
                   GitHub org
                 </Link>
@@ -51,10 +51,10 @@ export function ContributorsSection() {
               </CardHeader>
               <CardContent>
                 <Link
-                  href="https://www.npmjs.com/package/create-awesome-node-app"
+                  href="https://pypi.org/project/create-awesome-python-app/"
                   className="text-sm text-teal-700 dark:text-teal-300 hover:underline"
                 >
-                  npm: create-awesome-node-app
+                  PyPI: create-awesome-python-app
                 </Link>
               </CardContent>
             </Card>

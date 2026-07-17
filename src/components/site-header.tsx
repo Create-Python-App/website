@@ -48,7 +48,7 @@ export function SiteHeader({ onOpenCommand }: { onOpenCommand?: () => void }) {
       )}
     >
       <div className="container flex h-16 items-center gap-2 sm:gap-4">
-        <Link href="/" className="flex min-w-0 items-center gap-2.5 group" aria-label="Create Node App home">
+        <Link href="/" className="flex min-w-0 items-center gap-2.5 group" aria-label="Create Python App home">
           <svg
             width="36"
             height="36"
@@ -80,7 +80,7 @@ export function SiteHeader({ onOpenCommand }: { onOpenCommand?: () => void }) {
           </svg>
           <div className="hidden min-w-0 flex-col sm:flex">
             <span className="font-display text-sm font-semibold leading-tight tracking-tight truncate">
-              create-node-app
+              create-python-app
             </span>
             <span className="text-[10px] text-muted-foreground leading-tight hidden md:block">
               one command · any stack
@@ -134,12 +134,12 @@ export function SiteHeader({ onOpenCommand }: { onOpenCommand?: () => void }) {
             <Search className="h-5 w-5" />
           </Button>
           <ThemeToggle />
-          <Link href="https://www.npmjs.com/package/create-awesome-node-app" target="_blank" aria-label="NPM Package">
+          <Link href="https://pypi.org/project/create-awesome-python-app/" target="_blank" aria-label="PyPI Package">
             <Button variant="ghost" size="icon" className="hidden sm:inline-flex">
               <Package className="h-5 w-5" />
             </Button>
           </Link>
-          <Link href="https://github.com/Create-Node-App" target="_blank" aria-label="GitHub">
+          <Link href="https://github.com/Create-Python-App" target="_blank" aria-label="GitHub">
             <Button variant="ghost" size="icon">
               <Github className="h-5 w-5" />
             </Button>

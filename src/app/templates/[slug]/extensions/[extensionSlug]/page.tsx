@@ -193,7 +193,7 @@ export default function TemplateExtensionPage({
 
                       <div className="bg-muted rounded-md p-4 font-mono text-sm overflow-x-auto shimmer">
                         <p>
-                          <span className="text-green-500">$ npx create-awesome-node-app</span>{' '}
+                          <span className="text-green-500">$ uvx create-awesome-python-app</span>{' '}
                           <span className="break-all">--template {template.slug}</span>{' '}
                           <span className="break-all">--addons {extension.slug}</span>
                         </p>
@@ -292,7 +292,7 @@ export default function TemplateExtensionPage({
                   <CardContent>
                     <div className="bg-muted rounded-md p-4 font-mono text-sm overflow-x-auto mb-4">
                       <p>
-                        <span className="text-green-500">$ npx create-awesome-node-app</span>{' '}
+                        <span className="text-green-500">$ uvx create-awesome-python-app</span>{' '}
                         <span className="break-all">--template {template.slug}</span>{' '}
                         <span className="break-all">--addons {extension.slug}</span>
                       </p>
@@ -301,7 +301,7 @@ export default function TemplateExtensionPage({
                   <CardFooter className="flex flex-col items-start gap-4">
                     <CopyButton
                       className="w-full bg-gradient-to-r from-primary via-teal-600 to-amber-500 hover:from-primary/90 hover:via-teal-600/90 hover:to-amber-500/90 glow transition-all duration-300"
-                      command={`npx create-awesome-node-app --template ${template.slug} --addons ${extension.slug}`}
+                      command={`uvx create-awesome-python-app --template ${template.slug} --addons ${extension.slug}`}
                     />
                     <div className="flex w-full gap-2">
                       <Link href={template.url} className="flex-1" target="_blank">
@@ -401,7 +401,7 @@ export default function TemplateExtensionPage({
               <div className="flex flex-col gap-2 min-[400px]:flex-row">
                 <CopyButton
                   className="bg-gradient-to-r from-primary via-teal-600 to-amber-500 hover:from-primary/90 hover:via-teal-600/90 hover:to-amber-500/90 glow transition-all duration-300"
-                  command={`npx create-awesome-node-app --template ${template.slug} --addons ${extension.slug}`}
+                  command={`uvx create-awesome-python-app --template ${template.slug} --addons ${extension.slug}`}
                   size="lg"
                 />
                 <Button

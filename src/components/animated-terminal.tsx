@@ -4,33 +4,33 @@ import { useEffect, useState } from 'react';
 
 const STACKS = [
   {
-    label: 'React + Vite',
+    label: 'FastAPI API',
     lines: [
-      { prefix: '$', text: ' npx create-awesome-node-app my-app', color: 'text-foreground' },
-      { prefix: '✔', text: ' Template   react-vite-boilerplate', color: 'text-green-400' },
-      { prefix: '✔', text: ' Extensions zustand · tailwindcss · vitest', color: 'text-green-400' },
-      { prefix: '✔', text: ' Installing dependencies...', color: 'text-muted-foreground' },
-      { prefix: '✔', text: ' Ready. cd my-app && npm run dev', color: 'text-primary' },
+      { prefix: '$', text: ' uvx create-awesome-python-app my-api', color: 'text-foreground' },
+      { prefix: '✔', text: ' Template   fastapi-starter', color: 'text-green-400' },
+      { prefix: '✔', text: ' Extensions python-docker · github-setup · python-postgres', color: 'text-green-400' },
+      { prefix: '✔', text: ' Syncing with uv...', color: 'text-muted-foreground' },
+      { prefix: '✔', text: ' Ready. cd my-api && uv run uvicorn app.main:app --reload', color: 'text-primary' },
     ],
   },
   {
-    label: 'NestJS API',
+    label: 'CLI tool',
     lines: [
-      { prefix: '$', text: ' npx create-awesome-node-app my-api', color: 'text-foreground' },
-      { prefix: '✔', text: ' Template   nestjs-boilerplate', color: 'text-green-400' },
-      { prefix: '✔', text: ' Extensions drizzle-orm-postgresql · openapi', color: 'text-green-400' },
-      { prefix: '✔', text: ' Installing dependencies...', color: 'text-muted-foreground' },
-      { prefix: '✔', text: ' Ready. cd my-api && npm run start:dev', color: 'text-primary' },
+      { prefix: '$', text: ' uvx create-awesome-python-app my-cli', color: 'text-foreground' },
+      { prefix: '✔', text: ' Template   cli-starter', color: 'text-green-400' },
+      { prefix: '✔', text: ' Extensions github-setup · python-devcontainer', color: 'text-green-400' },
+      { prefix: '✔', text: ' Syncing with uv...', color: 'text-muted-foreground' },
+      { prefix: '✔', text: ' Ready. cd my-cli && uv run my-cli --help', color: 'text-primary' },
     ],
   },
   {
-    label: 'Next.js SaaS',
+    label: 'Celery worker',
     lines: [
-      { prefix: '$', text: ' npx create-awesome-node-app my-saas', color: 'text-foreground' },
-      { prefix: '✔', text: ' Template   nextjs-saas-ai-starter', color: 'text-green-400' },
-      { prefix: '✔', text: ' Extensions nextjs-auth · nextjs-drizzle-postgres', color: 'text-green-400' },
-      { prefix: '✔', text: ' Installing dependencies...', color: 'text-muted-foreground' },
-      { prefix: '✔', text: ' Ready. cd my-saas && npm run dev', color: 'text-primary' },
+      { prefix: '$', text: ' uvx create-awesome-python-app my-worker', color: 'text-foreground' },
+      { prefix: '✔', text: ' Template   celery-worker', color: 'text-green-400' },
+      { prefix: '✔', text: ' Extensions python-redis · python-docker', color: 'text-green-400' },
+      { prefix: '✔', text: ' Syncing with uv...', color: 'text-muted-foreground' },
+      { prefix: '✔', text: ' Ready. cd my-worker && uv run celery -A app worker', color: 'text-primary' },
     ],
   },
 ];
