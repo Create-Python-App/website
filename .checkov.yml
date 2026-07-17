@@ -1,0 +1,6 @@
+# Checkov configuration — keep GHA scans, skip noisy false positives if any remain.
+compact: true
+quiet: true
+framework:
+  - github_actions
+soft-fail: false

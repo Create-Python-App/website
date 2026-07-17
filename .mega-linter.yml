@@ -1,0 +1,39 @@
+# MegaLinter configuration for the Create Node App website
+# https://megalinter.io/latest/config-file/
+
+APPLY_FIXES: none
+SHOW_ELAPSED_TIME: true
+PRINT_ALL_FILES: false
+# Always lint the full tree so PR and main use the same gate.
+VALIDATE_ALL_CODEBASE: true
+FILTER_REGEX_EXCLUDE: (pnpm-lock\.yaml|megalinter-reports/|node_modules/|\.next/|tools/danger/package-lock\.json)
+
+DISABLE_LINTERS:
+  # SBOM generation is informational; keep trivy vuln scan as the gate.
+  - REPOSITORY_TRIVY_SBOM
+  - REPOSITORY_SYFT
+  # Grype duplicates Trivy on the same lockfile; one vuln gate is enough.
+  - REPOSITORY_GRYPE
+  # Project uses Tailwind utilities; MegaLinter stylelint has no Tailwind plugin.
+  - CSS_STYLELINT
+  # External link checkers are flaky in CI (npmjs 403, cert/network noise).
+  - SPELL_LYCHEE
+  - MARKDOWN_MARKDOWN_LINK_CHECK
+  # Schema store has no checkov schema; empty assignees fail issue-form schemas.
+  - YAML_V8R
+
+# TypeScript is linted by the repo ESLint/Next CI jobs, not MegaLinter ts-standard.
+DISABLE:
+  - TYPESCRIPT
+
+# Project-local configs
+COPYPASTE_JSCPD_CONFIG_FILE: .jscpd.json
+SPELL_CSPELL_CONFIG_FILE: .cspell.json
+REPOSITORY_CHECKOV_CONFIG_FILE: .checkov.yml
+
+# Trivy: fail only on HIGH/CRITICAL with available fixes.
+REPOSITORY_TRIVY_ARGUMENTS: >-
+  --scanners vuln,misconfig
+  --severity HIGH,CRITICAL
+  --ignore-unfixed
+  --exit-code 1

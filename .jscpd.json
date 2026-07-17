@@ -1,0 +1,13 @@
+{
+  "threshold": 5,
+  "minLines": 8,
+  "minTokens": 70,
+  "gitignore": true,
+  "ignore": [
+    "**/node_modules/**",
+    "**/.next/**",
+    "**/megalinter-reports/**",
+    "**/src/components/ui/**",
+    "**/pnpm-lock.yaml"
+  ]
+}
