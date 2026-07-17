@@ -111,7 +111,7 @@ export function ExtensionDetailsClient({ extension, compatibleTemplates }: Exten
                     </h3>
                     <p>To use this extension with a compatible template, run the following command:</p>
                     <div className="bg-muted rounded-md p-4 font-mono text-sm overflow-x-auto shimmer">
-                      <p>npx create-awesome-node-app --template [template-name] --addons {extension.slug}</p>
+                      <p>uvx create-awesome-python-app --template [template-name] --addons {extension.slug}</p>
                     </div>
                     <h3 className="text-transparent bg-clip-text bg-gradient-to-r from-teal-600 to-amber-500">
                       With Specific Templates
@@ -123,7 +123,7 @@ export function ExtensionDetailsClient({ extension, compatibleTemplates }: Exten
                         className="bg-muted rounded-md p-4 font-mono text-sm overflow-x-auto shimmer mb-4"
                       >
                         <p>
-                          npx create-awesome-node-app --template {template.slug} --addons {extension.slug}
+                          uvx create-awesome-python-app --template {template.slug} --addons {extension.slug}
                         </p>
                       </div>
                     ))}
@@ -178,7 +178,7 @@ export function ExtensionDetailsClient({ extension, compatibleTemplates }: Exten
                 </CardHeader>
                 <CardContent>
                   <div className="bg-muted rounded-md p-4 font-mono text-sm overflow-x-auto mb-4">
-                    <p className="text-green-500">$ npx create-awesome-node-app \\</p>
+                    <p className="text-green-500">$ uvx create-awesome-python-app \\</p>
                     <p className="pl-4">--template [template-name] \\</p>
                     <p className="pl-4">--addons {extension.slug}</p>
                   </div>
@@ -186,7 +186,7 @@ export function ExtensionDetailsClient({ extension, compatibleTemplates }: Exten
                 <CardFooter className="flex flex-col items-start gap-4">
                   <CopyButton
                     className="w-full bg-gradient-to-r from-teal-600 to-amber-500 hover:from-teal-600/90 hover:to-amber-500/90 glow transition-all duration-300"
-                    command={`npx create-awesome-node-app --template [template-name] --addons ${extension.slug}`}
+                    command={`uvx create-awesome-python-app --template [template-name] --addons ${extension.slug}`}
                   />
                   <Link href={extension.url} className="w-full" target="_blank" rel="noopener noreferrer">
                     <Button
@@ -301,7 +301,7 @@ export function ExtensionDetailsClient({ extension, compatibleTemplates }: Exten
                 className="bg-gradient-to-r from-teal-600 to-amber-500 hover:from-teal-600/90 hover:to-amber-500/90 glow transition-all duration-300"
                 onClick={() => {
                   navigator.clipboard?.writeText?.(
-                    `npx create-awesome-node-app --template [template-name] --addons ${extension.slug}`,
+                    `uvx create-awesome-python-app --template [template-name] --addons ${extension.slug}`,
                   );
                 }}
               >

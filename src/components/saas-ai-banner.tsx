@@ -15,16 +15,16 @@ import { AnimatedGradient } from '@/components/animated-gradient';
 import { Button } from '@/components/ui/button';
 
 const features = [
-  { icon: Building2, label: 'Multi-tenant architecture' },
-  { icon: Bot, label: 'AI (OpenAI / Anthropic)' },
-  { icon: Key, label: 'Auth.js v5 + Auth0' },
-  { icon: Database, label: 'PostgreSQL + pgvector + Drizzle ORM' },
-  { icon: Shield, label: 'PBAC (Permission-Based Access Control)' },
-  { icon: LayoutDashboard, label: 'Admin panel + Audit logs' },
-  { icon: Webhook, label: 'Outbound webhooks' },
-  { icon: Globe, label: 'i18n (EN + ES)' },
-  { icon: BookOpen, label: 'Storybook + CI/CD' },
-  { icon: Package, label: 'DevContainer (zero-config dev env)' },
+  { icon: Building2, label: 'FastAPI feature architecture' },
+  { icon: Bot, label: 'uv-first tooling' },
+  { icon: Key, label: 'JWT auth extension' },
+  { icon: Database, label: 'PostgreSQL + SQLAlchemy' },
+  { icon: Shield, label: 'Typed settings & config' },
+  { icon: LayoutDashboard, label: 'Health checks + OpenAPI' },
+  { icon: Webhook, label: 'Redis & Celery-ready addons' },
+  { icon: Globe, label: 'Docker + Dev Container' },
+  { icon: BookOpen, label: 'Docs & testing guides' },
+  { icon: Package, label: 'GitHub Actions setup' },
 ];
 
 export function SaasAiBanner() {
@@ -52,10 +52,10 @@ export function SaasAiBanner() {
             {/* Heading */}
             <div className="space-y-3">
               <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl bg-clip-text text-transparent bg-gradient-to-r from-amber-300 to-teal-300 leading-tight">
-                Next.js SaaS AI Starter
+                FastAPI Starter
               </h2>
               <p className="text-lg text-slate-300 max-w-lg">
-                The most complete production-ready SaaS boilerplate in the ecosystem
+                Production-ready FastAPI scaffold with composable Python extensions
               </p>
             </div>
 
@@ -79,7 +79,7 @@ export function SaasAiBanner() {
                 className="bg-gradient-to-r from-amber-500 to-teal-600 hover:from-amber-400 hover:to-teal-500 text-white shadow-lg shadow-amber-900/40 transition-all duration-300"
                 asChild
               >
-                <Link href="/templates/nextjs-saas-ai-starter">Get Started →</Link>
+                <Link href="/templates/fastapi-starter">Get Started →</Link>
               </Button>
               <Button
                 size="lg"
@@ -88,7 +88,7 @@ export function SaasAiBanner() {
                 asChild
               >
                 <a
-                  href="https://github.com/Create-Node-App/nextjs-saas-ai-template"
+                  href="https://github.com/Create-Python-App/cpa-templates/tree/main/templates/fastapi-starter"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -110,11 +110,12 @@ export function SaasAiBanner() {
               </div>
               {/* Code */}
               <div className="p-4 sm:p-6 font-mono text-sm leading-relaxed overflow-x-auto">
-                <p className="text-green-400">$ npx create-awesome-node-app my-saas \</p>
-                <p className="text-slate-300 pl-4">--template nextjs-saas-ai-starter</p>
-                <p className="mt-4 text-slate-500"># ✅ Multi-tenant SaaS scaffold ready</p>
-                <p className="text-slate-500"># ✅ Auth, DB, AI, RBAC — all configured</p>
-                <p className="text-slate-500"># ✅ Zero-config DevContainer included</p>
+                <p className="text-green-400">$ uvx create-awesome-python-app my-api \</p>
+                <p className="text-slate-300 pl-4">--template fastapi-starter \</p>
+                <p className="text-slate-300 pl-4">--addons python-docker github-setup</p>
+                <p className="mt-4 text-slate-500"># ✅ FastAPI scaffold ready</p>
+                <p className="text-slate-500"># ✅ uv workspace + typed settings</p>
+                <p className="text-slate-500"># ✅ Compose Docker + CI extensions</p>
                 <p className="mt-4 animate-pulse text-amber-400">▊</p>
               </div>
             </div>

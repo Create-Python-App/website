@@ -125,7 +125,7 @@ function SidebarContent() {
       </ScrollArea>
       <div className="px-3 pb-4 pt-2 border-t border-border/50 mt-auto">
         <a
-          href="https://github.com/Create-Node-App/cna-templates"
+          href="https://github.com/Create-Python-App/cpa-templates"
           target="_blank"
           rel="noreferrer"
           className="flex items-center gap-2 text-xs text-muted-foreground hover:text-foreground transition-colors"

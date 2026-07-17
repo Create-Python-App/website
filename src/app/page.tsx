@@ -16,23 +16,25 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { getTemplatesData } from '@/lib/data';
 
-const PRIMARY_COMMAND = 'npm create awesome-node-app@latest my-app';
+const PRIMARY_COMMAND = 'uvx create-awesome-python-app my-app';
 
 export default async function Home() {
   const { templates, categories } = await getTemplatesData();
 
-  const saasTemplate = templates.find((t) => t.slug === 'nextjs-saas-ai-starter');
-  const otherTemplates = templates.filter((t) => t.slug !== 'nextjs-saas-ai-starter');
-  const featuredTemplates = saasTemplate ? [saasTemplate, ...otherTemplates].slice(0, 3) : templates.slice(0, 3);
+  const flagshipTemplate = templates.find((t) => t.slug === 'fastapi-starter');
+  const otherTemplates = templates.filter((t) => t.slug !== 'fastapi-starter');
+  const featuredTemplates = flagshipTemplate
+    ? [flagshipTemplate, ...otherTemplates].slice(0, 3)
+    : templates.slice(0, 3);
 
   return (
     <div className="flex min-h-screen flex-col">
       <main className="flex-1">
         <AnnouncementBanner
           message={
-            <>New: Next.js SaaS AI Starter — multi-tenant SaaS with AI, Auth.js v5, Drizzle + pgvector, and more.</>
+            <>New: FastAPI Starter — production-ready API with uv, Ruff, pytest, and composable Python extensions.</>
           }
-          ctaHref="/templates/nextjs-saas-ai-starter"
+          ctaHref="/templates/fastapi-starter"
           ctaLabel="Explore template"
         />
         <HeroSection
@@ -43,7 +45,7 @@ export default async function Home() {
               <span className="text-gradient-primary animate-gradient-text">in one command.</span>
             </>
           }
-          description="Choose a template, add addons, and ship a production-ready Node, Web, or AI-ready app from a cozy developer workbench."
+          description="Choose a template, add extensions, and ship a production-ready FastAPI, Django, Celery, or CLI app from a cozy developer workbench."
           actions={
             <>
               <CopyButton
@@ -82,7 +84,7 @@ export default async function Home() {
                   Start with a solid foundation
                 </h2>
                 <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed">
-                  Curated starters for frontend, full-stack, and SaaS — not a dump of every option.
+                  Curated starters for APIs, workers, CLIs, and uv workspaces — not a dump of every option.
                 </p>
               </div>
             </div>
@@ -183,19 +185,19 @@ export default async function Home() {
                   </CardHeader>
                   <CardContent className="space-y-3">
                     <div className="bg-muted rounded-md p-4 font-mono text-sm overflow-x-auto">
-                      <p className="text-teal-700 dark:text-teal-300">$ npm create awesome-node-app@latest my-app \</p>
-                      <p className="pl-4">--template react-vite-boilerplate \</p>
-                      <p className="pl-4">--addons tailwind-css zustand github-setup</p>
+                      <p className="text-teal-700 dark:text-teal-300">$ uvx create-awesome-python-app my-app \</p>
+                      <p className="pl-4">--template fastapi-starter \</p>
+                      <p className="pl-4">--addons python-docker github-setup</p>
                     </div>
                     <CopyButton
-                      command="npm create awesome-node-app@latest my-app -- --template react-vite-boilerplate --addons tailwind-css zustand github-setup --no-interactive"
+                      command="uvx create-awesome-python-app my-app --template fastapi-starter --addons python-docker github-setup --no-interactive"
                       variant="outline"
                       className="w-full"
                     />
                   </CardContent>
                   <CardFooter>
                     <p className="text-sm text-muted-foreground">
-                      Generates a React app with Tailwind, Zustand, GitHub setup, and AI-ready conventions when enabled.
+                      Generates a FastAPI app with uv tooling, Docker packaging, and GitHub Actions setup.
                     </p>
                   </CardFooter>
                 </Card>

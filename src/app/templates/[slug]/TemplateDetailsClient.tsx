@@ -16,12 +16,16 @@ import type { Extension, Template } from '@/lib/schemas';
 
 function getTemplateIcon(type: string) {
   switch (type) {
-    case 'react':
-    case 'vue':
-      return <Code className="h-6 w-6 text-primary" />;
-    case 'nestjs':
-    case 'express':
+    case 'fastapi-backend':
       return <Server className="h-6 w-6 text-primary" />;
+    case 'django-backend':
+      return <Code className="h-6 w-6 text-primary" />;
+    case 'cli-app':
+      return <Code className="h-6 w-6 text-primary" />;
+    case 'celery-worker':
+      return <Package className="h-6 w-6 text-primary" />;
+    case 'uv-workspace':
+      return <Package className="h-6 w-6 text-primary" />;
     default:
       return <Package className="h-6 w-6 text-primary" />;
   }
@@ -112,11 +116,11 @@ export function TemplateDetailsClient({ template, compatibleExtensions }: Templa
                       Key Benefits
                     </h3>
                     <ul>
-                      <li>Pre-configured development environment</li>
-                      <li>Modern tooling and best practices</li>
-                      <li>TypeScript support out of the box</li>
-                      <li>Linting and formatting setup</li>
-                      <li>Testing infrastructure ready to go</li>
+                      <li>Pre-configured uv project with lockfile workflow</li>
+                      <li>Ruff, pytest, and type checking out of the box</li>
+                      <li>Python 3.12+ with modern typing patterns</li>
+                      <li>AGENTS.md for AI assistant guardrails</li>
+                      <li>Extension-ready structure for Docker, Postgres, and CI</li>
                     </ul>
                   </div>
                 </TabsContent>
@@ -127,7 +131,7 @@ export function TemplateDetailsClient({ template, compatibleExtensions }: Templa
                     </h3>
                     <p>To use this template, run the following command:</p>
                     <div className="bg-muted rounded-md p-4 font-mono text-sm overflow-x-auto shimmer">
-                      <p>npx create-awesome-node-app --template {template.slug}</p>
+                      <p>uvx create-awesome-python-app --template {template.slug}</p>
                     </div>
                     <h3 className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-teal-600">
                       With Extensions
@@ -135,7 +139,7 @@ export function TemplateDetailsClient({ template, compatibleExtensions }: Templa
                     <p>You can also add extensions to enhance your template:</p>
                     <div className="bg-muted rounded-md p-4 font-mono text-sm overflow-x-auto shimmer">
                       <p>
-                        npx create-awesome-node-app --template {template.slug} --addons{' '}
+                        uvx create-awesome-python-app --template {template.slug} --addons{' '}
                         {compatibleExtensions.length >= 2
                           ? `${compatibleExtensions[0].slug} ${compatibleExtensions[1].slug}`
                           : compatibleExtensions.length === 1
@@ -153,20 +157,20 @@ export function TemplateDetailsClient({ template, compatibleExtensions }: Templa
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 not-prose mt-4">
                       {[
                         {
-                          title: 'TypeScript Support',
-                          desc: 'Full TypeScript integration with properly configured tsconfig.',
+                          title: 'uv & pyproject.toml',
+                          desc: 'Dependencies and scripts managed with uv and a single pyproject.toml.',
                         },
                         {
-                          title: 'Modern Tooling',
-                          desc: 'ESLint, Prettier, and other tools preconfigured for code quality.',
+                          title: 'Quality tooling',
+                          desc: 'Ruff, pytest, and mypy/pyright preconfigured for Python 3.12+.',
                         },
                         {
-                          title: 'Testing Setup',
-                          desc: 'Testing framework and utilities ready for unit and integration tests.',
+                          title: 'Testing setup',
+                          desc: 'pytest fixtures and examples ready for unit and integration tests.',
                         },
                         {
-                          title: 'Optimized Build',
-                          desc: 'Production-ready build configuration for optimal performance.',
+                          title: 'Production patterns',
+                          desc: 'Settings, health checks, and extension hooks aligned with CPA best practices.',
                         },
                       ].map((f) => (
                         <Card key={f.title} className="bg-background/50 backdrop-blur-sm border-primary/10">
@@ -194,14 +198,14 @@ export function TemplateDetailsClient({ template, compatibleExtensions }: Templa
                 </CardHeader>
                 <CardContent>
                   <div className="bg-muted rounded-md p-4 font-mono text-sm overflow-x-auto mb-4">
-                    <p className="text-green-500">$ npx create-awesome-node-app \</p>
+                    <p className="text-green-500">$ uvx create-awesome-python-app \</p>
                     <p className="pl-4">--template {template.slug}</p>
                   </div>
                 </CardContent>
                 <CardFooter className="flex flex-col items-start gap-4">
                   <CopyButton
                     className="w-full bg-gradient-to-r from-primary to-teal-600 hover:from-primary/90 hover:to-teal-600/90 glow transition-all duration-300"
-                    command={`npx create-awesome-node-app --template ${template.slug}`}
+                    command={`uvx create-awesome-python-app --template ${template.slug}`}
                   />
                   <Link href={template.url} className="w-full" target="_blank" rel="noopener noreferrer">
                     <Button
@@ -332,7 +336,7 @@ export function TemplateDetailsClient({ template, compatibleExtensions }: Templa
                 Ready to Build?
               </h2>
               <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                Start creating your awesome Node.js app with this template
+                Start creating your awesome Python app with this template
               </p>
             </div>
             <div className="flex flex-col gap-2 min-[400px]:flex-row">
@@ -340,7 +344,7 @@ export function TemplateDetailsClient({ template, compatibleExtensions }: Templa
                 size="lg"
                 className="bg-gradient-to-r from-primary to-teal-600 hover:from-primary/90 hover:to-teal-600/90 glow transition-all duration-300"
                 onClick={() => {
-                  navigator.clipboard?.writeText?.(`npx create-awesome-node-app --template ${template.slug}`);
+                  navigator.clipboard?.writeText?.(`uvx create-awesome-python-app --template ${template.slug}`);
                 }}
               >
                 Get Started

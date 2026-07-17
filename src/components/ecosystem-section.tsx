@@ -24,10 +24,28 @@ interface EcosystemEntry {
 
 const ECOSYSTEM: EcosystemEntry[] = [
   {
+    name: 'Create Python App',
+    slug: 'create-python-app',
+    description:
+      'Composition-first scaffolding for Python — FastAPI, Django, Celery, CLIs, and uv workspaces with composable extensions.',
+    status: 'production',
+    href: 'https://github.com/Create-Python-App',
+    colors: {
+      node1: '#3b82f6',
+      node2: '#16a34a',
+      gradStart: '#3b82f6',
+      gradEnd: '#16a34a',
+      glow: 'rgba(59,130,246,0.12)',
+      border: 'rgba(59,130,246,0.25)',
+      badge: 'rgba(59,130,246,0.12)',
+      badgeText: '#60a5fa',
+    },
+  },
+  {
     name: 'Create Node App',
     slug: 'create-node-app',
     description:
-      'The original. 10 templates and 51 extensions for the full Node.js ecosystem — React, NestJS, Next.js, Remix, Astro, Hono, and more.',
+      'The original. Templates and extensions for the full Node.js ecosystem — React, NestJS, Next.js, Remix, Astro, Hono, and more.',
     status: 'production',
     href: 'https://github.com/Create-Node-App',
     colors: {
@@ -39,23 +57,6 @@ const ECOSYSTEM: EcosystemEntry[] = [
       border: 'hsl(var(--primary)/0.25)',
       badge: 'hsl(var(--primary)/0.12)',
       badgeText: 'hsl(var(--primary))',
-    },
-  },
-  {
-    name: 'Create Python App',
-    slug: 'create-python-app',
-    description: 'The same composition-first philosophy for Python — FastAPI, Django, Flask, and more. Coming soon.',
-    status: 'planned',
-    href: 'https://github.com/Create-Python-App',
-    colors: {
-      node1: '#3b82f6',
-      node2: '#16a34a',
-      gradStart: '#3b82f6',
-      gradEnd: '#16a34a',
-      glow: 'rgba(59,130,246,0.12)',
-      border: 'rgba(59,130,246,0.25)',
-      badge: 'rgba(59,130,246,0.12)',
-      badgeText: '#60a5fa',
     },
   },
   {
@@ -147,7 +148,7 @@ export function EcosystemSection() {
             </span>
           </h2>
           <p className="max-w-2xl text-muted-foreground md:text-lg">
-            The composition-first scaffolding approach is coming to more ecosystems. Start with Node.js today — Python
+            The composition-first scaffolding approach is coming to more ecosystems. Start with Python today — Node.js
             and V are on the way.
           </p>
         </div>
