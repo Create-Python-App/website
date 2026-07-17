@@ -9,6 +9,7 @@ Marketing and documentation site for create-python-app.
 - Next.js 15 (App Router)
 - TypeScript
 - Tailwind CSS v3
+- Node.js 24.17.0 (see `.node-version`)
 - pnpm 10+
 
 ## Key Commands
