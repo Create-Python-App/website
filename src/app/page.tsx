@@ -187,10 +187,10 @@ export default async function Home() {
                     <div className="bg-muted rounded-md p-4 font-mono text-sm overflow-x-auto">
                       <p className="text-green-700 dark:text-green-300">$ uvx create-awesome-python-app my-app \</p>
                       <p className="pl-4">--template fastapi-starter \</p>
-                      <p className="pl-4">--addons python-docker github-setup</p>
+                      <p className="pl-4">--addons fastapi-docker github-setup</p>
                     </div>
                     <CopyButton
-                      command="uvx create-awesome-python-app my-app --template fastapi-starter --addons python-docker github-setup --no-interactive"
+                      command="uvx create-awesome-python-app my-app --template fastapi-starter --addons fastapi-docker github-setup --no-interactive"
                       variant="outline"
                       className="w-full"
                     />

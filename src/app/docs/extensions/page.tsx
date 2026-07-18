@@ -1,4 +1,15 @@
-import { ArrowLeft, ArrowRight, Cloud, Code, Container, Database, Monitor, Shield, Terminal, Wrench } from 'lucide-react';
+import {
+  ArrowLeft,
+  ArrowRight,
+  Cloud,
+  Code,
+  Container,
+  Database,
+  Monitor,
+  Shield,
+  Terminal,
+  Wrench,
+} from 'lucide-react';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 
@@ -24,25 +35,25 @@ const categories = [
     name: 'Containers',
     description: 'Docker images and Compose stacks for local and production runs.',
     icon: <Container className="h-5 w-5 text-primary" />,
-    examples: ['python-docker'],
+    examples: ['fastapi-docker', 'django-docker', 'celery-docker'],
   },
   {
     name: 'Database',
     description: 'PostgreSQL services, ORM helpers, and migration scaffolding.',
     icon: <Database className="h-5 w-5 text-primary" />,
-    examples: ['python-postgres', 'python-sqlalchemy', 'python-redis'],
+    examples: ['postgres', 'fastapi-sqlalchemy', 'fastapi-redis'],
   },
   {
     name: 'Observability',
     description: 'Error tracking and production diagnostics.',
     icon: <Monitor className="h-5 w-5 text-primary" />,
-    examples: ['python-sentry'],
+    examples: ['fastapi-sentry'],
   },
   {
     name: 'Security',
     description: 'Authentication and authorization skeletons.',
     icon: <Shield className="h-5 w-5 text-primary" />,
-    examples: ['python-auth-jwt'],
+    examples: ['fastapi-auth-jwt'],
   },
   {
     name: 'CI & GitHub',
@@ -54,19 +65,19 @@ const categories = [
     name: 'Developer Experience',
     description: 'Editor integrations and remote development environments.',
     icon: <Terminal className="h-5 w-5 text-primary" />,
-    examples: ['python-devcontainer'],
+    examples: ['development-container'],
   },
   {
     name: 'API & Services',
     description: 'Backend-focused add-ons for FastAPI and similar templates.',
     icon: <Code className="h-5 w-5 text-primary" />,
-    examples: ['python-sqlalchemy', 'python-redis', 'python-auth-jwt'],
+    examples: ['fastapi-sqlalchemy', 'fastapi-redis', 'fastapi-auth-jwt'],
   },
   {
     name: 'Tooling',
     description: 'Cross-cutting workflow improvements for Python projects.',
     icon: <Wrench className="h-5 w-5 text-primary" />,
-    examples: ['github-setup', 'python-devcontainer'],
+    examples: ['github-setup', 'development-container'],
   },
 ];
 
@@ -102,8 +113,8 @@ export default function DocsExtensionsPage() {
             <div className="rounded-md bg-muted p-4">
               <pre className="text-sm overflow-x-auto">
                 <code>
-                  uvx create-awesome-python-app@latest my-app --template fastapi-starter --addons python-docker
-                  python-postgres github-setup
+                  uvx create-awesome-python-app@latest my-app --template fastapi-starter --addons fastapi-docker
+                  postgres github-setup
                 </code>
               </pre>
             </div>

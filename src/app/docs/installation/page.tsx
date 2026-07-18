@@ -327,7 +327,7 @@ makepkg -si`}</pre>
                       <pre className="text-sm font-mono overflow-x-auto">{`docker run --rm -it \\
   -v "\${PWD}:/app" -w /app \\
   ulisesjeremias/create-awesome-python-app:0.2.0 \\
-  my-app --template fastapi-starter --addons python-docker github-setup --no-interactive`}</pre>
+  my-app --template fastapi-starter --addons fastapi-docker github-setup --no-interactive`}</pre>
                     </div>
                   </div>
                   <div>

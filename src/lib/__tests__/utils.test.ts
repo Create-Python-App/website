@@ -45,7 +45,7 @@ describe('validateExtension', () => {
     const validData = {
       name: 'Tailwind CSS',
       description: 'Add Tailwind CSS.',
-      url: 'https://github.com/Create-Python-App/cpa-templates/tree/main/extensions/python-docker',
+      url: 'https://github.com/Create-Python-App/cpa-templates/tree/main/extensions/fastapi-docker',
       type: 'react',
       category: 'UI',
       labels: ['Tailwind'],

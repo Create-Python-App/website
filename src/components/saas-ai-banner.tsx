@@ -112,7 +112,7 @@ export function SaasAiBanner() {
               <div className="p-4 sm:p-6 font-mono text-sm leading-relaxed overflow-x-auto">
                 <p className="text-green-400">$ uvx create-awesome-python-app my-api \</p>
                 <p className="text-slate-300 pl-4">--template fastapi-starter \</p>
-                <p className="text-slate-300 pl-4">--addons python-docker github-setup</p>
+                <p className="text-slate-300 pl-4">--addons fastapi-docker github-setup</p>
                 <p className="mt-4 text-slate-500"># ✅ FastAPI scaffold ready</p>
                 <p className="text-slate-500"># ✅ uv workspace + typed settings</p>
                 <p className="text-slate-500"># ✅ Compose Docker + CI extensions</p>

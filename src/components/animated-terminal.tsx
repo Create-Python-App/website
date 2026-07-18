@@ -8,7 +8,7 @@ const STACKS = [
     lines: [
       { prefix: '$', text: ' uvx create-awesome-python-app my-api', color: 'text-foreground' },
       { prefix: '✔', text: ' Template   fastapi-starter', color: 'text-green-400' },
-      { prefix: '✔', text: ' Extensions python-docker · github-setup · python-postgres', color: 'text-green-400' },
+      { prefix: '✔', text: ' Extensions fastapi-docker · github-setup · postgres', color: 'text-green-400' },
       { prefix: '✔', text: ' Syncing with uv...', color: 'text-muted-foreground' },
       { prefix: '✔', text: ' Ready. cd my-api && uv run uvicorn app.main:app --reload', color: 'text-primary' },
     ],
@@ -18,7 +18,7 @@ const STACKS = [
     lines: [
       { prefix: '$', text: ' uvx create-awesome-python-app my-cli', color: 'text-foreground' },
       { prefix: '✔', text: ' Template   cli-starter', color: 'text-green-400' },
-      { prefix: '✔', text: ' Extensions github-setup · python-devcontainer', color: 'text-green-400' },
+      { prefix: '✔', text: ' Extensions github-setup · development-container', color: 'text-green-400' },
       { prefix: '✔', text: ' Syncing with uv...', color: 'text-muted-foreground' },
       { prefix: '✔', text: ' Ready. cd my-cli && uv run my-cli --help', color: 'text-primary' },
     ],
@@ -28,9 +28,13 @@ const STACKS = [
     lines: [
       { prefix: '$', text: ' uvx create-awesome-python-app my-worker', color: 'text-foreground' },
       { prefix: '✔', text: ' Template   celery-worker', color: 'text-green-400' },
-      { prefix: '✔', text: ' Extensions python-redis · python-docker', color: 'text-green-400' },
+      { prefix: '✔', text: ' Extensions celery-docker · github-setup', color: 'text-green-400' },
       { prefix: '✔', text: ' Syncing with uv...', color: 'text-muted-foreground' },
-      { prefix: '✔', text: ' Ready. cd my-worker && uv run celery -A app worker', color: 'text-primary' },
+      {
+        prefix: '✔',
+        text: ' Ready. cd my-worker && uv run celery -A worker.celery_app worker --loglevel=INFO',
+        color: 'text-primary',
+      },
     ],
   },
 ];
