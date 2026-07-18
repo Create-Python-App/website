@@ -324,7 +324,7 @@ export default function DocsPage() {
                 <div className="rounded-md bg-muted p-4 mt-2">
                   <pre className="text-sm">
                     <code>
-                      uvx create-awesome-python-app@latest my-app --template fastapi-starter --addons python-docker
+                      uvx create-awesome-python-app@latest my-app --template fastapi-starter --addons fastapi-docker
                       github-setup
                     </code>
                   </pre>

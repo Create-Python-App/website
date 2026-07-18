@@ -140,8 +140,8 @@ export default async function DocsTemplatesPage() {
                 <div className="rounded-md bg-muted p-4">
                   <pre className="text-sm overflow-x-auto">
                     <code>
-                      uvx create-awesome-python-app@latest my-app --template fastapi-starter --addons python-docker
-                      python-postgres
+                      uvx create-awesome-python-app@latest my-app --template fastapi-starter --addons fastapi-docker
+                      postgres
                     </code>
                   </pre>
                 </div>

@@ -113,12 +113,12 @@ uv remove unused-package`}
               <div className="rounded-lg border p-4">
                 <h3 className="text-lg font-semibold mb-2">Docker</h3>
                 <p className="text-sm text-muted-foreground">
-                  The <code>python-docker</code> extension adds a Dockerfile and Compose files for local and production
+                  The <code>fastapi-docker</code> extension adds a Dockerfile and Compose files for local and production
                   container runs.
                 </p>
                 <div className="mt-4">
                   <pre className="text-xs bg-muted p-2 rounded-md overflow-x-auto">
-                    uvx create-awesome-python-app@latest my-app --template fastapi-starter --addons python-docker
+                    uvx create-awesome-python-app@latest my-app --template fastapi-starter --addons fastapi-docker
                   </pre>
                 </div>
               </div>

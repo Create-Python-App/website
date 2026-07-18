@@ -31,9 +31,7 @@ export default function TemplateCustomizationClientPage() {
                   <FileCode className="h-5 w-5 text-primary" />
                   Project Structure Customization
                 </h3>
-                <p>
-                  After scaffolding, reorganize modules to match your domain. Common patterns across CPA templates:
-                </p>
+                <p>After scaffolding, reorganize modules to match your domain. Common patterns across CPA templates:</p>
 
                 <div className="grid gap-4 md:grid-cols-2 mt-4">
                   <div className="rounded-lg border p-4">
@@ -230,13 +228,13 @@ uv remove unused-package`}
                   <ul className="list-disc pl-6 space-y-2">
                     <li>
                       <strong>Routers:</strong> Register new routers in the app factory; pair with{' '}
-                      <code>python-sqlalchemy</code> or <code>python-auth-jwt</code> when needed.
+                      <code>fastapi-sqlalchemy</code> or <code>fastapi-auth-jwt</code> when needed.
                     </li>
                     <li>
                       <strong>Settings:</strong> Extend the generated <code>Settings</code> class for new env vars.
                     </li>
                     <li>
-                      <strong>Observability:</strong> Add <code>python-sentry</code> during scaffold or wire Sentry
+                      <strong>Observability:</strong> Add <code>fastapi-sentry</code> during scaffold or wire Sentry
                       manually in lifespan hooks.
                     </li>
                   </ul>
@@ -262,11 +260,13 @@ app.include_router(users.router, prefix="/users", tags=["users"])`}
                       <code>INSTALLED_APPS</code>.
                     </li>
                     <li>
-                      <strong>DRF:</strong> Define serializers and viewsets; keep URL routing in{' '}
-                      <code>urls.py</code>.
+                      <strong>DRF:</strong> Define serializers and viewsets; keep URL routing in <code>urls.py</code>.
                     </li>
                     <li>
-                      <strong>Database:</strong> Pair with <code>python-postgres</code> for local Compose services.
+                      <strong>Database:</strong> Pair with <code>postgres</code> for local Compose services.
+                    </li>
+                    <li>
+                      <strong>Containers:</strong> Add <code>django-docker</code> for gunicorn/runserver images.
                     </li>
                   </ul>
                 </div>
@@ -311,8 +311,8 @@ def greet(name: str) -> None:
                       <strong>Shared tooling:</strong> Keep Ruff/pytest config at the workspace root.
                     </li>
                     <li>
-                      <strong>Running:</strong> Use <code>uv run --package &lt;member&gt; ...</code> to target a specific
-                      app or library.
+                      <strong>Running:</strong> Use <code>uv run --package &lt;member&gt; ...</code> to target a
+                      specific app or library.
                     </li>
                   </ul>
                 </div>
@@ -327,7 +327,9 @@ def greet(name: str) -> None:
             <div className="space-y-6 mt-6">
               <div className="space-y-2">
                 <h3 className="text-xl font-semibold">Environment Variables</h3>
-                <p>Use <code>.env</code> locally (never commit secrets) and typed settings in code:</p>
+                <p>
+                  Use <code>.env</code> locally (never commit secrets) and typed settings in code:
+                </p>
 
                 <div className="rounded-md bg-muted p-4 mt-4">
                   <pre className="text-sm overflow-x-auto">
@@ -353,7 +355,7 @@ class Settings(BaseSettings):
               <div className="space-y-2">
                 <h3 className="text-xl font-semibold">Docker & Compose</h3>
                 <p>
-                  When you scaffold with <code>python-docker</code>, customize <code>Dockerfile</code>,{' '}
+                  When you scaffold with <code>fastapi-docker</code>, customize <code>Dockerfile</code>,{' '}
                   <code>compose.yml</code>, and health checks for your deployment target. Rebuild with{' '}
                   <code>docker compose up --build</code> after changes.
                 </p>

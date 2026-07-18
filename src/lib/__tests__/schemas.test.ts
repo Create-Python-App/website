@@ -55,7 +55,7 @@ describe('extensionSchema', () => {
     const validExtension = {
       name: 'Tailwind CSS',
       description: 'Add Tailwind CSS.',
-      url: 'https://github.com/Create-Python-App/cpa-templates/tree/main/extensions/python-docker',
+      url: 'https://github.com/Create-Python-App/cpa-templates/tree/main/extensions/fastapi-docker',
       type: 'react',
       category: 'UI',
       labels: ['Tailwind', 'CSS'],
@@ -68,7 +68,7 @@ describe('extensionSchema', () => {
     const validExtension = {
       name: 'GitHub Setup',
       description: 'Add GitHub automation.',
-      url: 'https://github.com/Create-Python-App/cpa-templates/tree/main/extensions/github-setup',
+      url: 'https://github.com/Create-Python-App/cpa-templates/tree/main/extensions/all-github-setup',
       type: ['react', 'nextjs', 'backend'],
       category: 'Tooling',
       labels: ['GitHub', 'CI/CD'],
@@ -96,7 +96,7 @@ describe('templatesDataSchema', () => {
         {
           name: 'Tailwind CSS',
           description: 'Add Tailwind CSS.',
-          url: 'https://github.com/example/python-docker',
+          url: 'https://github.com/example/fastapi-docker',
           type: 'react',
           category: 'UI',
           labels: ['CSS'],
