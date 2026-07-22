@@ -175,7 +175,7 @@ export function LayoutShell({ children }: { children: ReactNode }) {
                       </span>
                     </Link>
                     <Link
-                      href="https://create-vlang-app.vercel.app"
+                      href="https://create-awesome-vlang-app.vercel.app"
                       target="_blank"
                       rel="noreferrer"
                       className="flex items-center gap-2 text-sm transition-colors hover:text-foreground"

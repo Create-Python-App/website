@@ -65,7 +65,7 @@ const ECOSYSTEM: EcosystemEntry[] = [
     description:
       'Scaffolding for the V language — by a V core team member and author of vsl, vtl, rxv, and setup-v. Shipped at 0.1.0.',
     status: 'production',
-    href: 'https://create-vlang-app.vercel.app',
+    href: 'https://create-awesome-vlang-app.vercel.app',
     colors: {
       node1: '#a78bfa',
       node2: '#06b6d4',
