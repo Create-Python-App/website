@@ -22,11 +22,11 @@ describe('validateTemplate', () => {
   it('should return data for valid template', () => {
     const validData = {
       name: 'FastAPI Starter',
-      description: 'A fast React boilerplate.',
+      description: 'A FastAPI starter.',
       url: 'https://github.com/Create-Python-App/cpa-templates/tree/main/templates/fastapi-starter',
       type: 'react',
       category: 'frontend-applications',
-      labels: ['React', 'Vite'],
+      labels: ['FastAPI', 'uv'],
       slug: 'fastapi-starter',
     };
     const result = validateTemplate(validData);

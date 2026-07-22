@@ -10,12 +10,15 @@ interface TemplateCardProps {
 }
 
 const categoryColors: Record<string, string> = {
-  'frontend-applications': 'border-l-blue-500',
   'backend-applications': 'border-l-green-500',
-  'full-stack-applications': 'border-l-violet-500',
-  'monorepo-boilerplate': 'border-l-blue-500',
-  'user-acceptance-testing': 'border-l-orange-500',
-  'web-extension': 'border-l-cyan-500',
+  ci: 'border-l-emerald-500',
+  containers: 'border-l-blue-500',
+  database: 'border-l-green-600',
+  editor: 'border-l-sky-500',
+  'cli-applications': 'border-l-cyan-500',
+  observability: 'border-l-violet-500',
+  security: 'border-l-amber-500',
+  monorepo: 'border-l-lime-500',
 };
 
 export function TemplateCard({ template }: TemplateCardProps) {
