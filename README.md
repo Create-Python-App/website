@@ -3,6 +3,7 @@
 [![PyPI](https://img.shields.io/pypi/v/create-awesome-python-app?style=flat-square&color=3776ab)](https://pypi.org/project/create-awesome-python-app/)
 [![Templates](https://img.shields.io/badge/templates-cpa--templates-blue?style=flat-square)](https://github.com/Create-Python-App/cpa-templates)
 [![GitHub org](https://img.shields.io/badge/GitHub-Create--Python--App-black?style=flat-square&logo=github)](https://github.com/Create-Python-App)
+[![Discord](https://img.shields.io/discord/1527933660764831825?style=flat-square&label=Discord&logo=discord&logoColor=white)](https://discord.gg/dwFTsR7fK2)
 
 This is the official website for [Create Awesome Python App](https://pypi.org/project/create-awesome-python-app/), a tool that helps you quickly set up Python projects with best practices and modern tooling (uv-first).
 
