@@ -13,8 +13,6 @@
 
 </div>
 
----
-
 ## Install the CLI
 
 ```bash
