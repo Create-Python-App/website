@@ -7,8 +7,8 @@ describe('categorySchema', () => {
       slug: 'frontend-applications',
       name: 'Frontend Applications',
       description: 'Templates for building web interfaces.',
-      details: 'Discover templates for React, Vue, and other frameworks.',
-      labels: ['Frontend', 'UI', 'React'],
+      details: 'Discover templates for FastAPI, Django, and CLIs.',
+      labels: ['API', 'FastAPI', 'Python'],
     };
     expect(categorySchema.safeParse(validCategory).success).toBe(true);
   });
@@ -26,11 +26,11 @@ describe('templateSchema', () => {
   it('should validate a valid template', () => {
     const validTemplate = {
       name: 'FastAPI Starter',
-      description: 'A fast React boilerplate with Vite.',
+      description: 'A FastAPI API starter with uv.',
       url: 'https://github.com/Create-Python-App/cpa-templates/tree/main/templates/fastapi-starter',
       type: 'react',
       category: 'frontend-applications',
-      labels: ['React', 'Vite', 'TypeScript'],
+      labels: ['FastAPI', 'uv', 'Python'],
       slug: 'fastapi-starter',
     };
     expect(templateSchema.safeParse(validTemplate).success).toBe(true);
@@ -39,11 +39,11 @@ describe('templateSchema', () => {
   it('should reject a template with invalid url', () => {
     const invalidTemplate = {
       name: 'FastAPI Starter',
-      description: 'A fast React boilerplate.',
+      description: 'A FastAPI starter.',
       url: 'not-a-url',
       type: 'react',
       category: 'frontend-applications',
-      labels: ['React'],
+      labels: ['fastapi'],
       slug: 'fastapi-starter',
     };
     expect(templateSchema.safeParse(invalidTemplate).success).toBe(false);
@@ -84,11 +84,11 @@ describe('templatesDataSchema', () => {
       templates: [
         {
           name: 'FastAPI Starter',
-          description: 'A fast React boilerplate.',
+          description: 'A FastAPI starter.',
           url: 'https://github.com/example/fastapi-starter',
           type: 'react',
           category: 'frontend-applications',
-          labels: ['React'],
+          labels: ['fastapi'],
           slug: 'fastapi-starter',
         },
       ],

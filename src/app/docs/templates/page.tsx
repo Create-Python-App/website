@@ -50,7 +50,7 @@ export default async function DocsTemplatesPage() {
               <Link href="/docs/extensions" className="text-primary hover:underline">
                 extensions
               </Link>{' '}
-              on top of it to add functionality like state management, testing, or UI libraries.
+              on top of it to add functionality like Docker, Postgres overlays, or CI workflows.
             </p>
 
             <div className="rounded-md bg-muted p-4">

@@ -1,4 +1,4 @@
-import { ArrowRight, Code, Database, GitBranch, Globe, Layers, TestTube } from 'lucide-react';
+import { ArrowRight, Box, Code, Container, Database, Eye, GitBranch, Layers, Shield, Terminal } from 'lucide-react';
 import Link from 'next/link';
 import type React from 'react';
 
@@ -11,54 +11,72 @@ interface TemplateCategoriesProps {
 }
 
 export function TemplateCategories({ categories }: TemplateCategoriesProps) {
-  // Map of category slugs to their respective icons
   const categoryIcons: Record<string, React.ReactNode> = {
-    'frontend-applications': <Code className="h-5 w-5 text-primary" />,
-    'backend-applications': <Database className="h-5 w-5 text-green-600" />,
-    'fullstack-applications': <Layers className="h-5 w-5 text-blue-500" />,
-    'monorepo-boilerplate': <GitBranch className="h-5 w-5 text-green-500" />,
-    'user-acceptance-testing': <TestTube className="h-5 w-5 text-blue-500" />,
-    'web-extension': <Globe className="h-5 w-5 text-blue-500" />,
+    'backend-applications': <Code className="h-5 w-5 text-primary" />,
+    ci: <GitBranch className="h-5 w-5 text-green-500" />,
+    containers: <Container className="h-5 w-5 text-blue-500" />,
+    database: <Database className="h-5 w-5 text-green-600" />,
+    editor: <Box className="h-5 w-5 text-blue-400" />,
+    'cli-applications': <Terminal className="h-5 w-5 text-cyan-600" />,
+    observability: <Eye className="h-5 w-5 text-violet-500" />,
+    security: <Shield className="h-5 w-5 text-amber-500" />,
+    monorepo: <Layers className="h-5 w-5 text-green-500" />,
   };
 
-  // Map of category slugs to their respective color classes
   const categoryColors: Record<string, { bg: string; hover: string; border: string }> = {
-    'frontend-applications': {
+    'backend-applications': {
       bg: 'from-primary/20 to-green-600/20',
       hover: 'from-primary/40 to-green-600/40',
       border: 'border-primary/40',
     },
-    'backend-applications': {
-      bg: 'from-green-600/20 to-blue-500/20',
-      hover: 'from-green-600/40 to-blue-500/40',
-      border: 'border-green-600/40',
-    },
-    'fullstack-applications': {
-      bg: 'from-blue-500/20 to-green-600/20',
-      hover: 'from-blue-500/40 to-green-600/40',
-      border: 'border-blue-500/40',
-    },
-    'monorepo-boilerplate': {
-      bg: 'from-green-500/20 to-green-500/20',
-      hover: 'from-green-500/40 to-green-500/40',
+    ci: {
+      bg: 'from-green-500/20 to-blue-500/20',
+      hover: 'from-green-500/40 to-blue-500/40',
       border: 'border-green-500/40',
     },
-    'user-acceptance-testing': {
-      bg: 'from-blue-500/20 to-orange-500/20',
-      hover: 'from-blue-500/40 to-orange-500/40',
-      border: 'border-blue-500/40',
-    },
-    'web-extension': {
+    containers: {
       bg: 'from-blue-500/20 to-cyan-500/20',
       hover: 'from-blue-500/40 to-cyan-500/40',
       border: 'border-blue-500/40',
     },
+    database: {
+      bg: 'from-green-600/20 to-blue-500/20',
+      hover: 'from-green-600/40 to-blue-500/40',
+      border: 'border-green-600/40',
+    },
+    editor: {
+      bg: 'from-blue-400/20 to-primary/20',
+      hover: 'from-blue-400/40 to-primary/40',
+      border: 'border-blue-400/40',
+    },
+    'cli-applications': {
+      bg: 'from-cyan-500/20 to-green-600/20',
+      hover: 'from-cyan-500/40 to-green-600/40',
+      border: 'border-cyan-500/40',
+    },
+    observability: {
+      bg: 'from-violet-500/20 to-blue-500/20',
+      hover: 'from-violet-500/40 to-blue-500/40',
+      border: 'border-violet-500/40',
+    },
+    security: {
+      bg: 'from-amber-500/20 to-green-600/20',
+      hover: 'from-amber-500/40 to-green-600/40',
+      border: 'border-amber-500/40',
+    },
+    monorepo: {
+      bg: 'from-green-500/20 to-primary/20',
+      hover: 'from-green-500/40 to-primary/40',
+      border: 'border-green-500/40',
+    },
   };
+
+  const fallback = categoryColors['backend-applications'];
 
   return (
     <>
       {categories.map((category) => {
-        const colors = categoryColors[category.slug] || categoryColors['frontend-applications'];
+        const colors = categoryColors[category.slug] || fallback;
         const icon = categoryIcons[category.slug] || <Code className="h-5 w-5 text-primary" />;
 
         return (

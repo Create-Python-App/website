@@ -63,9 +63,9 @@ const ECOSYSTEM: EcosystemEntry[] = [
     name: 'Create Vlang App',
     slug: 'create-vlang-app',
     description:
-      'Scaffolding for the V language — by a V core team member and author of vsl, vtl, rxv, and setup-v. Coming soon.',
-    status: 'planned',
-    href: 'https://github.com/Create-Vlang-App',
+      'Scaffolding for the V language — by a V core team member and author of vsl, vtl, rxv, and setup-v. Shipped at 0.1.0.',
+    status: 'production',
+    href: 'https://create-vlang-app.vercel.app',
     colors: {
       node1: '#a78bfa',
       node2: '#06b6d4',
@@ -150,7 +150,7 @@ export function EcosystemSection() {
           </h2>
           <p className="max-w-2xl text-muted-foreground md:text-lg">
             The composition-first scaffolding approach spans ecosystems. Start with Python Beta today — Node.js is
-            production-ready, and V is on the way.
+            production-ready, and Create Vlang App is live.
           </p>
         </div>
 

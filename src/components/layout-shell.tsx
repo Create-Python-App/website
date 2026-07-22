@@ -175,7 +175,7 @@ export function LayoutShell({ children }: { children: ReactNode }) {
                       </span>
                     </Link>
                     <Link
-                      href="https://github.com/Create-Vlang-App"
+                      href="https://create-vlang-app.vercel.app"
                       target="_blank"
                       rel="noreferrer"
                       className="flex items-center gap-2 text-sm transition-colors hover:text-foreground"
@@ -183,7 +183,7 @@ export function LayoutShell({ children }: { children: ReactNode }) {
                       <span className="h-2 w-2 rounded-full bg-violet-500 shrink-0" />
                       <span className="text-muted-foreground hover:text-foreground transition-colors">
                         V language
-                        <span className="ml-1.5 text-[10px] font-medium text-muted-foreground">soon</span>
+                        <span className="ml-1.5 text-[10px] font-medium text-primary/80">live</span>
                       </span>
                     </Link>
                   </nav>
