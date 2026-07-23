@@ -4,7 +4,7 @@ import { Gauge, Github, Menu, Package, Search } from 'lucide-react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
-import { DiscordIcon } from '@/components/discord-icon';
+import { CommunityLogo } from '@/components/community-logo';
 import { usePerformanceMode } from '@/components/performance-provider';
 import { ThemeToggle } from '@/components/theme-toggle';
 import { Button } from '@/components/ui/button';
@@ -143,7 +143,7 @@ export function SiteHeader({ onOpenCommand }: { onOpenCommand?: () => void }) {
           </Link>
           <Link href={DISCORD_INVITE_URL} target="_blank" rel="noreferrer" aria-label="Discord Community">
             <Button variant="ghost" size="icon" className="hidden sm:inline-flex">
-              <DiscordIcon className="h-5 w-5" />
+              <CommunityLogo size={20} className="rounded" />
             </Button>
           </Link>
           <Link href="https://github.com/Create-Python-App" target="_blank" aria-label="GitHub">
