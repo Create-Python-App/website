@@ -35,7 +35,9 @@ export default async function Home() {
         <AnnouncementBanner
           icon={<DiscordIcon className="h-5 w-5 shrink-0 text-yellow-200" />}
           label="NEW"
-          message={<>Join Create Awesome on Discord — chat, good first issues, and collab across Node / Python / V.</>}
+          message={
+            <>Join Create Awesome on Discord — chat, good first issues, and collaboration across Node / Python / V.</>
+          }
           ctaHref={DISCORD_INVITE_URL}
           ctaLabel="Join Discord"
           ctaExternal
