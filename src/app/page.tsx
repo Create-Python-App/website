@@ -3,9 +3,10 @@ import Link from 'next/link';
 import { AnimatedGradient } from '@/components/animated-gradient';
 import { AnimatedTerminal } from '@/components/animated-terminal';
 import { AnnouncementBanner } from '@/components/announcement-banner';
+import { CommunityLogo } from '@/components/community-logo';
 import { ContributorsSection } from '@/components/contributors-section';
 import { CopyButton } from '@/components/copy-button';
-import { DiscordIcon } from '@/components/discord-icon';
+import { DiscordCommunitySection } from '@/components/discord-community-section';
 import { EcosystemSection } from '@/components/ecosystem-section';
 import { FeaturedTemplate } from '@/components/featured-template';
 import { HeroSection } from '@/components/hero-section';
@@ -33,7 +34,7 @@ export default async function Home() {
     <div className="flex min-h-screen flex-col">
       <main className="flex-1">
         <AnnouncementBanner
-          icon={<DiscordIcon className="h-5 w-5 shrink-0 text-yellow-200" />}
+          icon={<CommunityLogo size={20} className="shrink-0 rounded" />}
           label="NEW"
           message={
             <>Join Create Awesome on Discord — chat, good first issues, and collaboration across Node / Python / V.</>
@@ -212,6 +213,8 @@ export default async function Home() {
         </section>
 
         <ContributorsSection />
+
+        <DiscordCommunitySection />
 
         <EcosystemSection />
 
