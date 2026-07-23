@@ -4,10 +4,12 @@ import { Gauge, Github, Menu, Package, Search } from 'lucide-react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
+import { DiscordIcon } from '@/components/discord-icon';
 import { usePerformanceMode } from '@/components/performance-provider';
 import { ThemeToggle } from '@/components/theme-toggle';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
+import { DISCORD_INVITE_URL } from '@/lib/community';
 import { cn } from '@/lib/utils';
 
 interface NavItem {
@@ -137,6 +139,11 @@ export function SiteHeader({ onOpenCommand }: { onOpenCommand?: () => void }) {
           <Link href="https://pypi.org/project/create-awesome-python-app/" target="_blank" aria-label="PyPI Package">
             <Button variant="ghost" size="icon" className="hidden sm:inline-flex">
               <Package className="h-5 w-5" />
+            </Button>
+          </Link>
+          <Link href={DISCORD_INVITE_URL} target="_blank" rel="noreferrer" aria-label="Discord Community">
+            <Button variant="ghost" size="icon" className="hidden sm:inline-flex">
+              <DiscordIcon className="h-5 w-5" />
             </Button>
           </Link>
           <Link href="https://github.com/Create-Python-App" target="_blank" aria-label="GitHub">
