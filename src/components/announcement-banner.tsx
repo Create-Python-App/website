@@ -11,7 +11,7 @@ const bannerVariants = cva(
   {
     variants: {
       variant: {
-        gradient: 'bg-gradient-to-r from-blue-600 via-blue-500 to-green-600 text-white',
+        gradient: 'bg-gradient-to-r from-amber-600 via-amber-500 to-teal-600 text-white',
         subtle: 'bg-[hsl(var(--background))] border-b border-border/60 text-foreground/90 dark:text-foreground/80',
         accent: 'bg-[hsl(var(--primary)/0.15)] text-foreground',
       },
@@ -31,6 +31,7 @@ export interface AnnouncementBannerProps extends VariantProps<typeof bannerVaria
   message: ReactNode;
   ctaHref?: string;
   ctaLabel?: string;
+  ctaExternal?: boolean;
   className?: string;
   dismissible?: boolean; // future enhancement
 }
@@ -41,17 +42,37 @@ export function AnnouncementBanner({
   message,
   ctaHref,
   ctaLabel = 'Learn more',
+  ctaExternal = false,
   className,
   variant,
   size,
 }: AnnouncementBannerProps) {
+  const ctaClassName =
+    'inline-flex shrink-0 items-center gap-1 underline underline-offset-4 decoration-white/40 hover:decoration-white transition-colors group';
+  const ctaArrow = (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className="h-4 w-4 group-hover:translate-x-1 transition-transform"
+      aria-hidden="true"
+    >
+      <path d="M5 12h14" />
+      <path d="m12 5 7 7-7 7" />
+    </svg>
+  );
+
   return (
     <div className={cn(bannerVariants({ variant, size }), className)}>
       <div className="absolute inset-0 pointer-events-none select-none overflow-hidden" aria-hidden>
         {variant === 'gradient' && (
           <>
             <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center opacity-40 [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]" />
-            <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 via-blue-400/15 to-green-500/20 animate-gradient-text" />
+            <div className="absolute inset-0 bg-gradient-to-r from-amber-500/20 via-amber-400/15 to-teal-500/20 animate-gradient-text" />
           </>
         )}
       </div>
@@ -63,27 +84,18 @@ export function AnnouncementBanner({
           </span>
         )}
         <span className="min-w-0 text-balance">{message}</span>
-        {ctaHref && (
-          <Link
-            href={ctaHref}
-            className="inline-flex shrink-0 items-center gap-1 underline underline-offset-4 decoration-white/40 hover:decoration-white transition-colors group"
-          >
-            {ctaLabel}
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="h-4 w-4 group-hover:translate-x-1 transition-transform"
-            >
-              <path d="M5 12h14" />
-              <path d="m12 5 7 7-7 7" />
-            </svg>
-          </Link>
-        )}
+        {ctaHref &&
+          (ctaExternal ? (
+            <a href={ctaHref} target="_blank" rel="noreferrer" className={ctaClassName}>
+              {ctaLabel}
+              {ctaArrow}
+            </a>
+          ) : (
+            <Link href={ctaHref} className={ctaClassName}>
+              {ctaLabel}
+              {ctaArrow}
+            </Link>
+          ))}
       </div>
     </div>
   );
