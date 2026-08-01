@@ -62,7 +62,7 @@ export default function InstallationPage() {
           </p>
         </div>
 
-        <Alert>
+        <Alert lang="es">
           <Terminal className="h-4 w-4" />
           <AlertTitle>Inicio rápido en español</AlertTitle>
           <AlertDescription>
