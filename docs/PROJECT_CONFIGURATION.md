@@ -1,12 +1,12 @@
 # ⚙️ Project Configuration
 
-The application has been created using create-python-app to provide a simple and modern Python project structure. It allows developers to quickly create applications without dealing with complicated manual tooling setup.
+The application has been bootstrapped using Create Python App to provide a simple and modern Python project structure. It allows developers to quickly create applications without dealing with complicated manual tooling setup.
 
 A well-configured project improves maintainability, consistency, and collaboration. The following tools and practices should be configured and used throughout the project.
 
 ## uv
 
-uv is a fast Python package and project manager that handles dependency management, virtual environments, and project setup.
+uv is a fast Python package and project manager that handles dependency management, virtual environments, Python versions, and project setup.
 
 It replaces traditional workflows that require multiple separate tools by providing one unified solution for managing Python projects.
 
@@ -159,7 +159,7 @@ def greet(name: str) -> str:
 
 Git hooks can automatically run checks before commits or pushes.
 
-Tools such as pre-commit can be configured to run:
+Tools such as `pre-commit` can be configured to run:
 
 * Formatting checks
 * Linting
