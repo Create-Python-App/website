@@ -1,55 +1,197 @@
 # ⚙️ Project Configuration
 
-The application has been bootstrapped using [create-awesome-python-app](https://pypi.org/project/create-awesome-python-app/) for simplicity reasons. It allows us to create applications quickly without dealing with a complex tooling setup such as bundling, transpiling etc.
+The application has been bootstrapped using Create Python App to provide a simple and modern Python project structure. It allows developers to quickly create applications without dealing with complicated manual tooling setup.
 
-You should always configure and use the following tools:
+A well-configured project improves maintainability, consistency, and collaboration. The following tools and practices should be configured and used throughout the project.
 
-## ESLint
+## uv
 
-ESLint is a linting tool for JavaScript. By providing specific configuration defined in the`eslint.config.mjs` file it prevents developers from making silly mistakes in their code and enforces consistency in the codebase.
+uv is a fast Python package and project manager that handles dependency management, virtual environments, Python versions, and project setup.
 
-[ESLint Configuration](../eslint.config.mjs)
+It replaces traditional workflows that require multiple separate tools by providing one unified solution for managing Python projects.
 
-## Prettier
+uv can be used to:
 
-This is a great tool for formatting code. It enforces a consistent code style across your entire codebase. By utilizing the "format on save" feature in your IDE you can automatically format the code based on the configuration provided in the `.prettierrc.js` file. It will also give you good feedback when something is wrong with the code. If the auto-format doesn't work, something is wrong with the code.
+- Create new projects
+- Manage Python versions
+- Create and manage virtual environments
+- Install and update dependencies
+- Run project commands
 
-[Prettier Configuration](../.prettierrc.js)
+Initialize a new project:
 
-## TypeScript
+```bash
+uv init
+````
 
-ESLint is great for catching some of the bugs related to the language, but since JavaScript is a dynamic language ESLint cannot check data that run through the applications, which can lead to bugs, especially on larger projects. That is why TypeScript should be used. It is very useful during large refactors because it reports any issues you might miss otherwise. When refactoring, change the type declaration first, then fix all the TypeScript errors throughout the project and you are done. One thing you should keep in mind is that TypeScript does not protect your application from failing during runtime, it only does type checking during build time, but it increases development confidence drastically anyways. Here is a [great resource on using TypeScript with React](https://react-typescript-cheatsheet.netlify.app/).
+Add a dependency:
 
-## Husky
-
-Husky is a tool for executing git hooks. Use Husky to run your code validations before every commit, thus making sure the code is in the best shape possible at any point of time and no faulty commits get into the repo. It can run linting, code formatting and type checking, etc. before it allows pushing the code. You can check how to configure it [Husky documentation](https://typicode.github.io/husky/#/?id=usage).
-
-## Absolute imports
-
-Absolute imports should always be configured and used because it makes it easier to move files around and avoid messy import paths such as `../../../Component`. Wherever you move the file, all the imports will remain intact. Here is how to configure it:
-
-For JavaScript (`jsconfig.json`) projects:
-
-```json
-"compilerOptions": {
-    "baseUrl": ".",
-    "paths": {
-      "@/*": ["./src/*"]
-    }
-  }
+```bash
+uv add package-name
 ```
 
-For TypeScript (`tsconfig.json`) projects:
+Run a command inside the project environment:
 
-```json
-"compilerOptions": {
-    "baseUrl": ".",
-    "paths": {
-      "@/*": ["./src/*"]
-    }
-  }
+```bash
+uv run command
 ```
 
-[Paths Configuration](../tsconfig.json)
+Using uv ensures that all developers use consistent dependencies and project configuration.
 
-It is also possible to define multiple paths for various folders(such as `@/components`, `@/hooks`, etc.), but using `@/*` works very well because it is short enough so there is no need to configure multiple paths and it differs from other dependency modules so there is no confusion in what comes from `node_modules` and what is our source folder. That means that anything in the `src` folder can be accessed via `@`, e.g some file that lives in `src/components/MyComponent` can be accessed using `@/components/MyComponents`.
+## pyproject.toml
+
+The `pyproject.toml` file is the central configuration file for modern Python projects.
+
+It contains important project information including:
+
+* Project metadata
+* Python version requirements
+* Dependencies
+* Build configuration
+* Tool configuration
+
+Example:
+
+```toml
+[project]
+name = "example-project"
+version = "0.1.0"
+requires-python = ">=3.12"
+
+dependencies = [
+    "package-name"
+]
+```
+
+Keeping dependencies inside `pyproject.toml` makes the project easier to install, maintain, and reproduce across different environments.
+
+When adding or removing packages, use uv commands to update the configuration instead of manually editing dependency files.
+
+## Environment Variables
+
+Environment variables store configuration values that should not be directly written inside the source code.
+
+They are commonly used for:
+
+* API keys
+* Database credentials
+* Secret tokens
+* External service URLs
+* Application settings
+
+A common approach is creating a `.env` file:
+
+```env
+DATABASE_URL=your_database_url
+API_KEY=your_secret_key
+```
+
+Sensitive information should never be committed to the repository.
+
+Add secret files to `.gitignore`:
+
+```gitignore
+.env
+```
+
+For shared projects, provide an example environment file such as `.env.example`:
+
+```env
+DATABASE_URL=
+API_KEY=
+```
+
+This allows other developers to understand which variables are required without exposing private information.
+
+## Code Formatting and Quality Tools
+
+Consistent formatting and code quality checks help keep the project readable, reliable, and maintainable.
+
+Recommended tools include:
+
+* Ruff
+* Black
+* isort
+* mypy
+
+These tools help automatically format code, detect common issues, and improve development consistency.
+
+## Ruff
+
+Ruff is a fast Python linter and formatter that helps detect code issues and enforce consistent coding standards.
+
+It combines the functionality of multiple Python linting tools while providing fast feedback during development.
+
+Check code:
+
+```bash
+ruff check .
+```
+
+Format code:
+
+```bash
+ruff format .
+```
+
+## Type Checking
+
+Python is dynamically typed, meaning some errors may only appear while running the application.
+
+Type checking tools such as mypy help detect potential issues before runtime.
+
+Example:
+
+```bash
+mypy .
+```
+
+Adding type hints improves readability and makes larger changes and refactors safer.
+
+Example:
+
+```python
+def greet(name: str) -> str:
+    return f"Hello {name}"
+```
+
+## Git Hooks
+
+Git hooks can automatically run checks before commits or pushes.
+
+Tools such as `pre-commit` can be configured to run:
+
+* Formatting checks
+* Linting
+* Type checking
+* Tests
+
+This helps prevent broken or low-quality code from being added to the project.
+
+## Project Structure
+
+A common Python project structure looks like this:
+
+```text
+project/
+├── src/
+│   └── application/
+├── tests/
+├── pyproject.toml
+├── uv.lock
+├── .env
+├── .env.example
+└── README.md
+```
+
+Keeping source code, tests, configuration, and dependencies organized makes projects easier to understand and maintain.
+
+## Best Practices
+
+* Use uv for dependency and environment management
+* Keep dependencies inside `pyproject.toml`
+* Never commit secrets or `.env` files
+* Provide `.env.example` for required variables
+* Use formatting and linting tools consistently
+* Add type hints where possible
+* Keep project configuration documented for new contributors
