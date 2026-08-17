@@ -14,9 +14,17 @@ export function LayoutShell({ children }: { children: ReactNode }) {
     <PerformanceProvider>
       <ThemeProvider defaultTheme="dark">
         <div className="flex min-h-screen flex-col">
+          <a
+            href="#main-content"
+            className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-md focus:bg-primary focus:px-3 focus:py-2 focus:text-sm focus:font-medium focus:text-primary-foreground"
+          >
+            Skip to main content
+          </a>
           <SiteHeader onOpenCommand={() => setOpen(true)} />
           <CommandMenu open={open} onOpenChange={setOpen} />
-          {children}
+          <main id="main-content" className="flex-1" tabIndex={-1}>
+            {children}
+          </main>
           <footer className="w-full border-t mt-16">
             {/* Stats row */}
             <div className="border-b border-border/50">
