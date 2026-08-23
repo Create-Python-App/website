@@ -7,6 +7,7 @@ import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { DISCORD_INVITE_URL } from '@/lib/community';
 
 export const metadata: Metadata = {
   title: 'Installation | Create Awesome Python App Documentation',
@@ -61,6 +62,22 @@ export default function InstallationPage() {
           </p>
         </div>
 
+        <Alert lang="es">
+          <Terminal className="h-4 w-4" />
+          <AlertTitle>Inicio rápido en español</AlertTitle>
+          <AlertDescription>
+            Ejecuta la CLI con <code>uvx create-awesome-python-app@latest</code>, consulta los{' '}
+            <Link href="#install-methods" className="font-medium underline">
+              métodos de instalación
+            </Link>{' '}
+            y únete a nuestra{' '}
+            <Link href={DISCORD_INVITE_URL} target="_blank" rel="noreferrer" className="font-medium underline">
+              comunidad de Discord
+            </Link>{' '}
+            si necesitas ayuda.
+          </AlertDescription>
+        </Alert>
+
         <Alert className="border-primary/30 bg-primary/5">
           <CheckCircle className="h-4 w-4 text-primary" />
           <AlertTitle>No global install required</AlertTitle>
@@ -70,7 +87,7 @@ export default function InstallationPage() {
           </AlertDescription>
         </Alert>
 
-        <section className="space-y-4">
+        <section id="install-methods" className="space-y-4 scroll-mt-24">
           <h2 className="text-2xl font-bold tracking-tight">Install methods</h2>
 
           <Tabs defaultValue="uv">
