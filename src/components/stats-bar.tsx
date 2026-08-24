@@ -8,7 +8,7 @@ interface Stat {
   suffix?: string;
 }
 
-const STATS: Stat[] = [
+const DEFAULT_STATS: Stat[] = [
   { value: 5, label: 'Templates' },
   { value: 12, label: 'Extensions' },
   { value: 9, label: 'Categories' },
@@ -47,11 +47,26 @@ function Counter({ target, duration = 1200 }: { target: number; duration?: numbe
   return <span ref={ref}>{count}</span>;
 }
 
-export function StatsBar() {
+export function StatsBar({
+  templates,
+  extensions,
+  categories,
+}: {
+  templates?: number;
+  extensions?: number;
+  categories?: number;
+} = {}) {
+  const stats: Stat[] = [
+    { value: templates ?? (DEFAULT_STATS[0].value as number), label: 'Templates' },
+    { value: extensions ?? (DEFAULT_STATS[1].value as number), label: 'Extensions' },
+    { value: categories ?? (DEFAULT_STATS[2].value as number), label: 'Categories' },
+    { value: 'MIT', label: 'Licensed' },
+  ];
+
   return (
     <div className="w-full border-y border-border/50 bg-muted/20">
       <div className="container flex flex-wrap items-center justify-center gap-x-10 gap-y-4 py-6 md:gap-x-16">
-        {STATS.map((stat) => (
+        {stats.map((stat) => (
           <div key={stat.label} className="flex flex-col items-center gap-0.5">
             <span className="font-display text-2xl font-bold text-foreground md:text-3xl">
               {typeof stat.value === 'number' ? <Counter target={stat.value} /> : stat.value}

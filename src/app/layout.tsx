@@ -3,6 +3,7 @@ import { Inter, Space_Grotesk } from 'next/font/google';
 import type React from 'react';
 import '@/app/globals.css';
 import { LayoutShell } from '@/components/layout-shell';
+import { catalogStatsFrom, getTemplatesData } from '@/lib/data';
 import { jsonLdScript, organizationJsonLd, websiteJsonLd } from '@/lib/seo';
 
 const siteUrl = 'https://create-awesome-python-app.vercel.app';
@@ -91,7 +92,10 @@ const spaceGrotesk = Space_Grotesk({
   weight: ['400', '500', '600', '700'],
 });
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
+  const catalog = await getTemplatesData();
+  const stats = catalogStatsFrom(catalog);
+
   return (
     <html lang="en" className="dark">
       <body className={`${inter.variable} ${spaceGrotesk.variable} font-sans`}>
@@ -105,7 +109,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             }),
           }}
         />
-        <LayoutShell>{children}</LayoutShell>
+        <LayoutShell stats={stats}>{children}</LayoutShell>
       </body>
     </html>
   );

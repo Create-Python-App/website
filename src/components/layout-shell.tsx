@@ -8,7 +8,19 @@ import { PerformanceProvider } from '@/components/performance-provider';
 import { SiteHeader } from '@/components/site-header';
 import { ThemeProvider } from '@/components/theme-provider';
 
-export function LayoutShell({ children }: { children: ReactNode }) {
+type CatalogStats = {
+  templates: number;
+  extensions: number;
+  categories: number;
+};
+
+export function LayoutShell({
+  children,
+  stats = { templates: 5, extensions: 12, categories: 9 },
+}: {
+  children: ReactNode;
+  stats?: CatalogStats;
+}) {
   const [open, setOpen] = useState(false);
   return (
     <PerformanceProvider>
@@ -26,19 +38,22 @@ export function LayoutShell({ children }: { children: ReactNode }) {
             {children}
           </main>
           <footer className="w-full border-t mt-16">
-            {/* Stats row */}
+            {/* Stats row — counts from templates.json via getTemplatesData */}
             <div className="border-b border-border/50">
               <div className="container flex flex-wrap items-center justify-center gap-x-8 gap-y-2 py-4 text-xs text-muted-foreground">
                 <span>
-                  <strong className="text-foreground font-display font-semibold">5</strong> templates
+                  <strong className="text-foreground font-display font-semibold">{stats.templates}</strong>{' '}
+                  templates
                 </span>
                 <span className="text-border">·</span>
                 <span>
-                  <strong className="text-foreground font-display font-semibold">8</strong> extensions
+                  <strong className="text-foreground font-display font-semibold">{stats.extensions}</strong>{' '}
+                  extensions
                 </span>
                 <span className="text-border">·</span>
                 <span>
-                  <strong className="text-foreground font-display font-semibold">9</strong> categories
+                  <strong className="text-foreground font-display font-semibold">{stats.categories}</strong>{' '}
+                  categories
                 </span>
                 <span className="text-border">·</span>
                 <span>MIT licensed</span>
