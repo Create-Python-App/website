@@ -53,6 +53,7 @@
     "hookform",
     "httpx",
     "inicio",
+    "Instalación",
     "instalación",
     "interactiva",
     "jeremias",
@@ -100,6 +101,7 @@
     "recharts",
     "ruff",
     "runserver",
+    "rápida",
     "rápido",
     "saas",
     "Selenoid",
@@ -135,6 +137,9 @@
     "workdir",
     "wpgtk",
     "wscript",
+    "Zizmor",
+    "ZIZMOR",
+    "zizmor",
     "únete"
   ],
   "ignorePaths": [
