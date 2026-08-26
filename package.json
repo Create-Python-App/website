@@ -70,7 +70,7 @@
     "zod": "^3.24.2"
   },
   "devDependencies": {
-    "@commitlint/cli": "^19.7.1",
+    "@commitlint/cli": "^21.2.2",
     "@commitlint/config-conventional": "^19.7.1",
     "@next/eslint-plugin-next": "^15.5.20",
     "@testing-library/react": "^16.1.0",
