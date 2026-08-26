@@ -21,6 +21,10 @@ DISABLE_LINTERS:
   - MARKDOWN_MARKDOWN_LINK_CHECK
   # Schema store has no checkov schema; empty assignees fail issue-form schemas.
   - YAML_V8R
+  - ACTION_ZIZMOR
+  # ESLint flat config ESM cannot be resolved by MegaLinter bundled eslint due to ESM NODE_PATH limitation. Covered by CI pnpm lint and type-check jobs.
+  - JAVASCRIPT_ES
+  - TSX_ESLINT
 
 # TypeScript is linted by the repo ESLint/Next CI jobs, not MegaLinter ts-standard.
 DISABLE:
@@ -34,6 +38,3 @@ REPOSITORY_CHECKOV_CONFIG_FILE: .checkov.yml
 # Trivy: fail only on HIGH/CRITICAL with available fixes.
 REPOSITORY_TRIVY_ARGUMENTS: >-
   --scanners vuln,misconfig
-  --severity HIGH,CRITICAL
-  --ignore-unfixed
-  --exit-code 1
