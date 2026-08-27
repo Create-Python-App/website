@@ -3,6 +3,21 @@ import { type TemplatesData, templatesDataSchema } from './schemas';
 
 const TEMPLATES_URL = 'https://raw.githubusercontent.com/Create-Python-App/cpa-templates/main/templates.json';
 
+/** Catalog counts for footer / stats bar — single source of truth. */
+export type CatalogStats = {
+  templates: number;
+  extensions: number;
+  categories: number;
+};
+
+export function catalogStatsFrom(data: TemplatesData): CatalogStats {
+  return {
+    templates: data.templates.length,
+    extensions: data.extensions.length,
+    categories: data.categories.length,
+  };
+}
+
 export async function getTemplatesData(): Promise<TemplatesData> {
   try {
     const response = await fetch(TEMPLATES_URL, { next: { revalidate: 3600 } }); // Revalidate every hour

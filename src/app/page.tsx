@@ -17,12 +17,14 @@ import { TemplateCategories } from '@/components/template-categories';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { DISCORD_INVITE_URL } from '@/lib/community';
-import { getTemplatesData } from '@/lib/data';
+import { catalogStatsFrom, getTemplatesData } from '@/lib/data';
 
 const PRIMARY_COMMAND = 'uvx create-awesome-python-app my-app';
 
 export default async function Home() {
-  const { templates, categories } = await getTemplatesData();
+  const catalog = await getTemplatesData();
+  const { templates, categories } = catalog;
+  const stats = catalogStatsFrom(catalog);
 
   const flagshipTemplate = templates.find((t) => t.slug === 'fastapi-starter');
   const otherTemplates = templates.filter((t) => t.slug !== 'fastapi-starter');
@@ -72,7 +74,11 @@ export default async function Home() {
           sideVisual={<AnimatedTerminal />}
         />
 
-        <StatsBar />
+        <StatsBar
+          templates={stats.templates}
+          extensions={stats.extensions}
+          categories={stats.categories}
+        />
 
         <SaasAiBanner />
 
