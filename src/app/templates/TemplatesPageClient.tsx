@@ -10,6 +10,7 @@ import { TemplateCard } from '@/components/template-card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { Skeleton } from '@/components/ui/skeleton';
 import { getTemplatesData } from '@/lib/data';
 import type { Category, Template } from '@/lib/schemas';
 import { cn } from '@/lib/utils';
@@ -161,6 +162,7 @@ export function TemplatesPageClient() {
                   <Button
                     variant="outline"
                     size="icon"
+                    aria-label="Filter"
                     className="bg-background/50 backdrop-blur-sm border-primary/20 hover:bg-background/70 transition-all duration-300"
                   >
                     <Filter className="h-4 w-4" />
@@ -171,9 +173,17 @@ export function TemplatesPageClient() {
             </div>
             <div className="mx-auto grid max-w-5xl grid-cols-1 gap-6 pb-12 md:grid-cols-2 lg:grid-cols-3">
               {isLoading ? (
-                <div className="col-span-3 text-center py-12">
-                  <p className="text-muted-foreground">Loading templates...</p>
-                </div>
+                Array.from({ length: 6 }).map((_, i) => (
+                  <div key={i} className="rounded-lg border p-4 space-y-3">
+                    <Skeleton className="h-5 w-3/4" />
+                    <Skeleton className="h-4 w-full" />
+                    <Skeleton className="h-4 w-5/6" />
+                    <div className="flex gap-2 pt-2">
+                      <Skeleton className="h-5 w-16 rounded-full" />
+                      <Skeleton className="h-5 w-16 rounded-full" />
+                    </div>
+                  </div>
+                ))
               ) : filteredTemplates.length > 0 ? (
                 filteredTemplates.map((template, index) => (
                   <div key={template.slug} className={`fade-in-up-delay-${(index % 3) + 1}`}>

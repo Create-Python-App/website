@@ -7,6 +7,7 @@ import { CommandMenu } from '@/components/command-menu';
 import { PerformanceProvider } from '@/components/performance-provider';
 import { SiteHeader } from '@/components/site-header';
 import { ThemeProvider } from '@/components/theme-provider';
+import { FALLBACK_STATS } from '@/lib/data';
 
 type CatalogStats = {
   templates: number;
@@ -14,13 +15,7 @@ type CatalogStats = {
   categories: number;
 };
 
-export function LayoutShell({
-  children,
-  stats = { templates: 5, extensions: 12, categories: 9 },
-}: {
-  children: ReactNode;
-  stats?: CatalogStats;
-}) {
+export function LayoutShell({ children, stats = FALLBACK_STATS }: { children: ReactNode; stats?: CatalogStats }) {
   const [open, setOpen] = useState(false);
   return (
     <PerformanceProvider>
@@ -42,18 +37,15 @@ export function LayoutShell({
             <div className="border-b border-border/50">
               <div className="container flex flex-wrap items-center justify-center gap-x-8 gap-y-2 py-4 text-xs text-muted-foreground">
                 <span>
-                  <strong className="text-foreground font-display font-semibold">{stats.templates}</strong>{' '}
-                  templates
+                  <strong className="text-foreground font-display font-semibold">{stats.templates}</strong> templates
                 </span>
                 <span className="text-border">·</span>
                 <span>
-                  <strong className="text-foreground font-display font-semibold">{stats.extensions}</strong>{' '}
-                  extensions
+                  <strong className="text-foreground font-display font-semibold">{stats.extensions}</strong> extensions
                 </span>
                 <span className="text-border">·</span>
                 <span>
-                  <strong className="text-foreground font-display font-semibold">{stats.categories}</strong>{' '}
-                  categories
+                  <strong className="text-foreground font-display font-semibold">{stats.categories}</strong> categories
                 </span>
                 <span className="text-border">·</span>
                 <span>MIT licensed</span>

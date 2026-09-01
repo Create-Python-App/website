@@ -8,6 +8,7 @@ import { ExtensionCard } from '@/components/extension-card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { Skeleton } from '@/components/ui/skeleton';
 import { getTemplatesData } from '@/lib/data';
 import type { Extension } from '@/lib/schemas';
 import { cn } from '@/lib/utils';
@@ -177,6 +178,7 @@ export function ExtensionsPageClient() {
                   <Button
                     variant="outline"
                     size="icon"
+                    aria-label="Filter"
                     className="bg-background/50 backdrop-blur-sm border-green-600/20 hover:bg-background/70 transition-all duration-300"
                   >
                     <Filter className="h-4 w-4" />
@@ -187,9 +189,17 @@ export function ExtensionsPageClient() {
             </div>
             <div className="mx-auto grid max-w-5xl grid-cols-1 gap-6 py-8 md:grid-cols-2 lg:grid-cols-3">
               {isLoading ? (
-                <div className="col-span-3 text-center py-12">
-                  <p className="text-muted-foreground">Loading extensions...</p>
-                </div>
+                Array.from({ length: 6 }).map((_, i) => (
+                  <div key={i} className="rounded-lg border p-4 space-y-3">
+                    <Skeleton className="h-5 w-3/4" />
+                    <Skeleton className="h-4 w-full" />
+                    <Skeleton className="h-4 w-5/6" />
+                    <div className="flex gap-2 pt-2">
+                      <Skeleton className="h-5 w-16 rounded-full" />
+                      <Skeleton className="h-5 w-16 rounded-full" />
+                    </div>
+                  </div>
+                ))
               ) : filteredExtensions.length > 0 ? (
                 filteredExtensions.map((extension, index) => (
                   <div key={extension.slug} className={`fade-in-up-delay-${(index % 3) + 1}`}>
