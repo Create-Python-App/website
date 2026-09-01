@@ -2,6 +2,8 @@
 
 import { useEffect, useRef, useState } from 'react';
 
+import { FALLBACK_STATS } from '@/lib/data';
+
 interface Stat {
   value: number | string;
   label: string;
@@ -9,9 +11,9 @@ interface Stat {
 }
 
 const DEFAULT_STATS: Stat[] = [
-  { value: 5, label: 'Templates' },
-  { value: 12, label: 'Extensions' },
-  { value: 9, label: 'Categories' },
+  { value: FALLBACK_STATS.templates, label: 'Templates' },
+  { value: FALLBACK_STATS.extensions, label: 'Extensions' },
+  { value: FALLBACK_STATS.categories, label: 'Categories' },
   { value: 'MIT', label: 'Licensed' },
 ];
 

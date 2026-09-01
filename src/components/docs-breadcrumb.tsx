@@ -15,6 +15,7 @@ import {
 const segmentLabels: Record<string, string> = {
   docs: 'Docs',
   'agents-md': 'AGENTS.md',
+  installation: 'Installation',
   templates: 'Templates',
   customization: 'Customization',
   extensions: 'Extensions',

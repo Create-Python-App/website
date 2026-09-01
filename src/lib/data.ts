@@ -1,4 +1,4 @@
-import { getFallbackData } from './mock-data';
+import { getFallbackData, mockTemplatesData } from './mock-data';
 import { type TemplatesData, templatesDataSchema } from './schemas';
 
 const TEMPLATES_URL = 'https://raw.githubusercontent.com/Create-Python-App/cpa-templates/main/templates.json';
@@ -17,6 +17,8 @@ export function catalogStatsFrom(data: TemplatesData): CatalogStats {
     categories: data.categories.length,
   };
 }
+
+export const FALLBACK_STATS: CatalogStats = catalogStatsFrom(mockTemplatesData);
 
 export async function getTemplatesData(): Promise<TemplatesData> {
   try {
