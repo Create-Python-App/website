@@ -24,8 +24,8 @@ describe('validateTemplate', () => {
       name: 'FastAPI Starter',
       description: 'A FastAPI starter.',
       url: 'https://github.com/Create-Python-App/cpa-templates/tree/main/templates/fastapi-starter',
-      type: 'react',
-      category: 'frontend-applications',
+      type: 'fastapi-backend',
+      category: 'backend-applications',
       labels: ['FastAPI', 'uv'],
       slug: 'fastapi-starter',
     };
@@ -43,36 +43,36 @@ describe('validateExtension', () => {
 
   it('should return data for valid extension', () => {
     const validData = {
-      name: 'Tailwind CSS',
-      description: 'Add Tailwind CSS.',
+      name: 'FastAPI Docker',
+      description: 'Add Docker packaging for FastAPI.',
       url: 'https://github.com/Create-Python-App/cpa-templates/tree/main/extensions/fastapi-docker',
-      type: 'react',
-      category: 'UI',
-      labels: ['Tailwind'],
-      slug: 'tailwind-css',
+      type: 'fastapi-backend',
+      category: 'containers',
+      labels: ['Docker'],
+      slug: 'fastapi-docker',
     };
     const result = validateExtension(validData);
     expect(result).not.toBeNull();
-    expect(result?.name).toBe('Tailwind CSS');
+    expect(result?.name).toBe('FastAPI Docker');
   });
 });
 
 describe('isCompatible', () => {
   it('should return true when extension type matches template type', () => {
-    const template = { type: 'react' } as Template;
-    const extension = { type: 'react' } as Extension;
+    const template = { type: 'fastapi-backend' } as Template;
+    const extension = { type: 'fastapi-backend' } as Extension;
     expect(isCompatible(template, extension)).toBe(true);
   });
 
   it('should return true when extension type array includes template type', () => {
-    const template = { type: 'react' } as Template;
-    const extension = { type: ['react', 'nextjs'] } as Extension;
+    const template = { type: 'fastapi-backend' } as Template;
+    const extension = { type: ['fastapi-backend', 'django-backend'] } as Extension;
     expect(isCompatible(template, extension)).toBe(true);
   });
 
   it('should return false when extension type does not match', () => {
-    const template = { type: 'react' } as Template;
-    const extension = { type: 'nextjs' } as Extension;
+    const template = { type: 'fastapi-backend' } as Template;
+    const extension = { type: 'django-backend' } as Extension;
     expect(isCompatible(template, extension)).toBe(false);
   });
 });

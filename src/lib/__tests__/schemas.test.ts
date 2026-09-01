@@ -4,19 +4,19 @@ import { categorySchema, extensionSchema, templateSchema, templatesDataSchema } 
 describe('categorySchema', () => {
   it('should validate a valid category', () => {
     const validCategory = {
-      slug: 'frontend-applications',
-      name: 'Frontend Applications',
-      description: 'Templates for building web interfaces.',
-      details: 'Discover templates for FastAPI, Django, and CLIs.',
-      labels: ['API', 'FastAPI', 'Python'],
+      slug: 'backend-applications',
+      name: 'Backend Applications',
+      description: 'API and service starters for FastAPI.',
+      details: 'Use when the deliverable is an HTTP API — FastAPI for async APIs with OpenAPI docs.',
+      labels: ['Backend', 'API', 'FastAPI'],
     };
     expect(categorySchema.safeParse(validCategory).success).toBe(true);
   });
 
   it('should reject a category with missing required fields', () => {
     const invalidCategory = {
-      slug: 'frontend-applications',
-      name: 'Frontend Applications',
+      slug: 'backend-applications',
+      name: 'Backend Applications',
     };
     expect(categorySchema.safeParse(invalidCategory).success).toBe(false);
   });
@@ -28,8 +28,8 @@ describe('templateSchema', () => {
       name: 'FastAPI Starter',
       description: 'A FastAPI API starter with uv.',
       url: 'https://github.com/Create-Python-App/cpa-templates/tree/main/templates/fastapi-starter',
-      type: 'react',
-      category: 'frontend-applications',
+      type: 'fastapi-backend',
+      category: 'backend-applications',
       labels: ['FastAPI', 'uv', 'Python'],
       slug: 'fastapi-starter',
     };
@@ -41,8 +41,8 @@ describe('templateSchema', () => {
       name: 'FastAPI Starter',
       description: 'A FastAPI starter.',
       url: 'not-a-url',
-      type: 'react',
-      category: 'frontend-applications',
+      type: 'fastapi-backend',
+      category: 'backend-applications',
       labels: ['fastapi'],
       slug: 'fastapi-starter',
     };
@@ -53,13 +53,13 @@ describe('templateSchema', () => {
 describe('extensionSchema', () => {
   it('should validate a valid extension with string type', () => {
     const validExtension = {
-      name: 'Tailwind CSS',
-      description: 'Add Tailwind CSS.',
+      name: 'FastAPI Docker',
+      description: 'Add Docker packaging for FastAPI.',
       url: 'https://github.com/Create-Python-App/cpa-templates/tree/main/extensions/fastapi-docker',
-      type: 'react',
-      category: 'UI',
-      labels: ['Tailwind', 'CSS'],
-      slug: 'tailwind-css',
+      type: 'fastapi-backend',
+      category: 'containers',
+      labels: ['Docker', 'FastAPI'],
+      slug: 'fastapi-docker',
     };
     expect(extensionSchema.safeParse(validExtension).success).toBe(true);
   });
@@ -69,9 +69,9 @@ describe('extensionSchema', () => {
       name: 'GitHub Setup',
       description: 'Add GitHub automation.',
       url: 'https://github.com/Create-Python-App/cpa-templates/tree/main/extensions/all-github-setup',
-      type: ['react', 'nextjs', 'backend'],
-      category: 'Tooling',
-      labels: ['GitHub', 'CI/CD'],
+      type: ['fastapi-backend', 'django-backend', 'cli-app'],
+      category: 'ci',
+      labels: ['GitHub', 'CI'],
       slug: 'github-setup',
     };
     expect(extensionSchema.safeParse(validExtension).success).toBe(true);
@@ -86,30 +86,30 @@ describe('templatesDataSchema', () => {
           name: 'FastAPI Starter',
           description: 'A FastAPI starter.',
           url: 'https://github.com/example/fastapi-starter',
-          type: 'react',
-          category: 'frontend-applications',
+          type: 'fastapi-backend',
+          category: 'backend-applications',
           labels: ['fastapi'],
           slug: 'fastapi-starter',
         },
       ],
       extensions: [
         {
-          name: 'Tailwind CSS',
-          description: 'Add Tailwind CSS.',
+          name: 'FastAPI Docker',
+          description: 'Add Docker packaging.',
           url: 'https://github.com/example/fastapi-docker',
-          type: 'react',
-          category: 'UI',
-          labels: ['CSS'],
-          slug: 'tailwind-css',
+          type: 'fastapi-backend',
+          category: 'containers',
+          labels: ['Docker'],
+          slug: 'fastapi-docker',
         },
       ],
       categories: [
         {
-          slug: 'frontend-applications',
-          name: 'Frontend Applications',
-          description: 'Templates for building web interfaces.',
-          details: 'Build web interfaces.',
-          labels: ['Frontend'],
+          slug: 'backend-applications',
+          name: 'Backend Applications',
+          description: 'API and service starters for FastAPI.',
+          details: 'Build Python APIs.',
+          labels: ['Backend'],
         },
       ],
     };
