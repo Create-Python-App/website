@@ -9,6 +9,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Skeleton } from '@/components/ui/skeleton';
+import { matchesCatalogQuery } from '@/lib/catalog';
 import { getTemplatesData } from '@/lib/data';
 import type { Extension } from '@/lib/schemas';
 import { cn } from '@/lib/utils';
@@ -52,15 +53,7 @@ export function ExtensionsPageClient() {
         Array.isArray(extension.type) ? extension.type.includes(typeParam) : extension.type === typeParam,
       );
     }
-    if (searchQuery.trim()) {
-      const query = searchQuery.toLowerCase();
-      filtered = filtered.filter(
-        (extension) =>
-          extension.name.toLowerCase().includes(query) ||
-          extension.description.toLowerCase().includes(query) ||
-          extension.labels.some((label) => label.toLowerCase().includes(query)),
-      );
-    }
+    filtered = filtered.filter((extension) => matchesCatalogQuery(extension, searchQuery));
     setFilteredExtensions(filtered);
   }, [typeParam, selectedCategory, searchQuery, extensions]);
 
