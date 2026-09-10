@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { Fragment } from 'react';
 
 import {
   Breadcrumb,
@@ -11,48 +12,32 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from '@/components/ui/breadcrumb';
-
-const segmentLabels: Record<string, string> = {
-  docs: 'Docs',
-  'agents-md': 'AGENTS.md',
-  installation: 'Installation',
-  templates: 'Templates',
-  customization: 'Customization',
-  extensions: 'Extensions',
-  contributing: 'Contributing',
-  advanced: 'Advanced',
-  usage: 'Usage',
-};
+import { buildDocsBreadcrumbs } from '@/lib/catalog';
 
 export function DocsBreadcrumb() {
   const pathname = usePathname();
-  const segments = pathname.split('/').filter(Boolean);
+  const crumbs = buildDocsBreadcrumbs(pathname);
 
-  if (segments.length <= 1) {
+  if (crumbs.length === 0) {
     return null;
   }
-
-  const crumbs = segments.map((seg, idx) => {
-    const href = '/' + segments.slice(0, idx + 1).join('/');
-    const label = segmentLabels[seg] ?? seg;
-    const isLast = idx === segments.length - 1;
-    return { href, label, isLast };
-  });
 
   return (
     <Breadcrumb className="mb-6">
       <BreadcrumbList>
         {crumbs.map((crumb) => (
-          <BreadcrumbItem key={crumb.href}>
-            {crumb.isLast ? (
-              <BreadcrumbPage>{crumb.label}</BreadcrumbPage>
-            ) : (
-              <BreadcrumbLink asChild>
-                <Link href={crumb.href}>{crumb.label}</Link>
-              </BreadcrumbLink>
-            )}
+          <Fragment key={crumb.href}>
+            <BreadcrumbItem>
+              {crumb.isLast ? (
+                <BreadcrumbPage>{crumb.label}</BreadcrumbPage>
+              ) : (
+                <BreadcrumbLink asChild>
+                  <Link href={crumb.href}>{crumb.label}</Link>
+                </BreadcrumbLink>
+              )}
+            </BreadcrumbItem>
             {!crumb.isLast && <BreadcrumbSeparator />}
-          </BreadcrumbItem>
+          </Fragment>
         ))}
       </BreadcrumbList>
     </Breadcrumb>

@@ -11,6 +11,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Skeleton } from '@/components/ui/skeleton';
+import { matchesCatalogQuery } from '@/lib/catalog';
 import { getTemplatesData } from '@/lib/data';
 import type { Category, Template } from '@/lib/schemas';
 import { cn } from '@/lib/utils';
@@ -55,15 +56,7 @@ export function TemplatesPageClient() {
         );
       }
     }
-    if (searchQuery.trim()) {
-      const query = searchQuery.toLowerCase();
-      filtered = filtered.filter(
-        (template) =>
-          template.name.toLowerCase().includes(query) ||
-          template.description.toLowerCase().includes(query) ||
-          template.labels.some((label) => label.toLowerCase().includes(query)),
-      );
-    }
+    filtered = filtered.filter((template) => matchesCatalogQuery(template, searchQuery));
     setFilteredTemplates(filtered);
   }, [categoryParam, selectedCategory, searchQuery, templates, categories]);
 
