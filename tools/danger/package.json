@@ -23,6 +23,7 @@
     "typescript": "^5.8.2"
   },
   "overrides": {
+    "braces": "https://codeload.github.com/micromatch/braces/tar.gz/28d440b5dd449dbf1fe6f3506cf94ecca4d02660",
     "undici": ">=6.27.0"
   }
 }

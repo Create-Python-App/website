@@ -1,0 +1,2 @@
+# pnpm owns the lockfile structure; formatting rewrites every package entry.
+pnpm-lock.yaml
