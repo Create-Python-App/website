@@ -56,7 +56,7 @@ export function reviewPullRequest(pullRequest, files) {
     messages.push('Thanks for updating documentation.');
   }
   if (files.some((file) => file.status === 'modified' && /(^|\/)package\.json$/.test(file.filename))) {
-    warnings.push('package.json changed. Ensure applicable lockfiles are updated.');
+    warnings.push('package.json changed. Ensure applicable lock files are updated.');
   }
 
   return { failures, warnings, messages, additions, deletions, changedLines, changedFiles: files.length };

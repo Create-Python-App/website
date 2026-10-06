@@ -62,5 +62,5 @@ test('warns when a package manifest changes', () => {
     { filename: 'package.json', status: 'modified', additions: 1, deletions: 1 },
   ]);
 
-  assert.ok(result.warnings.includes('package.json changed. Ensure applicable lockfiles are updated.'));
+  assert.ok(result.warnings.includes('package.json changed. Ensure applicable lock files are updated.'));
 });
