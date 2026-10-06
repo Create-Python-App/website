@@ -131,21 +131,19 @@ uv remove unused-package`}
               <DiagramWorkflow
                 className="mt-4"
                 title="Deployment Workflow"
-                chart={`
-graph TD
-    A["Developer Pushes Code"] --> B["CI/CD Pipeline Triggered"]
-    B --> C["Install Dependencies"]
-    C --> D["Run Linting"]
-    C --> E["Run Tests"]
-    D --> F["Build Application"]
-    E --> F
-    F --> G["Deploy to Staging"]
-    G --> H["Run Integration Tests"]
-    H --> I{"Tests Pass?"}
-    I -->|Yes| J["Deploy to Production"]
-    I -->|No| K["Notify Team & Fix Issues"]
-    K --> A
-                `}
+                steps={[
+                  'Developer pushes code',
+                  'CI/CD pipeline installs dependencies, runs linting and tests, then builds the application',
+                  'Deploy to staging',
+                  'Run integration tests',
+                ]}
+                decision={{
+                  question: 'Do the tests pass?',
+                  branches: [
+                    { label: 'Yes', outcome: 'Deploy to production.' },
+                    { label: 'No', outcome: 'Notify the team, fix the issues, and repeat the workflow.' },
+                  ],
+                }}
               />
             </div>
           </section>

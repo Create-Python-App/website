@@ -14,14 +14,14 @@ export default function AgentsMdPage() {
   return (
     <div className="flex min-h-screen flex-col">
       <main className="flex-1">
-        <section className="w-full py-12 md:py-24 lg:py-32 bg-gradient-to-b from-background to-background/80 relative overflow-hidden">
+        <section className="w-full py-12 md:py-24 lg:py-32 bg-linear-to-b from-background to-background/80 relative overflow-hidden">
           <div className="absolute inset-0 z-0 opacity-50">
             <AnimatedGradient />
           </div>
           <div className="container relative z-10 px-4 md:px-6">
             <div className="flex flex-col items-center text-center space-y-4">
               <div className="space-y-2">
-                <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl bg-clip-text text-transparent bg-gradient-to-r from-primary to-green-600 animate-gradient-text">
+                <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl bg-clip-text text-transparent bg-linear-to-r from-primary to-green-600 animate-gradient-text">
                   AGENTS.md Contract
                 </h1>
                 <p className="max-w-2xl text-muted-foreground md:text-lg">
@@ -37,7 +37,7 @@ export default function AgentsMdPage() {
 
             <div className="mx-auto max-w-5xl py-12 space-y-10">
               <div className="grid gap-6 md:grid-cols-3">
-                <Card className="backdrop-blur-sm bg-card/60">
+                <Card className="backdrop-blur-xs bg-card/60">
                   <CardHeader>
                     <CardTitle className="flex items-center gap-2">
                       <FileText className="h-5 w-5 text-primary" />
@@ -50,7 +50,7 @@ export default function AgentsMdPage() {
                     steps.
                   </CardContent>
                 </Card>
-                <Card className="backdrop-blur-sm bg-card/60">
+                <Card className="backdrop-blur-xs bg-card/60">
                   <CardHeader>
                     <CardTitle className="flex items-center gap-2">
                       <Shield className="h-5 w-5 text-primary" />
@@ -62,7 +62,7 @@ export default function AgentsMdPage() {
                     Explicit refusal cases, escalation triggers, and validation reminders keep AI changes scoped + safe.
                   </CardContent>
                 </Card>
-                <Card className="backdrop-blur-sm bg-card/60">
+                <Card className="backdrop-blur-xs bg-card/60">
                   <CardHeader>
                     <CardTitle className="flex items-center gap-2">
                       <Workflow className="h-5 w-5 text-primary" />
@@ -76,7 +76,7 @@ export default function AgentsMdPage() {
                 </Card>
               </div>
 
-              <Card className="backdrop-blur-sm bg-card/60 border-primary/10">
+              <Card className="backdrop-blur-xs bg-card/60 border-primary/10">
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2">
                     <Sparkles className="h-5 w-5 text-primary" />
@@ -159,7 +159,7 @@ Humans: stop reading—go to CONTRIBUTING.md + docs/.
                 </CardContent>
               </Card>
 
-              <Card className="backdrop-blur-sm bg-card/60">
+              <Card className="backdrop-blur-xs bg-card/60">
                 <CardHeader>
                   <CardTitle>Customizing Your AGENTS.md</CardTitle>
                   <CardDescription>Adapting for your team</CardDescription>

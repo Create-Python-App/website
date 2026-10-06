@@ -133,17 +133,17 @@ export function TemplatesPageClient() {
                   <Input
                     type="search"
                     placeholder="Search templates..."
-                    className="w-full bg-background/50 backdrop-blur-sm pl-8 border-primary/20 focus:border-primary/40 transition-all duration-300"
+                    className="w-full bg-background/50 backdrop-blur-xs pl-8 border-primary/20 focus:border-primary/40 transition-all duration-300"
                     value={searchQuery}
                     onChange={handleSearchChange}
                   />
                 </div>
                 <div className="flex gap-2">
                   <Select defaultValue={categoryParam || 'all'} onValueChange={handleCategoryChange}>
-                    <SelectTrigger className="w-[180px] bg-background/50 backdrop-blur-sm border-primary/20 focus:border-primary/40 transition-all duration-300">
+                    <SelectTrigger className="w-[180px] bg-background/50 backdrop-blur-xs border-primary/20 focus:border-primary/40 transition-all duration-300">
                       <SelectValue placeholder="Category" />
                     </SelectTrigger>
-                    <SelectContent className="bg-background/80 backdrop-blur-sm border-primary/20">
+                    <SelectContent className="bg-background/80 backdrop-blur-xs border-primary/20">
                       <SelectItem value="all">All Categories</SelectItem>
                       {categories.map((category) => (
                         <SelectItem key={category.slug} value={category.slug}>
@@ -156,7 +156,7 @@ export function TemplatesPageClient() {
                     variant="outline"
                     size="icon"
                     aria-label="Filter"
-                    className="bg-background/50 backdrop-blur-sm border-primary/20 hover:bg-background/70 transition-all duration-300"
+                    className="bg-background/50 backdrop-blur-xs border-primary/20 hover:bg-background/70 transition-all duration-300"
                   >
                     <Filter className="h-4 w-4" />
                     <span className="sr-only">Filter</span>

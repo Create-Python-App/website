@@ -27,8 +27,8 @@ export function HeroSection({
       className={cn(
         'relative overflow-hidden w-full py-16 md:py-24 lg:py-32 xl:py-44',
         subtle
-          ? 'bg-gradient-to-b from-background to-background/80'
-          : 'bg-gradient-to-b from-background via-background/60 to-background/20',
+          ? 'bg-linear-to-b from-background to-background/80'
+          : 'bg-linear-to-b from-background via-background/60 to-background/20',
         className,
       )}
     >
@@ -37,7 +37,7 @@ export function HeroSection({
       </div>
       <div className="absolute inset-0 -z-10">
         {/* Grid mask */}
-        <div className="absolute inset-0 bg-grid-white/10 bg-[size:30px_30px] [mask-image:radial-gradient(white,transparent_70%)]" />
+        <div className="absolute inset-0 bg-grid-white/10 bg-size-[30px_30px] mask-[radial-gradient(white,transparent_70%)]" />
       </div>
       {glow && (
         <div className="pointer-events-none absolute inset-0 -z-10 mix-blend-screen opacity-30">

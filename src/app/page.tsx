@@ -59,12 +59,12 @@ export default async function Home() {
               <CopyButton
                 command={PRIMARY_COMMAND}
                 size="lg"
-                className="bg-gradient-to-r from-primary to-green-600 hover:from-primary/90 hover:to-green-600/90 glow transition-all duration-300 text-primary-foreground"
+                className="bg-linear-to-r from-primary to-green-600 hover:from-primary/90 hover:to-green-600/90 glow transition-all duration-300 text-primary-foreground"
               />
               <Button
                 size="lg"
                 variant="outline"
-                className="backdrop-blur-sm bg-background/30 border-primary/20 hover:bg-background/50 transition-all duration-300"
+                className="backdrop-blur-xs bg-background/30 border-primary/20 hover:bg-background/50 transition-all duration-300"
                 asChild
               >
                 <Link href="/templates">Explore templates</Link>
@@ -74,11 +74,7 @@ export default async function Home() {
           sideVisual={<AnimatedTerminal />}
         />
 
-        <StatsBar
-          templates={stats.templates}
-          extensions={stats.extensions}
-          categories={stats.categories}
-        />
+        <StatsBar templates={stats.templates} extensions={stats.extensions} categories={stats.categories} />
 
         <SaasAiBanner />
 
@@ -89,10 +85,10 @@ export default async function Home() {
           <div className="container px-4 md:px-6 relative z-10">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
-                <div className="inline-block rounded-lg bg-muted px-3 py-1 text-sm backdrop-blur-sm">
+                <div className="inline-block rounded-lg bg-muted px-3 py-1 text-sm backdrop-blur-xs">
                   Featured templates
                 </div>
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl bg-clip-text text-transparent bg-gradient-to-r from-primary to-green-600">
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl bg-clip-text text-transparent bg-linear-to-r from-primary to-green-600">
                   Start with a solid foundation
                 </h2>
                 <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed">
@@ -124,7 +120,7 @@ export default async function Home() {
               <Button
                 variant="outline"
                 size="lg"
-                className="backdrop-blur-sm bg-background/30 border-primary/20 hover:bg-background/50 transition-all duration-300"
+                className="backdrop-blur-xs bg-background/30 border-primary/20 hover:bg-background/50 transition-all duration-300"
                 asChild
               >
                 <Link href="/templates">
@@ -143,7 +139,7 @@ export default async function Home() {
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
                 <div className="inline-block rounded-lg bg-muted px-3 py-1 text-sm">Categories</div>
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl bg-clip-text text-transparent bg-gradient-to-r from-primary to-green-600">
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl bg-clip-text text-transparent bg-linear-to-r from-primary to-green-600">
                   Find your stack
                 </h2>
                 <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed">
@@ -165,10 +161,10 @@ export default async function Home() {
             <div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_600px]">
               <div className="flex flex-col justify-center space-y-4">
                 <div className="space-y-2">
-                  <div className="inline-block rounded-lg bg-muted px-3 py-1 text-sm backdrop-blur-sm">
+                  <div className="inline-block rounded-lg bg-muted px-3 py-1 text-sm backdrop-blur-xs">
                     How it works
                   </div>
-                  <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl bg-clip-text text-transparent bg-gradient-to-r from-primary to-green-600">
+                  <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl bg-clip-text text-transparent bg-linear-to-r from-primary to-green-600">
                     Compose, then generate
                   </h2>
                   <p className="max-w-[600px] text-muted-foreground md:text-xl/relaxed">
@@ -179,7 +175,7 @@ export default async function Home() {
                 <div className="flex flex-col gap-2 min-[400px]:flex-row">
                   <Button
                     variant="outline"
-                    className="backdrop-blur-sm bg-background/30 border-primary/20 hover:bg-background/50 transition-all duration-300"
+                    className="backdrop-blur-xs bg-background/30 border-primary/20 hover:bg-background/50 transition-all duration-300"
                     asChild
                   >
                     <Link href="/docs">
@@ -190,7 +186,7 @@ export default async function Home() {
                 </div>
               </div>
               <div className="flex items-center justify-center">
-                <Card className="w-full backdrop-blur-sm bg-card/50 border-primary/10 gradient-border-subtle">
+                <Card className="w-full backdrop-blur-xs bg-card/50 border-primary/10 gradient-border-subtle">
                   <CardHeader>
                     <CardTitle>Create your project</CardTitle>
                     <CardDescription>Use the CLI to generate your app</CardDescription>
@@ -228,7 +224,7 @@ export default async function Home() {
           <div className="container px-4 md:px-6 relative z-10">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl bg-clip-text text-transparent bg-gradient-to-r from-primary to-green-600 animate-gradient-text">
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl bg-clip-text text-transparent bg-linear-to-r from-primary to-green-600 animate-gradient-text">
                   Ready when you are
                 </h2>
                 <p className="max-w-[900px] text-muted-foreground md:text-xl/relaxed">
@@ -239,12 +235,12 @@ export default async function Home() {
                 <CopyButton
                   command={PRIMARY_COMMAND}
                   size="lg"
-                  className="bg-gradient-to-r from-primary to-green-600 hover:from-primary/90 hover:to-green-600/90 glow transition-all duration-300 text-primary-foreground"
+                  className="bg-linear-to-r from-primary to-green-600 hover:from-primary/90 hover:to-green-600/90 glow transition-all duration-300 text-primary-foreground"
                 />
                 <Button
                   size="lg"
                   variant="outline"
-                  className="backdrop-blur-sm bg-background/30 border-primary/20 hover:bg-background/50 transition-all duration-300"
+                  className="backdrop-blur-xs bg-background/30 border-primary/20 hover:bg-background/50 transition-all duration-300"
                   asChild
                 >
                   <Link href="/templates">Explore templates</Link>
