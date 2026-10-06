@@ -43,9 +43,9 @@ export function SiteHeader({ onOpenCommand }: { onOpenCommand?: () => void }) {
   return (
     <header
       className={cn(
-        'sticky top-0 z-50 w-full transition-colors backdrop-blur supports-[backdrop-filter]:bg-background/60',
+        'sticky top-0 z-50 w-full transition-colors backdrop-blur-sm supports-backdrop-filter:bg-background/60',
         scrolled
-          ? 'bg-background/85 shadow-sm border-b border-primary/10'
+          ? 'bg-background/85 shadow-xs border-b border-primary/10'
           : 'bg-background/40 border-b border-transparent',
       )}
     >
@@ -111,7 +111,7 @@ export function SiteHeader({ onOpenCommand }: { onOpenCommand?: () => void }) {
         </nav>
         <Button
           size="sm"
-          className="hidden lg:inline-flex bg-gradient-to-r from-primary to-[hsl(var(--brand-teal))] text-white border-0 hover:opacity-90 transition-opacity glow text-xs font-medium"
+          className="hidden lg:inline-flex bg-linear-to-r from-primary to-[hsl(var(--brand-teal))] text-white border-0 hover:opacity-90 transition-opacity glow text-xs font-medium"
           asChild
         >
           <Link href="/templates">Get started</Link>

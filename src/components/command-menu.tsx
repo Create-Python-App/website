@@ -50,7 +50,7 @@ export function CommandMenu({ open, onOpenChange, templates = [], extensions = [
     <div
       ref={containerRef}
       className={cn(
-        'fixed inset-0 z-[100] flex items-start justify-center px-4 pt-24 md:pt-40 pb-10 backdrop-blur-sm bg-background/40 transition-opacity',
+        'fixed inset-0 z-100 flex items-start justify-center px-4 pt-24 md:pt-40 pb-10 backdrop-blur-xs bg-background/40 transition-opacity',
         open ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none',
       )}
       aria-hidden={!open}
@@ -63,7 +63,7 @@ export function CommandMenu({ open, onOpenChange, templates = [], extensions = [
           <Command.Input
             autoFocus
             placeholder="Search templates, extensions, docs..."
-            className="flex h-12 w-full bg-transparent px-4 text-sm outline-none placeholder:text-muted-foreground"
+            className="flex h-12 w-full bg-transparent px-4 text-sm outline-hidden placeholder:text-muted-foreground"
           />
           <button
             onClick={() => onOpenChange(false)}

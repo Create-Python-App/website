@@ -10,26 +10,26 @@ interface TemplateExtensionComboProps {
 export function TemplateExtensionCombo({ template, extension }: TemplateExtensionComboProps) {
   return (
     <div className="relative">
-      <Card className="bg-background/50 backdrop-blur-sm border-primary/10 overflow-hidden">
+      <Card className="bg-background/50 backdrop-blur-xs border-primary/10 overflow-hidden">
         <CardContent className="p-4 sm:p-6">
           <div className="flex flex-col gap-4">
             <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
               <div className="flex min-w-0 items-center gap-3">
-                <div className="h-10 w-10 shrink-0 rounded-md bg-gradient-to-br from-primary/20 to-green-600/20 flex items-center justify-center">
+                <div className="h-10 w-10 shrink-0 rounded-md bg-linear-to-br from-primary/20 to-green-600/20 flex items-center justify-center">
                   <span className="text-sm font-semibold text-primary">T</span>
                 </div>
                 <div className="min-w-0">
-                  <h3 className="text-sm font-medium break-words">{template.name}</h3>
+                  <h3 className="text-sm font-medium wrap-break-word">{template.name}</h3>
                   <p className="text-xs text-muted-foreground">{template.type}</p>
                 </div>
               </div>
               <ArrowRight className="h-4 w-4 shrink-0 text-muted-foreground rotate-90 sm:rotate-0 self-center" />
               <div className="flex min-w-0 items-center gap-3">
-                <div className="h-10 w-10 shrink-0 rounded-md bg-gradient-to-br from-green-600/20 to-blue-500/20 flex items-center justify-center">
+                <div className="h-10 w-10 shrink-0 rounded-md bg-linear-to-br from-green-600/20 to-blue-500/20 flex items-center justify-center">
                   <span className="text-sm font-semibold text-green-600">E</span>
                 </div>
                 <div className="min-w-0">
-                  <h3 className="text-sm font-medium break-words">{extension.name}</h3>
+                  <h3 className="text-sm font-medium wrap-break-word">{extension.name}</h3>
                   <p className="text-xs text-muted-foreground">{extension.category}</p>
                 </div>
               </div>
@@ -43,7 +43,7 @@ export function TemplateExtensionCombo({ template, extension }: TemplateExtensio
           </div>
         </CardContent>
       </Card>
-      <div className="absolute -inset-px rounded-lg bg-gradient-to-r from-primary/20 via-green-600/20 to-blue-500/20 -z-10 animate-pulse"></div>
+      <div className="absolute -inset-px rounded-lg bg-linear-to-r from-primary/20 via-green-600/20 to-blue-500/20 -z-10 animate-pulse"></div>
     </div>
   );
 }

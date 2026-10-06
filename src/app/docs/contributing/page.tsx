@@ -24,7 +24,9 @@ export default function ContributingPage() {
         <div className="space-y-8">
           <section id="contributing-overview" className="space-y-4">
             <h2 className="text-2xl font-bold tracking-tight">Contribution Overview</h2>
-            <p>The create-awesome-python-app project welcomes contributions from the community. You can contribute by:</p>
+            <p>
+              The create-awesome-python-app project welcomes contributions from the community. You can contribute by:
+            </p>
             <ul className="list-disc pl-6 space-y-2">
               <li>Adding new templates</li>
               <li>Adding new extensions</li>
@@ -39,15 +41,15 @@ export default function ContributingPage() {
 
             <DiagramWorkflow
               title="Contribution Workflow"
-              chart={`
-graph TD
-    A["Fork Repository"] --> B["Create New Template/Extension"]
-    B --> C["Add Entry to templates.json"]
-    C --> D["Test Locally"]
-    D --> E["Create Pull Request"]
-    E --> F["Review Process"]
-    F --> G["Merged!"]
-              `}
+              steps={[
+                'Fork the repository',
+                'Create a template or extension',
+                'Add an entry to templates.json',
+                'Test locally',
+                'Create a pull request',
+                'Complete the review process',
+                'Merge the contribution',
+              ]}
             />
           </section>
 
@@ -135,8 +137,9 @@ graph TD
                     <strong>url</strong>: The URL to your template in the repository
                   </li>
                   <li>
-                    <strong>type</strong>: The type of template (e.g., &quot;fastapi-backend&quot;, &quot;django-backend&quot;,
-                    &quot;cli-app&quot;, &quot;celery-worker&quot;, &quot;uv-workspace&quot;)
+                    <strong>type</strong>: The type of template (e.g., &quot;fastapi-backend&quot;,
+                    &quot;django-backend&quot;, &quot;cli-app&quot;, &quot;celery-worker&quot;,
+                    &quot;uv-workspace&quot;)
                   </li>
                   <li>
                     <strong>category</strong>: The category slug from the categories section
@@ -330,8 +333,8 @@ graph TD
                     of strings)
                   </li>
                   <li>
-                    <strong>category</strong>: The category of the extension (e.g., &quot;containers&quot;, &quot;database&quot;,
-                    &quot;observability&quot;, &quot;security&quot;, &quot;ci&quot;)
+                    <strong>category</strong>: The category of the extension (e.g., &quot;containers&quot;,
+                    &quot;database&quot;, &quot;observability&quot;, &quot;security&quot;, &quot;ci&quot;)
                   </li>
                   <li>
                     <strong>labels</strong>: Keywords that describe your extension
@@ -490,7 +493,9 @@ dev = [
                 <ul className="list-disc pl-6 space-y-2">
                   <li>Provide a detailed README.md</li>
                   <li>Include usage examples</li>
-                  <li>Document available <code>uv run</code> commands and Makefile targets</li>
+                  <li>
+                    Document available <code>uv run</code> commands and Makefile targets
+                  </li>
                   <li>Explain any non-standard configurations</li>
                 </ul>
               </div>

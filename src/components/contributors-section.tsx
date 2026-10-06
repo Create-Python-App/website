@@ -10,7 +10,7 @@ export function ContributorsSection() {
         <div className="grid gap-10 lg:grid-cols-2 lg:gap-16 items-center">
           <div className="space-y-4">
             <div className="inline-block rounded-lg bg-muted px-3 py-1 text-sm">Open source</div>
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl bg-clip-text text-transparent bg-gradient-to-r from-primary to-green-600">
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl bg-clip-text text-transparent bg-linear-to-r from-primary to-green-600">
               Build with us
             </h2>
             <p className="max-w-[600px] text-muted-foreground md:text-xl/relaxed">
@@ -19,7 +19,7 @@ export function ContributorsSection() {
             <div className="flex flex-col sm:flex-row gap-3">
               <Button
                 size="lg"
-                className="bg-gradient-to-r from-primary to-green-600 hover:from-primary/90 hover:to-green-600/90"
+                className="bg-linear-to-r from-primary to-green-600 hover:from-primary/90 hover:to-green-600/90"
                 asChild
               >
                 <Link href="https://github.com/Create-Python-App/create-python-app/blob/main/CONTRIBUTING.md">

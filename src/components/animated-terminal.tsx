@@ -77,7 +77,7 @@ export function AnimatedTerminal() {
   const stack = STACKS[stackIdx];
 
   return (
-    <div className="relative w-full max-w-lg rounded-xl border border-border/60 bg-card/80 backdrop-blur-sm overflow-hidden elevation-md font-mono text-sm">
+    <div className="relative w-full max-w-lg rounded-xl border border-border/60 bg-card/80 backdrop-blur-xs overflow-hidden elevation-md font-mono text-sm">
       {/* Terminal title bar */}
       <div className="flex items-center gap-1.5 px-4 py-3 border-b border-border/50 bg-muted/40">
         <span className="h-3 w-3 rounded-full bg-red-400/80" />

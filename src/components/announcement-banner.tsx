@@ -11,7 +11,7 @@ const bannerVariants = cva(
   {
     variants: {
       variant: {
-        gradient: 'bg-gradient-to-r from-amber-600 via-amber-500 to-teal-600 text-white',
+        gradient: 'bg-linear-to-r from-amber-600 via-amber-500 to-teal-600 text-white',
         subtle: 'bg-[hsl(var(--background))] border-b border-border/60 text-foreground/90 dark:text-foreground/80',
         accent: 'bg-[hsl(var(--primary)/0.15)] text-foreground',
       },
@@ -71,15 +71,15 @@ export function AnnouncementBanner({
       <div className="absolute inset-0 pointer-events-none select-none overflow-hidden" aria-hidden>
         {variant === 'gradient' && (
           <>
-            <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center opacity-40 [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]" />
-            <div className="absolute inset-0 bg-gradient-to-r from-amber-500/20 via-amber-400/15 to-teal-500/20 animate-gradient-text" />
+            <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center opacity-40 mask-[linear-gradient(180deg,white,rgba(255,255,255,0))]" />
+            <div className="absolute inset-0 bg-linear-to-r from-amber-500/20 via-amber-400/15 to-teal-500/20 animate-gradient-text" />
           </>
         )}
       </div>
       <div className="relative z-10 flex max-w-6xl flex-wrap items-center justify-center gap-x-2 gap-y-2 text-center sm:text-left">
         {icon}
         {label && (
-          <span className="shrink-0 font-semibold bg-gradient-to-r from-yellow-300 to-yellow-100 bg-clip-text text-transparent tracking-wide">
+          <span className="shrink-0 font-semibold bg-linear-to-r from-yellow-300 to-yellow-100 bg-clip-text text-transparent tracking-wide">
             {label}
           </span>
         )}
