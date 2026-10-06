@@ -10,41 +10,32 @@ on:
     branches:
       - main
 
-permissions:
-  actions: write
-  checks: write
-  contents: write
-  issues: write
-  pull-requests: write
-  statuses: write
-
 jobs:
   pr-review:
+    name: PR Review
     if: github.event_name == 'pull_request' && github.event.pull_request.draft == false
 
     runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+      pull-requests: read
 
     steps:
       - name: Checkout
         uses: actions/checkout@v7
 
-      - name: Setup Danger Files
-        run: |
-          echo "Setting up Danger files..."
-          mv tools/danger/* .
-
       - uses: actions/setup-node@v7
         with:
           node-version-file: .node-version
 
-      - name: Install dependencies
-        run: npm install
+      - name: Test PR review rules
+        run: node --test .github/scripts/pr-review.test.mjs
 
-      - name: Danger JS Action
-        # Pinned to main: tag 14.0.6 ships FROM node:20-slim, whose transitive
-        # @yao-pkg/pkg requires node >=22 (docker build fails). Upstream main
-        # already uses FROM node:22-slim; revert to a tag once released.
-        uses: danger/danger-js@main
+      - name: Validate pull request
+        run: node .github/scripts/pr-review.mjs
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          DANGER_GITHUB_API_TOKEN: ${{ secrets.DANGER_GITHUB_API_TOKEN }}
+          GITHUB_TOKEN: ${{ github.token }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          GITHUB_EVENT_PATH: ${{ github.event_path }}
+          GITHUB_STEP_SUMMARY: ${{ github.step_summary }}
