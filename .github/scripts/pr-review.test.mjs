@@ -66,10 +66,9 @@ test('warns when a package manifest changes', () => {
 });
 
 test('does not require the template from bot-authored pull requests', () => {
-  const result = reviewPullRequest(
-    { title: 'chore(deps): bump vite', body: '', user: { type: 'Bot' } },
-    [{ filename: 'package.json', status: 'modified', additions: 1, deletions: 1 }],
-  );
+  const result = reviewPullRequest({ title: 'chore(deps): bump vite', body: '', user: { type: 'Bot' } }, [
+    { filename: 'package.json', status: 'modified', additions: 1, deletions: 1 },
+  ]);
 
   assert.deepEqual(result.failures, []);
   assert.deepEqual(result.warnings, ['package.json changed. Ensure applicable lock files are updated.']);
