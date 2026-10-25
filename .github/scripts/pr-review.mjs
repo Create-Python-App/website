@@ -24,18 +24,23 @@ export function reviewPullRequest(pullRequest, files) {
   const messages = [];
   const body = pullRequest.body ?? '';
 
-  if (!body) {
-    failures.push(
-      'Missing Summary - Add a `## Description` section explaining the motivation, changes, related issue, and required dependencies.',
-    );
-  }
   if (!pullRequest.title) failures.push('Missing PR Title - Add a relevant pull request title.');
 
-  for (const section of requiredSections) {
-    if (!body.includes(section)) failures.push(`Missing section: ${section}`);
-  }
-  for (const item of checklistItems) {
-    if (!body.includes(`- [x] ${item}`)) warnings.push(`Unchecked checklist item: ${item}`);
+  // Bots (Dependabot, Renovate, ...) cannot fill in the template, so the body and
+  // checklist rules only apply to human-authored pull requests.
+  if (pullRequest.user?.type !== 'Bot') {
+    if (!body) {
+      failures.push(
+        'Missing Summary - Add a `## Description` section explaining the motivation, changes, related issue, and required dependencies.',
+      );
+    }
+
+    for (const section of requiredSections) {
+      if (!body.includes(section)) failures.push(`Missing section: ${section}`);
+    }
+    for (const item of checklistItems) {
+      if (!body.includes(`- [x] ${item}`)) warnings.push(`Unchecked checklist item: ${item}`);
+    }
   }
 
   const additions = files.reduce((total, file) => total + (file.additions ?? 0), 0);
