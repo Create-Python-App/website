@@ -2,3 +2,8 @@
 id = "GHSA-vfj7-8cjw-p6xm"
 ignoreUntil = 2026-11-04
 reason = "No patched release is published yet. All braces 3.0.3 copies are pinned to upstream micromatch/braces#72 commit 28d440b5dd449dbf1fe6f3506cf94ecca4d02660, which adds bounded recursion guards; its upstream suite passes (904 tests). Recheck and remove this exception when braces publishes a fixed release."
+
+[[IgnoredVulns]]
+id = "GHSA-g3hv-75wg-m249"
+ignoreUntil = 2027-02-01
+reason = "minimatch (ReDoS, fixed in 11.0.1) is a transitive dependency of the ESLint and typescript-eslint toolchain: 3.1.4 and 3.1.5 via eslint 9, 10.2.6 via typescript-estree. It only parses glob patterns from repository config, never untrusted input, so it is not reachable from the shipped site. Latest typescript-eslint still requires ^10.2.2, and an override is not applied to already-pinned lock entries. Remove this exception once typescript-eslint requires minimatch >= 11.0.1, or once a pnpm override is approved and applied."
